@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/Fall (32x32).png-0fc42821470f17709d8787f59c4db3c8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://assets/Player Sprite Placeholder/Fall (32x32).png"
+dest_files=[ "res://.import/Fall (32x32).png-0fc42821470f17709d8787f59c4db3c8.stex" ]
 
 [params]
 
