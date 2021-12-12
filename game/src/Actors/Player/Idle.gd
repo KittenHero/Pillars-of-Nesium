@@ -8,7 +8,6 @@ func physics_process(parent: KinematicBody2D, _delta: float):
 	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		parent.push_state(parent.STATES.RUNNING)
 	elif Input.is_action_just_pressed("melee"):
-		print("called from idle")
 		parent.push_state(parent.STATES.MELEEONE, {"melee": "ground"})
 	
 func enter(parent: KinematicBody2D):
