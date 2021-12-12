@@ -2,6 +2,7 @@ extends "res://src/Actors/State.gd"
 	
 
 func physics_process(parent: KinematicBody2D, delta: float):
+	print("falling", parent.velocity)
 	parent.velocity.y += parent.gravity * delta
 	parent.velocity = parent.move_and_slide(
 		parent.move_horizontal(delta), Vector2.UP

@@ -9,7 +9,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 	if not parent.is_on_floor() or parent.velocity.length_squared() < parent.acc_per_frame:
 		parent.pop_state()
 	elif Input.is_action_just_pressed("jump"):
-		parent.push_state(parent.STATES.JUMPING)
+		parent.push_state(parent.STATES.JUMPING, {"jump": true})
 	elif Input.is_action_just_pressed("melee"):
 		parent.push_state(parent.STATES.MELEEONE, {"melee": "ground"})
 
