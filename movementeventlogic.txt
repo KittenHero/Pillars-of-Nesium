@@ -1,0 +1,63 @@
+#things that make the inputs work to the specifications
+
+#basic movement
+
+
+##climbing
+# check to see if player is overlapping a climable surface (while)
+	#if is_button_pressed("climb_grab"):
+	#disables normal movement & enable climb moveset
+#while climb moveset is enabled
+	#set gravity to 0
+	#climbing should be slightly slower than normal movement with no friction for left,right,up directions
+	#swap to climbing animation
+	#movement for up down left right
+	#if is_button_pressed("jump"):
+		#do the jump
+		#reenable normal movement
+	#if is_button_pressed("climb_drop"):
+		#enable normal movement
+
+##look
+#while is_button_pressed("look"):
+	#possibly disables players movement
+	#enable camera drift from player to cursor up to a fixed distance
+
+##select weapons
+#if is_button_pressed("weapon_select"):
+	#bring up ui that that shows user their weapon list
+	#can select with cursor
+	#highlight when selected
+	#can still use direct select if the player wishs (1,2,3)
+
+##ranged attack
+#while is_button_pressed("ranged_aim"):
+	#character points in direction facing cursor (may be fixed to x/y axis ask Sam)
+	#"ranged_attack" can then be pressed for attack animation and projectile emission 
+
+##Fishing
+#should be a check to see if player is in fishing area (prompt display for player)
+#if player is in fishing zone:
+	#if is_button_pressed("cast_line"):
+		#disables players movement
+		#while is_button_pressed("cast_line"):
+			#builds meter for cast distance
+		#cast distance = cast_held
+		#lock camera to reel
+		#launch reel in direction of cursor
+		#(possibly allow reeling in during lauch)
+		#wait for fish (look at that lovely fish ai)
+		#flick mouse at right moment to hook the fish
+		# spin cursor in circles to reel it in (fish varies in difficulty)
+		# if fish gets too far away it escapes
+		#fish too much tension is on the line it snaps
+		#notification for success or failure
+		#reenable player movement
+
+##long jump
+#while is_button_pressed("slide"): 
+	#if is_button_pressed("long_jump"):
+		#goes further in slide direction
+	#if is_button_pressed("blaster_slide"):
+		#PEW PEW
+
