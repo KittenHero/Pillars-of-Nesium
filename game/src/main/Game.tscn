@@ -93,7 +93,7 @@ position = Vector2( 0, 560 )
 polygon = PoolVector2Array( 0, 0, 128, 0, 128, -16, 272, -16, 272, 0, 400, 0, 400, -16, 464, -16, 464, -48, 528, -48, 528, -64, 608, -64, 608, -80, 672, -80, 672, -64, 752, -64, 752, -80, 768, -80, 768, -112, 896, -112, 896, -128, 960, -128, 960, -144, 1024, -144, 1024, 48, 0, 48 )
 
 [node name="Object" parent="." instance=ExtResource( 3 )]
-position = Vector2( 72, 528 )
+position = Vector2( 72, 536 )
 
 [node name="Object2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 344, 528 )
+position = Vector2( 344, 536 )
