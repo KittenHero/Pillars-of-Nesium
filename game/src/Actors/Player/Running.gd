@@ -24,11 +24,11 @@ func anim_process(parent: KinematicBody2D, _delta: float):
 		parent.anim_sprite.set_flip_h(true)
 	else:
 		parent.anim_sprite.set_flip_h(false)
-	if not parent.anim_sprite.is_playing():
-		parent.anim_sprite.play("dash")
+	if not parent.anim_player.is_playing():
+		parent.anim_player.play("run")
 
 func handle_anim_finished(parent: KinematicBody2D):
-	parent.anim_sprite.stop()
+	parent.anim_player.stop()
 
 func enter(_parent: KinematicBody2D):
 	pass

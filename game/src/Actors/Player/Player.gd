@@ -18,7 +18,6 @@ enum STATES {
 	AIRBORNE,
 	MELEEONE,
 	MELEETWO,
-	MELEETHREE,
 	ROLLING,
 	RUNNING, 
 }
@@ -28,11 +27,11 @@ onready var state_dict = {
 	STATES.AIRBORNE: $States/Airborne,
 	STATES.MELEEONE: $States/MeleeOne,
 	STATES.MELEETWO: $States/MeleeTwo,
-	STATES.MELEETHREE: $States/MeleeThree,
 	STATES.ROLLING: $States/Rolling,
 	STATES.RUNNING: $States/Running,
 }
 onready var anim_sprite = $Sprite
+onready var anim_player = $AnimationPlayer
 onready var acc_per_frame = max_speed/time_to_max_speed
 onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
@@ -53,6 +52,8 @@ func move_horizontal(_delta: float) -> Vector2:
 		velocity.x += acc_per_frame;
 	if velocity.x > max_speed:
 		velocity.x = max_speed
+	elif velocity.x < - max_speed:
+		velocity.x = - max_speed
 	return velocity
 
 func apply_stopping_friction(_delta: float) -> Vector2:
@@ -65,7 +66,7 @@ func apply_gravity(delta: float) -> Vector2:
 	return velocity
 
 func modulate_sprite(color: Color) -> void:
-	$player.modulate = color
+	$Sprite.modulate = color
 
 func push_state(state, args = {}) -> void:
 	assert(state in state_dict, "Cannot push unknown state: %s" % state)
