@@ -1,4 +1,5 @@
 extends StateMachine
+class_name SleepingAngel
 
 func _ready():
 	add_state("sleep")

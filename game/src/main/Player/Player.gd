@@ -23,7 +23,7 @@ onready var immunity_timer = $Timers/InvulnerabilityTimer
 
 var velocity = Vector2.ZERO
 onready var move_speed = move_speed_units * 96 setget _set_move_speed
-var gravity = 500
+var gravity = Globals.gravity
 var jump_velocity = -200
 var is_grounded
 var is_jumping = false

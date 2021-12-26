@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/main/Player/PlayerFSM.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Scroad",
+"language": "GDScript",
+"path": "res://src/main/Enemies/Scroad.gd"
+}, {
+"base": "StateMachine",
+"class": "SleepingAngel",
+"language": "GDScript",
+"path": "res://src/main/Player/SleepingAngel.gd"
+}, {
 "base": "Node",
 "class": "StateMachine",
 "language": "GDScript",
@@ -39,12 +49,14 @@ _global_script_class_icons={
 "Obstacle": "",
 "Player": "",
 "PlayerFSM": "",
+"Scroad": "",
+"SleepingAngel": "",
 "StateMachine": ""
 }
 
 [application]
 
-config/name="Pillars-of-Nesium"
+config/name="Pillars-of-Nesium-kevin"
 run/main_scene="res://src/main/Game.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
