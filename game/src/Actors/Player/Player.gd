@@ -1,11 +1,24 @@
 extends KinematicBody2D
 class_name MC
 
+# adding in stuff for UI health bars - Kevin
+signal damaged(amount)
+signal health_updated(health)
+signal dead()
+#
+
 export var gravity = 3000
 export var max_speed = 200
 export var time_to_max_speed = 20
 export var jump_height = 300
 export var stack_buffer = 10
+
+# adding in stuff for UI health bars - Kevin
+export (float) var max_health = 5
+onready var immunity_timer = $Timers/ImmunityTimer
+onready var status_anim = $StatusAnim
+onready var health = max_health setget _set_health
+#
 
 var frame_count = 0
 var velocity = Vector2.ZERO
@@ -37,6 +50,13 @@ onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
 
 func _ready():
+	# adding in stuff for UI health bars - Kevin
+	Globals.MC = self
+	var health_bar = get_tree().current_scene.player_health_bar
+	health_bar.set_max_health(max_health)
+	connect("health_updated", health_bar, "_on_health_updated")
+	connect("health_updated", self, "_on_health_updated")
+	#
 	current_state = state_dict[entry_state]
 
 func _physics_process(delta) -> void:
@@ -95,3 +115,30 @@ func print_stack_states():
 		names.push_back(state)
 	print("<- ", current_state, " : ", names)
 
+func damage(amount):
+	var amount_damaged = 0
+	if immunity_timer.is_stopped():
+		immunity_timer.start()
+		var prev_health = health
+		_set_health(health - amount)
+		amount_damaged = prev_health - health
+		emit_signal("damaged", amount)
+		status_anim.play("damage")
+		if health != 0:
+			status_anim.queue("flash")
+	return amount_damaged
+
+func kill():
+	emit_signal("dead")
+	queue_free()
+	
+func _set_health(value):
+	var prev_health = health
+	health = clamp(value, 0, max_health)
+	emit_signal("health_updated", health, health-prev_health)
+	if health != prev_health:
+		if health == 0:
+			kill()
+
+func _on_InvulnerabilityTimer_timeout() -> void:
+	status_anim.play("RESET")
