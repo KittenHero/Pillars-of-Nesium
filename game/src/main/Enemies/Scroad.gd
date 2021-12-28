@@ -36,6 +36,9 @@ onready var move_speed = move_speed_units * 48 setget _set_move_speed
 func _ready():
 	health_display.set_max_health(max_health)
 	health_display.hide()
+	
+func _apply_velocity():
+	pass
 
 func _apply_stop_velocity():
 	velocity = velocity.linear_interpolate(Vector2.ZERO, move_weight)

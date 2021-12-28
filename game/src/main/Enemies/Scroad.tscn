@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/[Ph] Scroad/Scroad.png" type="Texture" id=1]
 [ext_resource path="res://src/main/Player/Hitbox.tscn" type="PackedScene" id=2]
@@ -149,6 +149,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("DamageArea/CollisionShape2D2:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "attack"
@@ -164,6 +176,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DamageArea/CollisionShape2D2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -181,6 +205,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DamageArea/CollisionShape2D2:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -222,9 +258,24 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -41, 0 ), Vector2( -53, -4 ), Vector2( -41, 0 ), Vector2( -53, -4 ), Vector2( -41, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("DamageArea/CollisionShape2D2:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 11, 12 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 42, 1 )
 
 [node name="Scroad" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -284,11 +335,61 @@ anims/telegraph = SubResource( 10 )
 position = Vector2( 0, 2 )
 shape = SubResource( 11 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2( -58, 0 )
+shape = SubResource( 12 )
+
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
 margin_left = -22.0
 margin_top = -38.0
 margin_right = -22.0
 margin_bottom = -38.0
 rect_scale = Vector2( 0.3, 0.5 )
+
+[node name="Attack_Raycast" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Attack_Raycast"]
+position = Vector2( -16, 0 )
+rotation = 1.5708
+scale = Vector2( 0.5, 1.45 )
+enabled = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="Attack_Raycast"]
+position = Vector2( 16, 0 )
+rotation = -1.5708
+scale = Vector2( 0.5, 1.45 )
+enabled = true
+
+[node name="Alert_Raycast" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Alert_Raycast"]
+position = Vector2( -16, -8 )
+rotation = 1.5708
+scale = Vector2( 0.5, 3 )
+enabled = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="Alert_Raycast"]
+position = Vector2( 16, -8 )
+rotation = -1.5708
+scale = Vector2( 0.5, 3 )
+enabled = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="Alert_Raycast"]
+position = Vector2( -16, -16 )
+rotation = 2.35619
+scale = Vector2( 0.5, 3 )
+enabled = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="Alert_Raycast"]
+position = Vector2( 16, -16 )
+rotation = -2.35619
+scale = Vector2( 0.5, 3 )
+enabled = true
+
+[node name="RayCast2D5" type="RayCast2D" parent="Alert_Raycast"]
+position = Vector2( 0, -16 )
+rotation = 3.14159
+scale = Vector2( 0.5, 3 )
+enabled = true
 
 [connection signal="timeout" from="Timers/ImmunityTimer" to="." method="_on_ImmunityTimer_timeout"]
