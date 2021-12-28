@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SpeechBubble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="character" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 189, 227 )
+texture = ExtResource( 2 )
+
+[node name="SpeechBubble" parent="Sprite" instance=ExtResource( 1 )]
+position = Vector2( 0, -128 )
