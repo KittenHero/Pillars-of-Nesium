@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Player
+class_name MC
 
 export var gravity = 3000
 export var max_speed = 200
