@@ -106,6 +106,9 @@ func _set_health(value):
 	if health != prev_health:
 		if health == 0:
 			kill()
+			
+func _on_health_updated(health, amount):
+	pass
 		
 func _on_InvulnerabilityTimer_timeout() -> void:
 	effects_animation.play("RESET")

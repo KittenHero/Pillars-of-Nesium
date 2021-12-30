@@ -140,5 +140,8 @@ func _set_health(value):
 		if health == 0:
 			kill()
 
+func _on_health_updated(health, amount):
+	pass
+
 func _on_InvulnerabilityTimer_timeout() -> void:
 	status_anim.play("RESET")
