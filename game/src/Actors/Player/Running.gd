@@ -18,6 +18,8 @@ func physics_process(parent: KinematicBody2D, delta: float):
 		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})
 	elif Input.is_action_just_pressed("melee"):
 		parent.push_state(parent.STATES.MELEEONE, {"melee": "ground"})
+	elif Input.is_action_just_pressed("slide"):
+		parent.push_state(parent.STATES.SLIDE, {"slide": true})
 
 func anim_process(parent: KinematicBody2D, _delta: float):
 	if parent.anim_direction != Vector2.RIGHT:
