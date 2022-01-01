@@ -1,18 +1,18 @@
 extends KinematicBody2D
 class_name Player
 
-export var max_speed := 200
+export var max_speed := 300
 export var time_to_max_speed := 20
 export var deceleration := 0.8
-export var max_air_speed := 200
+export var max_air_speed := 300
 export var time_to_max_air_speed := 20
 export var jump_height := 150
 export var min_jump_height := 10
 export var gravity := 3000
-export var slide_speed_multiplier := 3
+export var slide_speed_multiplier := 2
 export var slide_gravity_multiplier := 0.5
-export var slide_jump_multiplier := 0.8
-export var slide_duration := 10
+export var slide_jump_multiplier := 0.5
+export var slide_duration := 20
 export var stack_buffer := 10
 
 var frame_count = 0
