@@ -7,9 +7,12 @@ func physics_process(parent: KinematicBody2D, delta: float):
 #		parent.push_state(parent.STATES.MELEEONE, {"melee": "air"})
 #	elif parent.is_on_floor():
 #		parent.pop_state()
+	if Input.is_action_just_released("jump"):
+		if parent.velocity.y < parent.terminal_velocity:
+			parent.velocity.y = parent.terminal_velocity
 	if parent.is_on_floor():
 		parent.pop_state()
-	var velocity = parent.move_horizontal(delta)
+	var velocity = parent.move_air_horizontal(delta)
 	velocity = parent.apply_gravity(delta)
 	parent.velocity = parent.move_and_slide(velocity, Vector2.UP)
 
@@ -28,7 +31,7 @@ func handle_anim_finished(parent: KinematicBody2D):
 
 func enter(parent: KinematicBody2D):
 	if "jump" in _args and _args["jump"]:
-		parent.velocity.y = - sqrt(2 * parent.jump_height * parent.gravity)
+		parent.velocity.y = parent.init_jump_velocity
 	
 func exit(parent: KinematicBody2D):
 	.exit(parent) 
