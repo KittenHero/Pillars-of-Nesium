@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://assets/Tilemaps/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://assets/Player Sprite Placeholder/Idle (32x32).png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://assets/player/step_attack_3.png" type="Texture" id=24]
 [ext_resource path="res://assets/player/attack_3.png" type="Texture" id=25]
 [ext_resource path="res://assets/player/slide_1.png" type="Texture" id=26]
+[ext_resource path="res://src/Actors/Player/Climbing.gd" type="Script" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 points = PoolVector2Array( 12.9804, 0.959366, 28.3299, 6.30843, 40.1909, 13.7506, 91.5884, 52.5894, 107.17, 60.9619, 128, 64, 0, 64, 0, 0 )
@@ -1043,10 +1044,39 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0 )
 3/shapes = [  ]
 3/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=114]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=113]
+0/name = "Tiles.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 256, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 114 )
+0/shape_one_way = true
+0/shape_one_way_margin = 0.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 0.0,
+"shape": SubResource( 114 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
 [sub_resource type="ShaderMaterial" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
 height = 18.0
+
+[sub_resource type="SegmentShape2D" id=112]
+a = Vector2( 0, -2.4 )
 
 [sub_resource type="Animation" id=50]
 length = 0.001
@@ -1073,6 +1103,72 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 12 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "climbing_horizontal"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+
+[sub_resource type="Animation" id=111]
+resource_name = "climbing_vertical"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
 }
 
 [sub_resource type="Animation" id=51]
@@ -1118,6 +1214,42 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 12 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -1242,7 +1374,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=68]
 resource_name = "slide"
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 2
@@ -1267,6 +1398,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 15.35 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.75 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 17 ) ]
+}
 
 [node name="World" type="Node2D"]
 
@@ -1274,8 +1429,9 @@ tracks/1/keys = {
 tile_set = SubResource( 73 )
 cell_size = Vector2( 32, 32 )
 show_collision = true
+collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( -393143, 1610612753, 0, -393140, 1610612758, 0, -393139, 1610612758, 0, -393136, -1610612719, 0, -327604, 1610612758, 0, -327603, 1610612758, 0, -262068, 1610612758, 0, -262067, 1610612758, 0, -196552, 14, 0, -196550, 16, 0, -196549, 16, 0, -196548, 13, 0, -196532, 1610612758, 0, -196531, 1610612753, 0, -131046, 1610612749, 0, -131044, 1610612752, 0, -131043, 1610612752, 0, -130996, 1610612758, 0, -130995, 1610612758, 0, -65508, 1610612749, 0, -65460, 1610612758, 0, -65459, 1610612758, 0, -65424, 1610612761, 0, -65423, 1610612761, 0, -65422, 1610612761, 0, -65421, 1610612761, 0, -65420, 1610612761, 0, -65419, 1610612761, 0, -65418, 1610612761, 0, -65417, 1610612761, 0, -65416, 1610612761, 0, -65415, 1610612761, 0, -65414, 1610612761, 0, -65413, 1610612761, 0, -65412, 1610612761, 0, -65411, 1610612761, 0, -65410, 1610612761, 0, -65409, 1610612761, 0, -65408, 1610612761, 0, -65407, 1610612761, 0, -65406, 1610612761, 0, -65405, 1610612761, 0, 30, 1610612749, 0, 32, 1610612752, 0, 33, 1610612752, 0, 48, -1610612720, 0, 49, -1610612720, 0, 50, 1610612750, 0, 76, 1610612758, 0, 77, 1610612758, 0, 100, 1610612751, 0, 65568, 1610612749, 0, 65584, 1610612750, 0, 65612, -1610612719, 0, 65613, 1610612758, 0, 65624, 1610612758, 0, 65625, 1610612758, 0, 65626, 1610612758, 0, 65627, 1610612758, 0, 65628, 1610612758, 0, 65629, 1610612758, 0, 65630, 1610612758, 0, 65631, 1610612758, 0, 65632, 1610612758, 0, 65633, 1610612758, 0, 131106, 1610612751, 0, 131118, -1610612721, 0, 131148, 1610612758, 0, 131149, 1610612758, 0, 131160, 1610612758, 0, 131161, 1610612758, 0, 131162, 1610612758, 0, 131163, 1610612758, 0, 131164, 1610612758, 0, 131165, 1610612758, 0, 131166, 1610612758, 0, 131167, 1610612758, 0, 131168, 1610612758, 0, 131169, 1610612758, 0, 196684, 1610612758, 0, 196685, 1610612758, 0, 262180, 1610612751, 0, 262188, -1610612721, 0, 262220, 1610612758, 0, 262221, 1610612758, 0, 327756, 1610612753, 0, 327757, -1610612719, 0, 327761, 1610612749, 0, 327763, 1610612750, 0, 327768, 1610612753, 0, 327769, -1610612719, 0, 327772, 1610612749, 0, 327774, 1610612752, 0, 327775, 1610612752, 0, 327776, 1610612750, 0, 393254, -1073741810, 0, 393255, 1610612752, 0, 393258, -1610612720, 0, 393259, -1610612723, 0, 393310, -2147483631, 0, 393311, -1610612719, 0, 458791, 1610612752, 0, 458794, -1610612720, 0, 458852, 1610612749, 0, 524327, -1073741810, 0, 524330, -1610612723, 0, 589924, 19, 0, 655377, 1610612753, 0, 655382, -1610612719, 0, 655448, -1073741803, 0, 851958, 16, 0, 851959, 16, 0, 851963, 16, 0, 851964, 16, 0, 917494, 16, 0, 917495, 16, 0, 917499, 16, 0, 917500, 16, 0, 982994, 5, 0, 983030, 16, 0, 983031, 16, 0, 983035, 16, 0, 983036, 16, 0, 1048566, 16, 0, 1048567, 16, 0, 1048571, 16, 0, 1048572, 16, 0, 1114102, 16, 0, 1114103, 16, 0, 1114107, 16, 0, 1114108, 16, 0, 1048660, -1073741819, 0, 1114120, 19, 0, 1114126, 18, 0, 1114128, 19, 0, 1114134, 18, 0, 1179676, 1, 0, 1179699, 1610612749, 0, 1179701, 1610612750, 0, 1245245, 1610612749, 0, 1245247, 1610612750, 0, 1310762, 1610612752, 0, 1310763, 1610612752, 0, 1310764, 1610612750, 0, 1310796, 19, 0, 1310798, 10, 0, 1310799, 10, 0, 1376298, 1610612750, 0, 1376328, 1610612749, 0, 1376330, 16, 0, 1376331, 16, 0, 1376332, 16, 0, 1376333, 16, 0, 1376334, 1610612752, 0, 1376335, 1610612752, 0, 1441866, 1610612749, 0, 1507375, 1610612749, 0, 1507377, 1610612750, 0, 1638442, 1610612750, 0, 1835050, 18, 0, 1835082, 19, 0, 1900586, 10, 0, 1900587, 10, 0, 1900588, 10, 0, 1900589, 10, 0, 1900590, 10, 0, 1900591, 10, 0, 1900592, 10, 0, 1900593, 10, 0, 1900594, 10, 0, 1900595, 10, 0, 1900596, 10, 0, 1900597, 10, 0, 1900598, 10, 0, 1900599, 10, 0, 1900600, 10, 0, 1900601, 10, 0, 1900602, 10, 0, 1900603, 10, 0, 1900604, 10, 0, 1900605, 10, 0, 1900606, 10, 0, 1900607, 10, 0, 1900608, 10, 0, 1900609, 10, 0, 1900610, 10, 0, 1900611, 10, 0, 1900612, 10, 0, 1900613, 10, 0, 1900614, 10, 0, 1900615, 10, 0, 1900616, 10, 0, 1900617, 10, 0, 1900618, 10, 0, 1900619, 10, 0 )
+tile_data = PoolIntArray( -393143, 1610612753, 0, -393136, -1610612719, 0, -196552, 14, 0, -196550, 16, 0, -196549, 16, 0, -196548, 13, 0, -196531, 1610612753, 0, -131046, 1610612749, 0, -131044, 1610612752, 0, -131043, 1610612752, 0, -65508, 1610612749, 0, -65424, 1610612761, 0, -65423, 1610612761, 0, -65422, 1610612761, 0, -65421, 1610612761, 0, -65420, 1610612761, 0, -65419, 1610612761, 0, -65418, 1610612761, 0, -65417, 1610612761, 0, -65416, 1610612761, 0, -65415, 1610612761, 0, -65414, 1610612761, 0, -65413, 1610612761, 0, -65412, 1610612761, 0, -65411, 1610612761, 0, -65410, 1610612761, 0, -65409, 1610612761, 0, -65408, 1610612761, 0, -65407, 1610612761, 0, -65406, 1610612761, 0, -65405, 1610612761, 0, 30, 1610612749, 0, 32, 1610612752, 0, 33, 1610612752, 0, 48, -1610612720, 0, 49, -1610612720, 0, 50, 1610612750, 0, 100, 1610612751, 0, 65568, 1610612749, 0, 65584, 1610612750, 0, 65612, -1610612719, 0, 65624, 1610612758, 0, 65625, 1610612758, 0, 65626, 1610612758, 0, 65627, 1610612758, 0, 65628, 1610612758, 0, 65629, 1610612758, 0, 65630, 1610612758, 0, 65631, 1610612758, 0, 65632, 1610612758, 0, 65633, 1610612758, 0, 131106, 1610612751, 0, 131118, -1610612721, 0, 131160, 1610612758, 0, 131161, 1610612758, 0, 131162, 1610612758, 0, 131163, 1610612758, 0, 131164, 1610612758, 0, 131165, 1610612758, 0, 131166, 1610612758, 0, 131167, 1610612758, 0, 131168, 1610612758, 0, 131169, 1610612758, 0, 262180, 1610612751, 0, 262188, -1610612721, 0, 327756, 1610612753, 0, 327757, -1610612719, 0, 327761, 1610612749, 0, 327763, 1610612750, 0, 327768, 1610612753, 0, 327769, -1610612719, 0, 327772, 1610612749, 0, 327774, 1610612752, 0, 327775, 1610612752, 0, 327776, 1610612750, 0, 393254, -1073741810, 0, 393255, 1610612752, 0, 393258, -1610612720, 0, 393259, -1610612723, 0, 393310, -2147483631, 0, 393311, -1610612719, 0, 458791, 1610612752, 0, 458794, -1610612720, 0, 458852, 1610612749, 0, 524327, -1073741810, 0, 524330, -1610612723, 0, 589924, 19, 0, 655377, 1610612753, 0, 655382, -1610612719, 0, 655448, -1073741803, 0, 851958, 16, 0, 851959, 16, 0, 851963, 16, 0, 851964, 16, 0, 917494, 16, 0, 917495, 16, 0, 917499, 16, 0, 917500, 16, 0, 982994, 5, 0, 983030, 16, 0, 983031, 16, 0, 983035, 16, 0, 983036, 16, 0, 1048566, 16, 0, 1048567, 16, 0, 1048571, 16, 0, 1048572, 16, 0, 1114102, 16, 0, 1114103, 16, 0, 1114107, 16, 0, 1114108, 16, 0, 1048660, -1073741819, 0, 1114120, 19, 0, 1114126, 18, 0, 1114128, 19, 0, 1114134, 18, 0, 1179676, 1, 0, 1179699, 1610612749, 0, 1179701, 1610612750, 0, 1245245, 1610612749, 0, 1245247, 1610612750, 0, 1310762, 1610612752, 0, 1310763, 1610612752, 0, 1310764, 1610612750, 0, 1310796, 19, 0, 1310798, 10, 0, 1310799, 10, 0, 1376298, 1610612750, 0, 1376328, 1610612749, 0, 1376330, 16, 0, 1376331, 16, 0, 1376332, 16, 0, 1376333, 16, 0, 1376334, 1610612752, 0, 1376335, 1610612752, 0, 1441866, 1610612749, 0, 1507375, 1610612749, 0, 1507377, 1610612750, 0, 1638442, 1610612750, 0, 1835050, 18, 0, 1835082, 19, 0, 1900586, 10, 0, 1900587, 10, 0, 1900588, 10, 0, 1900589, 10, 0, 1900590, 10, 0, 1900591, 10, 0, 1900592, 10, 0, 1900593, 10, 0, 1900594, 10, 0, 1900595, 10, 0, 1900596, 10, 0, 1900597, 10, 0, 1900598, 10, 0, 1900599, 10, 0, 1900600, 10, 0, 1900601, 10, 0, 1900602, 10, 0, 1900603, 10, 0, 1900604, 10, 0, 1900605, 10, 0, 1900606, 10, 0, 1900607, 10, 0, 1900608, 10, 0, 1900609, 10, 0, 1900610, 10, 0, 1900611, 10, 0, 1900612, 10, 0, 1900613, 10, 0, 1900614, 10, 0, 1900615, 10, 0, 1900616, 10, 0, 1900617, 10, 0, 1900618, 10, 0, 1900619, 10, 0 )
 
 [node name="64 Tiles" type="TileMap" parent="32 Tiles"]
 tile_set = SubResource( 90 )
@@ -1300,6 +1456,16 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 1376334, 1610612738, 0 )
 
+[node name="Climb" type="TileMap" parent="32 Tiles" groups=["climb"]]
+tile_set = SubResource( 113 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+collision_use_kinematic = true
+collision_layer = 15
+collision_mask = 15
+format = 1
+tile_data = PoolIntArray( -393140, 0, 0, -393139, 0, 0, -327604, 0, 0, -327603, 0, 0, -262068, 0, 0, -262067, 0, 0, -196532, 0, 0, -130996, 0, 0, -130995, 0, 0, -65460, 0, 0, -65459, 0, 0, 38, 0, 0, 76, 0, 0, 77, 0, 0, 65613, 0, 0, 65614, 0, 0, 65615, 0, 0, 65616, 0, 0, 65617, 0, 0, 131148, 0, 0, 131149, 0, 0, 131150, 0, 0, 131151, 0, 0, 131152, 0, 0, 131153, 0, 0, 196684, 0, 0, 196685, 0, 0, 196686, 0, 0, 196687, 0, 0, 196688, 0, 0, 262220, 0, 0, 262221, 0, 0, 262222, 0, 0, 262223, 0, 0, 262224, 0, 0 )
+
 [node name="Player" type="KinematicBody2D" parent="."]
 visible = false
 position = Vector2( 156.379, 524.071 )
@@ -1313,14 +1479,16 @@ texture = ExtResource( 2 )
 hframes = 11
 
 [node name="MC" type="KinematicBody2D" parent="."]
-position = Vector2( 44, 523 )
+position = Vector2( 98, 493 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 time_to_max_speed = 5
 time_to_max_air_speed = 5
+jump_height = 300
 min_jump_height = 20
+max_climbing_speed = 100
 
 [node name="Sprite" type="Sprite" parent="MC"]
 texture = ExtResource( 16 )
@@ -1331,6 +1499,15 @@ material = SubResource( 2 )
 use_parent_material = true
 position = Vector2( 0, 12 )
 shape = SubResource( 3 )
+
+[node name="ClimbDetection" type="Area2D" parent="MC"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MC/ClimbDetection"]
+position = Vector2( -1, -20 )
+scale = Vector2( 1.916, 5 )
+shape = SubResource( 112 )
 
 [node name="States" type="Node" parent="MC"]
 
@@ -1352,8 +1529,11 @@ script = ExtResource( 11 )
 [node name="MeleeTwo" type="Node" parent="MC/States"]
 script = ExtResource( 9 )
 
-[node name="Slide" type="Node" parent="MC/States"]
+[node name="Sliding" type="Node" parent="MC/States"]
 script = ExtResource( 7 )
+
+[node name="Climbing" type="Node" parent="MC/States"]
+script = ExtResource( 28 )
 
 [node name="Camera2D" type="Camera2D" parent="MC"]
 current = true
@@ -1361,6 +1541,8 @@ zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MC"]
 anims/RESET = SubResource( 50 )
+anims/climbing_horizontal = SubResource( 110 )
+anims/climbing_vertical = SubResource( 111 )
 anims/fall = SubResource( 51 )
 anims/idle = SubResource( 52 )
 anims/jump = SubResource( 53 )
@@ -1370,5 +1552,8 @@ anims/roll = SubResource( 57 )
 anims/run = SubResource( 56 )
 anims/slide = SubResource( 68 )
 
+[connection signal="body_entered" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_entered"]
+[connection signal="body_exited" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_exited"]
+[connection signal="body_shape_entered" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_shape_entered"]
 [connection signal="animation_finished" from="MC/AnimationPlayer" to="MC/States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="MC/AnimationPlayer" to="MC/States/MeleeTwo" method="_on_AnimationPlayer_animation_finished"]

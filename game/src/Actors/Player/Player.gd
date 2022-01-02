@@ -10,10 +10,11 @@ export var jump_height := 150
 export var min_jump_height := 10
 export var gravity := 3000
 export var slide_speed_multiplier := 2
-export var slide_gravity_multiplier := 0.5
-export var slide_jump_multiplier := 0.5
+export var slide_gravity_multiplier := 0.9
+export var slide_jump_multiplier := 0.9
 export var slide_duration := 20
 export var stack_buffer := 10
+export var max_climbing_speed := 250
 
 var frame_count = 0
 var velocity = Vector2.ZERO
@@ -28,7 +29,8 @@ enum STATES {
 	MELEETWO,
 	ROLLING,
 	RUNNING, 
-	SLIDE
+	SLIDING,
+	CLIMBING
 }
 
 onready var state_dict = {
@@ -38,21 +40,23 @@ onready var state_dict = {
 	STATES.MELEETWO: $States/MeleeTwo,
 	STATES.ROLLING: $States/Rolling,
 	STATES.RUNNING: $States/Running,
-	STATES.SLIDE: $States/Slide,
+	STATES.SLIDING: $States/Sliding,
+	STATES.CLIMBING: $States/Climbing,
 }
 onready var anim_sprite = $Sprite
 onready var anim_player = $AnimationPlayer
 onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
+onready var can_climb = false
 
 onready var acc_per_frame = max_speed/time_to_max_speed
 onready var air_acc_per_frame = max_air_speed/time_to_max_air_speed
 
 # Variable high jump physics
-onready var init_jump_velocity = - sqrt(2 * gravity * jump_height)
+onready var init_jump_velocity = - sqrt(2*gravity*jump_height)
 onready var terminal_velocity = - sqrt(
 	pow(init_jump_velocity, 2) - 
-	(2 * gravity * (jump_height - min_jump_height))
+	(2*gravity*(jump_height - min_jump_height))
 )
 # Variable slide jump physics
 onready var init_slide_jump_velocity = - sqrt(2*
@@ -63,7 +67,7 @@ onready var init_slide_jump_velocity = - sqrt(2*
 )
 onready var slide_terminal_velocity = - sqrt(
 	pow(init_slide_jump_velocity, 2) - 
-	(2 * gravity * slide_gravity_multiplier * slide_jump_multiplier *
+	(2*gravity*slide_gravity_multiplier*slide_jump_multiplier*
 	(jump_height - min_jump_height))
 )
 
@@ -107,13 +111,26 @@ func slide(_delta: float) -> Vector2:
 		velocity.x = max_speed * slide_speed_multiplier
 	return velocity
 
+func climb(_delta: float) -> Vector2:
+	if Input.is_action_pressed("move_up"):
+		velocity.y -= max_climbing_speed
+	elif Input.is_action_pressed("move_down"):
+		velocity.y += max_climbing_speed
+	elif Input.is_action_pressed("move_left"):
+		velocity.x -= max_climbing_speed
+	elif Input.is_action_pressed("move_right"):
+		velocity.x += max_climbing_speed
+	else:
+		velocity = Vector2.ZERO
+	return velocity
+
 func apply_stopping_friction(_delta: float) -> Vector2:
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0, deceleration)
 	return velocity
 
-func apply_gravity(delta: float, grav = gravity) -> Vector2:
-	velocity.y += grav * delta
+func apply_gravity(delta: float, gravity_scale = 1) -> Vector2:
+	velocity.y += gravity * gravity_scale * delta
 	return velocity
 
 func modulate_sprite(color: Color) -> void:
@@ -131,13 +148,14 @@ func push_state(state, args = {}) -> void:
 	current_state.set_args(args)
 	current_state.enter(self)
 
-func pop_state() -> void:
+func pop_state(args={}) -> void:
 	assert(stack, "Buffer empty")
 	if current_state:
 		current_state.exit(self)
 	var next_state = stack.pop_front()
 	if next_state:
 		current_state = next_state
+		current_state.set_args(args)
 		current_state.enter(self)
 
 func print_stack_states():
@@ -145,4 +163,12 @@ func print_stack_states():
 	for state in stack:
 		names.push_back(state)
 	print("<- ", current_state, " : ", names)
+
+func _on_ClimbDetection_body_entered(body):
+	if body.is_in_group('climb'):
+		can_climb = true
+
+func _on_ClimbDetection_body_exited(body):
+	if body.is_in_group('climb'):
+		can_climb = false
 
