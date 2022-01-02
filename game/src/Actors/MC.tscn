@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/player/attack_1.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player/MeleeOne.gd" type="Script" id=2]
@@ -21,12 +21,21 @@
 [ext_resource path="res://src/Actors/Player/Rolling.gd" type="Script" id=19]
 [ext_resource path="res://src/Actors/Player/Running.gd" type="Script" id=20]
 [ext_resource path="res://src/Actors/Player/Player.gd" type="Script" id=21]
-[ext_resource path="res://src/main/Player/Hitbox.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/player/slide_1.png" type="Texture" id=22]
+[ext_resource path="res://src/Actors/Player/Climbing.gd" type="Script" id=23]
+[ext_resource path="res://src/Actors/Player/Slide.gd" type="Script" id=24]
+[ext_resource path="res://src/main/Player/Hitbox.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ShaderMaterial" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
-height = 18.0
+height = 42.0
+
+[sub_resource type="SegmentShape2D" id=112]
+a = Vector2( 0, -2.4 )
+
+[sub_resource type="CapsuleShape2D" id=116]
+height = 42.0
 
 [sub_resource type="Animation" id=50]
 length = 0.001
@@ -54,6 +63,72 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "climbing_horizontal"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+
+[sub_resource type="Animation" id=111]
+resource_name = "climbing_vertical"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
 
 [sub_resource type="Animation" id=51]
 resource_name = "fall"
@@ -69,6 +144,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=52]
@@ -99,6 +210,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=53]
 resource_name = "jump"
@@ -115,6 +262,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=54]
@@ -219,8 +402,95 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 4 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=68]
+resource_name = "slide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 22 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 15.35 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 18 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6.0 ]
+}
+
+[sub_resource type="Animation" id=113]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -247,7 +517,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=114]
 resource_name = "damage"
 length = 0.1
 step = 0.05
@@ -264,9 +534,10 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=115]
 resource_name = "flash"
 length = 0.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
@@ -280,18 +551,17 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="CapsuleShape2D" id=61]
-radius = 13.0
-height = 36.0
-
 [node name="MC" type="KinematicBody2D"]
-position = Vector2( 44, 523 )
+position = Vector2( 98, 493 )
 script = ExtResource( 21 )
 __meta__ = {
 "_edit_group_": true
 }
-time_to_max_speed = 10
-jump_height = 150
+time_to_max_speed = 5
+time_to_max_air_speed = 5
+min_jump_height = 20
+slide_gravity_multiplier = 1.0
+slide_jump_multiplier = 1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 7 )
@@ -300,8 +570,25 @@ texture = ExtResource( 7 )
 light_mask = 157
 material = SubResource( 2 )
 use_parent_material = true
-position = Vector2( 0, 12 )
+position = Vector2( -1, 0 )
 shape = SubResource( 3 )
+
+[node name="ClimbDetection" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbDetection"]
+position = Vector2( -1, -20 )
+scale = Vector2( 1.916, 5 )
+shape = SubResource( 112 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 25 )]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+modulate = Color( 0.556863, 0.560784, 0.858824, 1 )
+position = Vector2( -1, 0 )
+z_index = 1
+shape = SubResource( 116 )
 
 [node name="States" type="Node" parent="."]
 
@@ -323,12 +610,20 @@ script = ExtResource( 2 )
 [node name="MeleeTwo" type="Node" parent="States"]
 script = ExtResource( 18 )
 
+[node name="Sliding" type="Node" parent="States"]
+script = ExtResource( 24 )
+
+[node name="Climbing" type="Node" parent="States"]
+script = ExtResource( 23 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -40 )
 current = true
+zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 50 )
+anims/climbing_horizontal = SubResource( 110 )
+anims/climbing_vertical = SubResource( 111 )
 anims/fall = SubResource( 51 )
 anims/idle = SubResource( 52 )
 anims/jump = SubResource( 53 )
@@ -336,6 +631,12 @@ anims/melee_one = SubResource( 54 )
 anims/melee_two = SubResource( 55 )
 anims/roll = SubResource( 57 )
 anims/run = SubResource( 56 )
+anims/slide = SubResource( 68 )
+
+[node name="StatusAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 113 )
+anims/damage = SubResource( 114 )
+anims/flash = SubResource( 115 )
 
 [node name="Timers" type="Node" parent="."]
 
@@ -343,16 +644,8 @@ anims/run = SubResource( 56 )
 wait_time = 0.8
 one_shot = true
 
-[node name="StatusAnim" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 58 )
-anims/damage = SubResource( 59 )
-anims/flash = SubResource( 60 )
-
-[node name="Hitbox" parent="." instance=ExtResource( 22 )]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( -1, 0 )
-shape = SubResource( 61 )
-
+[connection signal="body_entered" from="ClimbDetection" to="." method="_on_ClimbDetection_body_entered"]
+[connection signal="body_exited" from="ClimbDetection" to="." method="_on_ClimbDetection_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeTwo" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timers/ImmunityTimer" to="." method="_on_ImmunityTimer_timeout"]

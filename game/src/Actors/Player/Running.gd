@@ -18,13 +18,16 @@ func physics_process(parent: KinematicBody2D, delta: float):
 		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})
 	elif Input.is_action_just_pressed("melee"):
 		parent.push_state(parent.STATES.MELEEONE, {"melee": "ground"})
+	elif Input.is_action_just_pressed("slide"):
+		parent.push_state(parent.STATES.SLIDING, {"slide": true})
 
 func anim_process(parent: KinematicBody2D, _delta: float):
 	if parent.anim_direction != Vector2.RIGHT:
 		parent.anim_sprite.set_flip_h(true)
 	else:
 		parent.anim_sprite.set_flip_h(false)
-	if not parent.anim_player.is_playing():
+	var current_anim = parent.anim_player.assigned_animation
+	if not parent.anim_player.is_playing() or current_anim != "run":
 		parent.anim_player.play("run")
 
 func handle_anim_finished(parent: KinematicBody2D):

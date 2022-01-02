@@ -11,7 +11,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 				_args["next"] = parent.STATES.MELEETWO
 				_args["next_args"] = {"melee": "ground"}
 		"air":
-			var velocity = parent.move_horizontal(delta)
+			var velocity = parent.move_air_horizontal(delta)
 			parent.apply_gravity(delta)
 			parent.velocity = parent.move_and_slide(velocity, Vector2.UP)
 	anim_process(parent, delta)
