@@ -85,16 +85,8 @@ onready var slide_terminal_velocity = - sqrt(
 )
 
 func _ready():
-	# adding in stuff for UI health bars - Kevin
-	Globals.MC = self
-	var health_bar = get_tree().current_scene.player_health_bar
-	health_bar.set_max_health(max_health)
-	connect("health_updated", health_bar, "_on_health_updated")
-	connect("health_updated", self, "_on_health_updated")
-	#
-	
 	# adding health orbs
-	var health_orbs = get_tree().current_scene.player_health_orbs
+	var health_orbs = get_tree().current_scene.get_node("UI/Interface/HealthOrbsDisplay")
 	health_orbs.set_max_health(max_health)
 	connect("health_updated", health_orbs, "_on_health_updated")
 	#
@@ -219,9 +211,6 @@ func _set_health(value):
 	if health != prev_health:
 		if health == 0:
 			kill()
-
-func _on_health_updated(health, amount):
-	pass
 
 func _on_ImmunityTimer_timeout() -> void:
 	status_anim.play("RESET")
