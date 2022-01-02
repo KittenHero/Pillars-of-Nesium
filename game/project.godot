@@ -74,6 +74,7 @@ Globals="*res://src/main/Globals.gd"
 [debug]
 
 gdscript/warnings/enable=false
+shapes/collision/shape_color=Color( 0.101961, 0.835294, 0.956863, 0.419608 )
 
 [importer_defaults]
 
