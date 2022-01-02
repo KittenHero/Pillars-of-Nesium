@@ -1073,7 +1073,7 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 [sub_resource type="ShaderMaterial" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
-height = 18.0
+height = 36.0
 
 [sub_resource type="SegmentShape2D" id=112]
 a = Vector2( 0, -2.4 )
@@ -1126,7 +1126,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 12 ) ]
+"values": [ Vector2( 0, 3 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CollisionShape2D:shape")
@@ -1139,6 +1139,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ SubResource( 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CollisionShape2D:shape:height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 36.0 ]
 }
 
 [sub_resource type="Animation" id=110]
@@ -1237,7 +1249,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 12 ) ]
+"values": [ Vector2( 0, 3 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CollisionShape2D:scale")
@@ -1250,6 +1262,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CollisionShape2D:shape:height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 36.0 ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -1371,6 +1395,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, 4 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 36.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 3 ) ]
+}
 
 [sub_resource type="Animation" id=68]
 resource_name = "slide"
@@ -1399,7 +1447,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 15.35 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/path = NodePath("CollisionShape2D:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1408,19 +1456,19 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 1, 0.75 ) ]
+"values": [ Vector2( 0, 18 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:position")
-tracks/3/interp = 2
+tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 17 ) ]
+"update": 0,
+"values": [ 6.0 ]
 }
 
 [node name="World" type="Node2D"]
@@ -1486,9 +1534,9 @@ __meta__ = {
 }
 time_to_max_speed = 5
 time_to_max_air_speed = 5
-jump_height = 300
 min_jump_height = 20
-max_climbing_speed = 100
+slide_gravity_multiplier = 1.0
+slide_jump_multiplier = 1.0
 
 [node name="Sprite" type="Sprite" parent="MC"]
 texture = ExtResource( 16 )
@@ -1497,7 +1545,7 @@ texture = ExtResource( 16 )
 light_mask = 157
 material = SubResource( 2 )
 use_parent_material = true
-position = Vector2( 0, 12 )
+position = Vector2( 0, 3 )
 shape = SubResource( 3 )
 
 [node name="ClimbDetection" type="Area2D" parent="MC"]

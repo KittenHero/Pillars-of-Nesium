@@ -8,13 +8,13 @@ export var max_air_speed := 300
 export var time_to_max_air_speed := 20
 export var jump_height := 150
 export var min_jump_height := 10
-export var gravity := 3000
+export var gravity := 2500
 export var slide_speed_multiplier := 2
 export var slide_gravity_multiplier := 0.9
 export var slide_jump_multiplier := 0.9
 export var slide_duration := 20
 export var stack_buffer := 10
-export var max_climbing_speed := 250
+export var max_climbing_speed := 100
 
 var frame_count = 0
 var velocity = Vector2.ZERO
