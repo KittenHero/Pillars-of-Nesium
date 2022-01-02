@@ -4,6 +4,7 @@ extends Node
 const MCPS = preload("res://src/Actors/MC.tscn")
 
 onready var player_health_bar = $UI/Interface/HealthDisplay
+onready var player_health_orbs = $UI/Interface/HealthOrbsDisplay
 onready var entities = $Entities
 onready var spawnpoints = $Spawn
 

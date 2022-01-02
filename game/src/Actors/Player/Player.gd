@@ -14,7 +14,7 @@ export var jump_height = 300
 export var stack_buffer = 10
 
 # adding in stuff for UI health bars - Kevin
-export (float) var max_health = 5
+export (float) var max_health = 25
 onready var immunity_timer = $Timers/ImmunityTimer
 onready var status_anim = $StatusAnim
 onready var health = max_health setget _set_health
@@ -56,6 +56,12 @@ func _ready():
 	health_bar.set_max_health(max_health)
 	connect("health_updated", health_bar, "_on_health_updated")
 	connect("health_updated", self, "_on_health_updated")
+	#
+	
+	# adding health orbs
+	var health_orbs = get_tree().current_scene.player_health_orbs
+	health_orbs.set_max_health(max_health)
+	connect("health_updated", health_orbs, "_on_health_updated")
 	#
 	current_state = state_dict[entry_state]
 

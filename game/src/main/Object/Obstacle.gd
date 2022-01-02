@@ -6,3 +6,5 @@ var damage_area
 
 func _ready():
 	damage_area = $Body/DamageArea
+	damage_area.set_damage(2)
+

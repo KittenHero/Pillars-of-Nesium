@@ -75,17 +75,14 @@ func _check_is_grounded(raycasts = self.raycasts):
 	return false
 
 func damage(amount):
-	var amount_damaged = 0
 	if immunity_timer.is_stopped():
 		immunity_timer.start()
-		var prev_health = health
 		_set_health(health - amount)
-		amount_damaged = prev_health - health
-		emit_signal("damaged", amount)
+		emit_signal("damaged", amount) # can be used in future to play some effects i.e. screen shake
 		effects_animation.play("Damage")
 		if health != 0:
 			effects_animation.queue("Flash")
-	return amount_damaged
+	return amount
 		
 func kill():
 	emit_signal("dead")
@@ -102,7 +99,7 @@ func _set_move_speed(value):
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
-	emit_signal("health_updated", health, health-prev_health)
+	emit_signal("health_updated", health, health-prev_health) # send new health, damage taken
 	if health != prev_health:
 		if health == 0:
 			kill()
