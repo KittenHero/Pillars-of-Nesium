@@ -1554,6 +1554,5 @@ anims/slide = SubResource( 68 )
 
 [connection signal="body_entered" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_entered"]
 [connection signal="body_exited" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_exited"]
-[connection signal="body_shape_entered" from="MC/ClimbDetection" to="MC" method="_on_ClimbDetection_body_shape_entered"]
 [connection signal="animation_finished" from="MC/AnimationPlayer" to="MC/States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="MC/AnimationPlayer" to="MC/States/MeleeTwo" method="_on_AnimationPlayer_animation_finished"]
