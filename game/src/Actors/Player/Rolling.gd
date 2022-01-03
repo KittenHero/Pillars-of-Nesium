@@ -1,10 +1,10 @@
 extends "res://src/Actors/State.gd"
 
-func physics_process(_parent: KinematicBody2D, _delta: float):
+func physics_process(_parent: MC, _delta: float):
 	pass
 	
-func enter(_parent: KinematicBody2D):
+func enter(_parent: MC):
 	pass
 	
-func exit(parent: KinematicBody2D):
+func exit(parent: MC):
 	.exit(parent)
