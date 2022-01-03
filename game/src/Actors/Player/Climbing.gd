@@ -3,7 +3,7 @@ extends "res://src/Actors/State.gd"
 var anim_direction := Vector2.RIGHT
 
 func physics_process(parent: MC, delta: float):
-	if not parent.can_climb:
+	if not parent.can_climb():
 		parent.pop_state()
 	var velocity = parent.climb(delta)
 	parent.velocity = parent.move_and_slide(velocity, Vector2.UP)
