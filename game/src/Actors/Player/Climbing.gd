@@ -2,7 +2,7 @@ extends "res://src/Actors/State.gd"
 
 var anim_direction := Vector2.RIGHT
 
-func physics_process(parent: KinematicBody2D, delta: float):
+func physics_process(parent: MC, delta: float):
 	if not parent.can_climb:
 		parent.pop_state()
 	var velocity = parent.climb(delta)
@@ -11,7 +11,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 		parent.pop_state({"jump": "true"})
 	anim_process(parent, delta)
 
-func anim_process(parent: KinematicBody2D, _delta: float):
+func anim_process(parent: MC, _delta: float):
 	if parent.velocity == Vector2.ZERO:
 		parent.anim_player.stop(false)
 		return 
@@ -27,15 +27,16 @@ func anim_process(parent: KinematicBody2D, _delta: float):
 		Vector2.DOWN:
 			parent.anim_player.play_backwards("climbing_vertical")
 		
-func handle_anim_finished(parent: KinematicBody2D):
+func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
-func enter(parent: KinematicBody2D):
+func enter(parent: MC):
 	if "climb" in _args and _args["climb"]:
 		parent.velocity = Vector2.ZERO
 	else:
 		parent.pop_state()
 	
-func exit(parent: KinematicBody2D):
+func exit(parent: MC):
+	parent.velocity = Vector2.ZERO
 	.exit(parent) 
 	handle_anim_finished(parent)

@@ -1,6 +1,6 @@
 extends "res://src/Actors/State.gd"
 
-func handle_normal(parent: KinematicBody2D, delta: float) -> Vector2:
+func handle_normal(parent: MC, delta: float) -> Vector2:
 #	Need air melee sprite to uncomment this
 #	if Input.is_action_just_pressed("melee"):
 #		parent.push_state(parent.STATES.MELEEONE, {"melee": "air"})
@@ -12,11 +12,11 @@ func handle_normal(parent: KinematicBody2D, delta: float) -> Vector2:
 	var velocity = parent.apply_gravity(delta)
 	return velocity
 
-func handle_slide_jump(parent: KinematicBody2D, delta: float) -> Vector2:
+func handle_slide_jump(parent: MC, delta: float) -> Vector2:
 	var velocity = parent.apply_gravity(delta, parent.slide_gravity_multiplier)
 	return velocity
 
-func physics_process(parent: KinematicBody2D, delta: float):
+func physics_process(parent: MC, delta: float):
 	anim_process(parent, delta)
 	var velocity = parent.move_air_horizontal(delta)
 	if "slide_jump" in _args:
@@ -29,7 +29,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 	if Input.is_action_just_pressed("move_up") and parent.can_climb:
 		parent.push_state(parent.STATES.CLIMBING, {"climb": "true"})
 
-func anim_process(parent: KinematicBody2D, _delta: float):
+func anim_process(parent: MC, _delta: float):
 	if parent.anim_direction != Vector2.RIGHT:
 		parent.anim_sprite.set_flip_h(true)
 	else:
@@ -39,10 +39,10 @@ func anim_process(parent: KinematicBody2D, _delta: float):
 	elif parent.velocity.y <= 0:
 		parent.anim_player.play("jump")
 
-func handle_anim_finished(parent: KinematicBody2D):
+func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
-func enter(parent: KinematicBody2D):
+func enter(parent: MC):
 	if "jump" in _args and _args["jump"]:
 		# Instant release
 		if not Input.is_action_pressed("jump"):
@@ -52,6 +52,6 @@ func enter(parent: KinematicBody2D):
 	elif "slide_jump" in _args and _args["slide_jump"]:
 		parent.velocity.y = parent.init_slide_jump_velocity
 	
-func exit(parent: KinematicBody2D):
+func exit(parent: MC):
 	.exit(parent) 
 	handle_anim_finished(parent)

@@ -33,7 +33,6 @@ func _ready():
 	var health_bar = get_tree().current_scene.player_health_bar
 	health_bar.set_max_health(max_health)
 	connect("health_updated", health_bar, "_on_health_updated")
-	connect("health_updated", self, "_on_health_updated")
 
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
@@ -103,9 +102,6 @@ func _set_health(value):
 	if health != prev_health:
 		if health == 0:
 			kill()
-			
-func _on_health_updated(health, amount):
-	pass
-		
+
 func _on_InvulnerabilityTimer_timeout() -> void:
 	effects_animation.play("RESET")

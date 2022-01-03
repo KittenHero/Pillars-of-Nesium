@@ -20,7 +20,7 @@ export var slide_gravity_multiplier := 0.9
 export var slide_jump_multiplier := 0.9
 export var slide_duration := 20
 export var stack_buffer := 10
-export var max_climbing_speed := 100
+export var max_climbing_speed := 150
 
 var frame_count = 0
 var velocity = Vector2.ZERO
@@ -28,7 +28,7 @@ var stack = []
 var current_state = null
 
 # adding in stuff for UI health bars - Kevin
-export (float) var max_health = 25
+export var max_health = 25
 onready var immunity_timer = $Timers/ImmunityTimer
 onready var status_anim = $StatusAnim
 onready var health = max_health setget _set_health
@@ -84,6 +84,11 @@ onready var slide_terminal_velocity = - sqrt(
 	(jump_height - min_jump_height))
 )
 
+onready var ground_offset = Vector2(
+	0,
+	$CollisionShape2D.position.y + $CollisionShape2D.shape.height/2
+)
+
 func _ready():
 	# adding health orbs
 	var health_orbs = get_tree().current_scene.get_node("UI/Interface/HealthOrbsDisplay")
@@ -130,16 +135,15 @@ func slide(_delta: float) -> Vector2:
 	return velocity
 
 func climb(_delta: float) -> Vector2:
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= max_climbing_speed
+		velocity.y = -max_climbing_speed
 	elif Input.is_action_pressed("move_down"):
-		velocity.y += max_climbing_speed
-	elif Input.is_action_pressed("move_left"):
-		velocity.x -= max_climbing_speed
+		velocity.y = +max_climbing_speed
+	if Input.is_action_pressed("move_left"):
+		velocity.x = -max_climbing_speed
 	elif Input.is_action_pressed("move_right"):
-		velocity.x += max_climbing_speed
-	else:
-		velocity = Vector2.ZERO
+		velocity.x = +max_climbing_speed
 	return velocity
 
 func apply_stopping_friction(_delta: float) -> Vector2:
@@ -207,10 +211,10 @@ func kill():
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
-	emit_signal("health_updated", health, health-prev_health)
 	if health != prev_health:
-		if health == 0:
-			kill()
+		emit_signal("health_updated", health)
+	if health == 0:
+		kill()
 
 func _on_ImmunityTimer_timeout() -> void:
 	status_anim.play("RESET")

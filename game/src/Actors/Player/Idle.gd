@@ -1,6 +1,6 @@
 extends "res://src/Actors/State.gd"
 
-func physics_process(parent: KinematicBody2D, delta: float):
+func physics_process(parent: MC, delta: float):
 
 	var grounded = parent.is_on_floor()
 	var velocity = parent.apply_gravity(delta)
@@ -28,7 +28,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 		parent.velocity = Vector2.ZERO
 	anim_process(parent, delta)
 	
-func anim_process(parent: KinematicBody2D, _delta: float):
+func anim_process(parent: MC, _delta: float):
 	if parent.anim_direction != Vector2.RIGHT:
 		parent.anim_sprite.set_flip_h(true)
 	else:
@@ -37,16 +37,16 @@ func anim_process(parent: KinematicBody2D, _delta: float):
 	if not parent.anim_player.is_playing() or current_anim != "idle":
 		parent.anim_player.play("idle")
 
-func handle_anim_finished(parent: KinematicBody2D):
+func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
-func enter(parent: KinematicBody2D):
+func enter(parent: MC):
 	# Came from a popped state that needs to transition to jump
 	# Ex: Idle -> Climb (pops to Idle) -> Jump
 	if "jump" in _args and _args["jump"]:
 		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})	
 	
-func exit(parent: KinematicBody2D):
+func exit(parent: MC):
 	.exit(parent)
 	handle_anim_finished(parent)
 

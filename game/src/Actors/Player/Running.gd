@@ -1,6 +1,6 @@
 extends "res://src/Actors/State.gd"
 
-func physics_process(parent: KinematicBody2D, delta: float):
+func physics_process(parent: MC, delta: float):
 	var is_movement_input = (Input.is_action_pressed("move_left") 
 		or Input.is_action_pressed("move_right"))
 	anim_process(parent, delta)
@@ -21,7 +21,7 @@ func physics_process(parent: KinematicBody2D, delta: float):
 	elif Input.is_action_just_pressed("slide"):
 		parent.push_state(parent.STATES.SLIDING, {"slide": true})
 
-func anim_process(parent: KinematicBody2D, _delta: float):
+func anim_process(parent: MC, _delta: float):
 	if parent.anim_direction != Vector2.RIGHT:
 		parent.anim_sprite.set_flip_h(true)
 	else:
@@ -30,13 +30,13 @@ func anim_process(parent: KinematicBody2D, _delta: float):
 	if not parent.anim_player.is_playing() or current_anim != "run":
 		parent.anim_player.play("run")
 
-func handle_anim_finished(parent: KinematicBody2D):
+func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
-func enter(_parent: KinematicBody2D):
+func enter(_parent: MC):
 	pass
 	
-func exit(parent: KinematicBody2D):
+func exit(parent: MC):
 	.exit(parent)
 	handle_anim_finished(parent)
 
