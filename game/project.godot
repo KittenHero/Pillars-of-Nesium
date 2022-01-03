@@ -62,7 +62,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Pillars-of-Nesium-kevin"
+config/name="Pillars-of-Nesium"
 run/main_scene="res://src/main/Game.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
