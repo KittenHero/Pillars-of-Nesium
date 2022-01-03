@@ -26,7 +26,7 @@ func physics_process(parent: MC, delta: float):
 	if parent.is_on_floor():
 		parent.pop_state()
 	parent.velocity = parent.move_and_slide(velocity, Vector2.UP)
-	if Input.is_action_just_pressed("move_up") and parent.can_climb:
+	if Input.is_action_just_pressed("climb") and parent.can_climb:
 		parent.push_state(parent.STATES.CLIMBING, {"climb": "true"})
 
 func anim_process(parent: MC, _delta: float):
