@@ -1,9 +1,11 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=1]
-[ext_resource path="res://src/main/SpawnPlayer.gd" type="Script" id=3]
+[ext_resource path="res://src/main/Spawn.gd" type="Script" id=2]
+[ext_resource path="res://src/main/Game.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/main/Object/Obstacle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/main/RespwanButton.gd" type="Script" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 points = PoolVector2Array( 12.9804, 0.959366, 28.3299, 6.30843, 40.1909, 13.7506, 91.5884, 52.5894, 107.17, 60.9619, 128, 64, 0, 64, 0, 0 )
@@ -1092,11 +1094,16 @@ collision_mask = 15
 format = 1
 tile_data = PoolIntArray( -393140, 0, 0, -393139, 0, 0, -327604, 0, 0, -327603, 0, 0, -262068, 0, 0, -262067, 0, 0, -196532, 0, 0, -130996, 0, 0, -130995, 0, 0, -65460, 0, 0, -65459, 0, 0, 38, 0, 0, 76, 0, 0, 77, 0, 0, 65613, 0, 0, 65614, 0, 0, 65615, 0, 0, 65616, 0, 0, 65617, 0, 0, 131148, 0, 0, 131149, 0, 0, 131150, 0, 0, 131151, 0, 0, 131152, 0, 0, 131153, 0, 0, 196684, 0, 0, 196685, 0, 0, 196686, 0, 0, 196687, 0, 0, 196688, 0, 0, 262220, 0, 0, 262221, 0, 0, 262222, 0, 0, 262223, 0, 0, 262224, 0, 0 )
 
-[node name="Spawn" type="Node2D" parent="."]
-
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Obstacle" parent="Entities" instance=ExtResource( 5 )]
 position = Vector2( -872, 552 )
+
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2( 153, 356 )
+script = ExtResource( 2 )
+
+[node name="RespawnButton" type="Node2D" parent="Spawn"]
+script = ExtResource( 7 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]

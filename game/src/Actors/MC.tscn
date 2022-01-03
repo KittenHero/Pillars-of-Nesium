@@ -555,7 +555,6 @@ tracks/0/keys = {
 }
 
 [node name="MC" type="KinematicBody2D"]
-position = Vector2( 98, 493 )
 script = ExtResource( 21 )
 time_to_max_speed = 5
 time_to_max_air_speed = 5

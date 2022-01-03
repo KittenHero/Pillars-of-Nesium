@@ -9,7 +9,7 @@ var max_health
 func _ready():
 	pass
 
-func _on_health_updated(health, amount): #will re-draw the health orbs
+func _on_health_updated(health):
 	for n in orbs.get_children():
 		n.queue_free()
 	
@@ -41,9 +41,9 @@ func _on_health_updated(health, amount): #will re-draw the health orbs
 		else:
 			orb.play_anim("empty")
 		c_health = max(0, c_health - 5)
-		flashed = flashed or c_health < 0
+		flashed = flashed or c_health < 5
 
 func set_max_health(value): #intented to start
 	max_health = value
-	_on_health_updated(max_health, 0)
+	_on_health_updated(max_health)
 	

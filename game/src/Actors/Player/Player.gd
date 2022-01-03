@@ -94,6 +94,8 @@ func _ready():
 	var health_orbs = get_tree().current_scene.get_node("UI/Interface/HealthOrbsDisplay")
 	health_orbs.set_max_health(max_health)
 	connect("health_updated", health_orbs, "_on_health_updated")
+	var spawn = get_tree().current_scene.get_node("Spawn")
+	connect("dead", spawn, "_on_dead")
 	#
 	current_state = state_dict[entry_state]
 
@@ -207,7 +209,14 @@ func damage(amount):
 func kill():
 	emit_signal("dead")
 	queue_free()
-	
+
+func connect_signal(sig_name: String, entity: Object, method: String):
+	connect(sig_name, entity, method, [self])
+
+func disconnect_signal(sig_name: String, entity: Object, method: String):
+	disconnect(sig_name, entity, method)
+
+
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
