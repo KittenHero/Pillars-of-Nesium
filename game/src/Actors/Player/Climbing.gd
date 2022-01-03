@@ -15,17 +15,7 @@ func anim_process(parent: MC, _delta: float):
 	if parent.velocity == Vector2.ZERO:
 		parent.anim_player.stop(false)
 		return 
-	match anim_direction:
-		Vector2.RIGHT:
-			parent.anim_sprite.set_flip_h(true)
-			parent.anim_player.play("climbing_horizontal")
-		Vector2.LEFT:
-			parent.anim_sprite.set_flip_h(false)
-			parent.anim_player.play("climbing_horizontal")
-		Vector2.UP:
-			parent.anim_player.play("climbing_vertical")
-		Vector2.DOWN:
-			parent.anim_player.play_backwards("climbing_vertical")
+	parent.anim_player.play("climbing")
 		
 func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()

@@ -30,6 +30,7 @@
 [ext_resource path="res://assets/fonts/Gemerald.ttf" type="DynamicFontData" id=28]
 [ext_resource path="res://src/Actors/Player/Crouching.gd" type="Script" id=29]
 [ext_resource path="res://assets/player/crouch.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/climb.png" type="Texture" id=31]
 
 [sub_resource type="ShaderMaterial" id=2]
 
@@ -45,7 +46,7 @@ height = 42.0
 [sub_resource type="Animation" id=50]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -54,7 +55,60 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 7 ) ]
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "climbing"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -69,7 +123,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:shape:radius")
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -78,10 +132,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 10.0 ]
+"values": [ 42.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/path = NodePath("CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -90,49 +144,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 42.0 ]
+"values": [ Vector2( -1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CollisionShape2D:position")
-tracks/4/interp = 1
+tracks/4/path = NodePath("Sprite:flip_h")
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=110]
-resource_name = "climbing_horizontal"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
-}
-
-[sub_resource type="Animation" id=111]
-resource_name = "climbing_vertical"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=117]
@@ -237,6 +261,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=52]
 resource_name = "idle"
@@ -249,7 +285,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 4.2 ),
+"times": PoolRealArray( 0, 3.5, 4.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ ExtResource( 7 ), ExtResource( 10 ), ExtResource( 7 ) ]
@@ -354,6 +390,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=54]
@@ -612,6 +660,7 @@ script = ExtResource( 21 )
 time_to_max_speed = 5
 time_to_max_air_speed = 5
 min_jump_height = 20
+slide_speed_multiplier = 3
 slide_gravity_multiplier = 1.0
 slide_jump_height = 140
 
@@ -628,7 +677,7 @@ cast_to = Vector2( 0, -55 )
 collide_with_areas = true
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 157
@@ -691,8 +740,7 @@ zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 50 )
-anims/climbing_horizontal = SubResource( 110 )
-anims/climbing_vertical = SubResource( 111 )
+anims/climbing = SubResource( 110 )
 anims/crouch = SubResource( 117 )
 anims/fall = SubResource( 51 )
 anims/idle = SubResource( 52 )
