@@ -9,6 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
+<<<<<<< HEAD
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
@@ -24,10 +25,13 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/main/Object/Obstacle.gd"
 }, {
+=======
+>>>>>>> origin/Jacob
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/main/Player/Player.gd"
+<<<<<<< HEAD
 }, {
 "base": "StateMachine",
 "class": "PlayerFSM",
@@ -58,11 +62,16 @@ _global_script_class_icons={
 "SleepingAngel": "",
 "State": "",
 "StateMachine": ""
+=======
+} ]
+_global_script_class_icons={
+"Player": ""
+>>>>>>> origin/Jacob
 }
 
 [application]
 
-config/name="Pillars-of-Nesium"
+config/name="Pillars-of-Nesium-kevin"
 run/main_scene="res://src/main/Game.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
@@ -153,11 +162,14 @@ respawn={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777221,"unicode":0,"echo":false,"script":null)
  ]
 }
+<<<<<<< HEAD
 climb={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+=======
+>>>>>>> origin/Jacob
 
 [physics]
 
