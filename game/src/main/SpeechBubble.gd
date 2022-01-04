@@ -58,6 +58,8 @@ func say(delay):
 	tween.start()
 
 func unsay(delay):
+	if not autoplay:
+		tween.remove_all()
 	tween.interpolate_property(text_node, "percent_visible", 1, 0, 0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, delay)
 	tween.interpolate_property(text_bg, "rect_size", bg_size_end, bg_size_start, bg_delay, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, delay)
 	tween.interpolate_property(text_bg, "rect_position", bg_pos_end, bg_pos_start, bg_delay, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, delay)
