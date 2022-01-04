@@ -1,5 +1,7 @@
 extends State
 
+var active: bool
+
 func physics_process(parent: MC, delta: float):
 	var velocity = parent.slide(delta)
 	velocity = parent.apply_gravity(delta)
@@ -20,6 +22,10 @@ func anim_process(parent: MC, _delta: float):
 		parent.anim_sprite.set_flip_h(true)
 	else:
 		parent.anim_sprite.set_flip_h(false)
+	if active:
+		parent.anim_sprite.rotation = Vector2.UP.angle_to(parent.get_floor_normal())
+	else:
+		parent.anim_sprite.rotation = 0
 	var current_anim = parent.anim_player.assigned_animation
 	if not parent.anim_player.is_playing() or current_anim != "slide":
 		parent.anim_player.play("slide")
@@ -28,10 +34,12 @@ func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
 func enter(parent: MC):
+	active = true
 	if not "slide" in _args:
 		parent.pop_state()
 	_args["initial"] = parent.frame_count
 	
 func exit(parent: MC):
 	.exit(parent)
+	active = false
 	handle_anim_finished(parent)
