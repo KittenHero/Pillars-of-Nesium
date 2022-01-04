@@ -8,11 +8,13 @@ func physics_process(parent: MC, delta: float):
 	parent.velocity = parent.move_and_slide_with_snap(
 		velocity, parent.ground_offset, Vector2.UP
 	)
-	if parent.frame_count - _args["initial"] > parent.slide_duration:
-		if parent.can_stand() and not Input.is_action_pressed("move_down"):
-			parent.pop_state()
-		elif parent.is_on_floor():
-			parent.push_state(parent.STATES.CROUCHING)
+	if not parent.is_on_floor():
+		parent.push_state(parent.STATES.AIRBORNE, {"slide_jump": false})
+	elif parent.frame_count - _args["initial"] > parent.slide_duration:
+			if parent.can_stand() and not Input.is_action_pressed("move_down"):
+				parent.pop_state()
+			else:
+				parent.push_state(parent.STATES.CROUCHING)
 	if Input.is_action_just_pressed("jump") and parent.can_stand() and parent.is_on_floor():
 		parent.push_state(parent.STATES.AIRBORNE, {"slide_jump": true})
 	anim_process(parent, delta)
