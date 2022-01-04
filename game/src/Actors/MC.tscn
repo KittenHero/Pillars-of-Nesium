@@ -658,9 +658,9 @@ script = ExtResource( 21 )
 time_to_max_speed = 5
 time_to_max_air_speed = 7
 min_jump_height = 20
-slide_speed_multiplier = 3
-slide_gravity_multiplier = 1.0
-slide_jump_height = 140
+slide_gravity_multiplier = 0.75
+slide_jump_height = 75
+max_health = 15
 
 [node name="stand_1" type="RayCast2D" parent="."]
 visible = false
