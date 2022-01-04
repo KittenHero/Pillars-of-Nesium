@@ -20,9 +20,10 @@ func physics_process(parent: MC, delta: float):
 		parent.push_state(parent.STATES.MELEEONE, {"melee": "ground"})
 	elif Input.is_action_just_pressed("slide"):
 		parent.push_state(parent.STATES.SLIDING, {"slide": true})
-	elif Input.is_action_just_pressed("move_up") and parent.can_climb:
+	elif Input.is_action_just_pressed("move_up") and parent.can_climb():
 		parent.push_state(parent.STATES.CLIMBING)
-		
+	elif Input.is_action_just_pressed("move_down"):
+		parent.push_state(parent.STATES.CROUCHING)
 
 	if parent.velocity.length_squared() < parent.acc_per_frame * parent.acc_per_frame * 2:
 		parent.velocity = Vector2.ZERO
@@ -41,10 +42,12 @@ func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
 func enter(parent: MC):
-	# Came from a popped state that needs to transition to jump
+	# Came from a popped state that needs to transition instantly
 	# Ex: Idle -> Climb (pops to Idle) -> Jump
 	if "jump" in _args and _args["jump"]:
-		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})	
+		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})
+	if "slide" in _args and _args["slide"]:
+		parent.push_state(parent.STATES.SLIDING, {"slide": true})
 	
 func exit(parent: MC):
 	.exit(parent)

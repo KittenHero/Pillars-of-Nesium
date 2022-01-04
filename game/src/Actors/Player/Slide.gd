@@ -7,8 +7,11 @@ func physics_process(parent: MC, delta: float):
 		velocity, parent.ground_offset, Vector2.UP
 	)
 	if parent.frame_count - _args["initial"] > parent.slide_duration:
-		parent.pop_state()
-	if Input.is_action_just_pressed("jump"):
+		if parent.can_stand() and not Input.is_action_pressed("move_down"):
+			parent.pop_state()
+		elif parent.is_on_floor():
+			parent.push_state(parent.STATES.CROUCHING)
+	if Input.is_action_just_pressed("jump") and parent.can_stand() and parent.is_on_floor():
 		parent.push_state(parent.STATES.AIRBORNE, {"slide_jump": true})
 	anim_process(parent, delta)
 

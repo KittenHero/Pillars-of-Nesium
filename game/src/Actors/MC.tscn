@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://assets/player/attack_1.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player/MeleeOne.gd" type="Script" id=2]
@@ -25,6 +25,12 @@
 [ext_resource path="res://src/Actors/Player/Climbing.gd" type="Script" id=23]
 [ext_resource path="res://src/Actors/Player/Slide.gd" type="Script" id=24]
 [ext_resource path="res://src/Actors/PlayerHP.gd" type="Script" id=25]
+[ext_resource path="res://assets/fonts/Kenney Future.ttf" type="DynamicFontData" id=26]
+[ext_resource path="res://src/main/SpeechBubble.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/fonts/Gemerald.ttf" type="DynamicFontData" id=28]
+[ext_resource path="res://src/Actors/Player/Crouching.gd" type="Script" id=29]
+[ext_resource path="res://assets/player/crouch.png" type="Texture" id=30]
+[ext_resource path="res://assets/player/climb.png" type="Texture" id=31]
 
 [sub_resource type="ShaderMaterial" id=2]
 
@@ -40,7 +46,7 @@ height = 42.0
 [sub_resource type="Animation" id=50]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -49,7 +55,60 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 7 ) ]
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "climbing"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 31 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -64,7 +123,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:shape:radius")
+tracks/2/path = NodePath("CollisionShape2D:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -73,10 +132,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 10.0 ]
+"values": [ 42.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:shape:height")
+tracks/3/path = NodePath("CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -85,49 +144,70 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 42.0 ]
+"values": [ Vector2( -1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("CollisionShape2D:position")
-tracks/4/interp = 1
+tracks/4/path = NodePath("Sprite:flip_h")
+tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=117]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -1, 0 ) ]
+"values": [ Vector2( -1, 18 ) ]
 }
-
-[sub_resource type="Animation" id=110]
-resource_name = "climbing_horizontal"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape2D:shape:height")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 30 ) ]
 }
-
-[sub_resource type="Animation" id=111]
-resource_name = "climbing_vertical"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
+"update": 0,
+"values": [ Vector2( 0, 15.35 ) ]
 }
 
 [sub_resource type="Animation" id=51]
@@ -181,6 +261,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=52]
 resource_name = "idle"
@@ -193,7 +285,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 4.2 ),
+"times": PoolRealArray( 0, 3.5, 4.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ ExtResource( 7 ), ExtResource( 10 ), ExtResource( 7 ) ]
@@ -298,6 +390,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=54]
@@ -557,12 +661,24 @@ script = ExtResource( 21 )
 time_to_max_speed = 5
 time_to_max_air_speed = 7
 min_jump_height = 20
+slide_speed_multiplier = 3
 slide_gravity_multiplier = 1.0
-slide_jump_multiplier = 1.0
-max_climbing_speed = 200
+slide_jump_height = 140
+
+[node name="stand_1" type="RayCast2D" parent="."]
+position = Vector2( -5, 30 )
+enabled = true
+cast_to = Vector2( 0, -55 )
+collide_with_areas = true
+
+[node name="stand_2" type="RayCast2D" parent="."]
+position = Vector2( 3, 30 )
+enabled = true
+cast_to = Vector2( 0, -55 )
+collide_with_areas = true
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 157
@@ -571,13 +687,13 @@ use_parent_material = true
 position = Vector2( -1, 0 )
 shape = SubResource( 3 )
 
-[node name="ClimbDetection" type="Area2D" parent="."]
-collision_layer = 15
-collision_mask = 15
+[node name="TileDetection" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbDetection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDetection"]
 position = Vector2( -1, -20 )
-scale = Vector2( 1.916, 5 )
+scale = Vector2( 5, 5 )
 shape = SubResource( 112 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -617,14 +733,17 @@ script = ExtResource( 24 )
 [node name="Climbing" type="Node" parent="States"]
 script = ExtResource( 23 )
 
+[node name="Crouching" type="Node" parent="States"]
+script = ExtResource( 29 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 50 )
-anims/climbing_horizontal = SubResource( 110 )
-anims/climbing_vertical = SubResource( 111 )
+anims/climbing = SubResource( 110 )
+anims/crouch = SubResource( 117 )
 anims/fall = SubResource( 51 )
 anims/idle = SubResource( 52 )
 anims/jump = SubResource( 53 )
@@ -645,8 +764,21 @@ anims/flash = SubResource( 115 )
 wait_time = 0.8
 one_shot = true
 
-[connection signal="body_entered" from="ClimbDetection" to="." method="_on_ClimbDetection_body_entered"]
-[connection signal="body_exited" from="ClimbDetection" to="." method="_on_ClimbDetection_body_exited"]
+[node name="speech 1" parent="." instance=ExtResource( 27 )]
+position = Vector2( -1, -47 )
+text = "Hello darkness my old friend"
+font_resource = ExtResource( 26 )
+
+[node name="speech 2" parent="." instance=ExtResource( 27 )]
+position = Vector2( -1, -47 )
+delay = 6
+color = Color( 1, 1, 1, 1 )
+bg_color = Color( 0, 0, 0, 1 )
+text = "I've come to talk to you again"
+font_resource = ExtResource( 28 )
+
+[connection signal="body_entered" from="TileDetection" to="." method="_on_TileDetection_body_entered"]
+[connection signal="body_exited" from="TileDetection" to="." method="_on_TileDetection_body_exited"]
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]

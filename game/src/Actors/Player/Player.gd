@@ -11,7 +11,7 @@ export var min_jump_height := 10
 export var gravity := 2500
 export var slide_speed_multiplier := 2
 export var slide_gravity_multiplier := 0.9
-export var slide_jump_multiplier := 0.9
+export var slide_jump_height := 100
 export var slide_duration := 20
 export var stack_buffer := 10
 export var max_climbing_speed := 150
@@ -32,7 +32,8 @@ enum STATES {
 	ROLLING,
 	RUNNING, 
 	SLIDING,
-	CLIMBING
+	CLIMBING,
+	CROUCHING
 }
 
 onready var state_dict = {
@@ -44,12 +45,15 @@ onready var state_dict = {
 	STATES.RUNNING: $States/Running,
 	STATES.SLIDING: $States/Sliding,
 	STATES.CLIMBING: $States/Climbing,
+	STATES.CROUCHING: $States/Crouching
 }
 onready var anim_sprite = $Sprite
 onready var anim_player = $AnimationPlayer
 onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
-onready var can_climb = false
+onready var climb_tiles = 0
+onready var stand_left = $stand_1
+onready var stand_right = $stand_2
 
 onready var acc_per_frame = max_speed/time_to_max_speed
 onready var air_acc_per_frame = max_air_speed/time_to_max_air_speed
@@ -60,18 +64,20 @@ onready var terminal_velocity = - sqrt(
 	pow(init_jump_velocity, 2) - 
 	(2*gravity*(jump_height - min_jump_height))
 )
+onready var slide_jump_velocity = - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
 # Variable slide jump physics
-onready var init_slide_jump_velocity = - sqrt(2*
-	gravity*
-	slide_gravity_multiplier*
-	jump_height*
-	slide_jump_multiplier
-)
-onready var slide_terminal_velocity = - sqrt(
-	pow(init_slide_jump_velocity, 2) - 
-	(2*gravity*slide_gravity_multiplier*slide_jump_multiplier*
-	(jump_height - min_jump_height))
-)
+# Remove if uneeded after long jump is fine
+#onready var init_slide_jump_velocity = - sqrt(2*
+#	gravity*
+#	slide_gravity_multiplier*
+#	jump_height*
+#	slide_jump_multiplier
+#)
+#onready var slide_terminal_velocity = - sqrt(
+#	pow(init_slide_jump_velocity, 2) - 
+#	(2*gravity*slide_gravity_multiplier*slide_jump_multiplier*
+#	(jump_height - min_jump_height))
+#)
 
 onready var ground_offset = Vector2(
 	0,
@@ -98,17 +104,17 @@ func move_horizontal(_delta: float) -> Vector2:
 		velocity.x = - max_speed
 	return velocity
 
-func move_air_horizontal(_delta: float) -> Vector2:
+func move_air_horizontal(_delta: float, speed = max_air_speed) -> Vector2:
 	if Input.is_action_pressed("move_left"):
 		anim_direction = Vector2.LEFT
 		velocity.x -= air_acc_per_frame;
 	elif Input.is_action_pressed("move_right"):
 		anim_direction = Vector2.RIGHT
 		velocity.x += air_acc_per_frame;
-	if velocity.x > max_air_speed:
-		velocity.x = max_air_speed
-	elif velocity.x < - max_air_speed:
-		velocity.x = - max_air_speed
+	if velocity.x > speed:
+		velocity.x = speed
+	elif velocity.x < - speed:
+		velocity.x = - speed
 	return velocity
 
 func slide(_delta: float) -> Vector2:
@@ -130,6 +136,12 @@ func climb(_delta: float) -> Vector2:
 		velocity.x = +max_climbing_speed
 	return velocity
 
+func crouch_look(_delta: float) -> void:
+	if Input.is_action_pressed("move_left"):
+		anim_direction = Vector2.LEFT
+	elif Input.is_action_pressed("move_right"):
+		anim_direction = Vector2.RIGHT
+
 func apply_stopping_friction(_delta: float) -> Vector2:
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0, deceleration)
@@ -141,6 +153,12 @@ func apply_gravity(delta: float, gravity_scale = 1) -> Vector2:
 
 func modulate_sprite(color: Color) -> void:
 	$Sprite.modulate = color
+
+func can_climb() -> bool:
+	return climb_tiles > 0
+
+func can_stand() -> bool:
+	return not stand_left.is_colliding() && not stand_right.is_colliding()
 
 func push_state(state, args = {}) -> void:
 	assert(state in state_dict, "Cannot push unknown state: %s" % state)
@@ -165,18 +183,23 @@ func pop_state(args={}) -> void:
 		current_state.enter(self)
 
 func print_stack_states():
+	print("Position: ", self.position)
 	var names = []
 	for state in stack:
 		names.push_back(state)
-	print("<- ", current_state, " : ", names)
+	print("<- ", current_state, ":", current_state._args, " : ", names)
 
-func _on_ClimbDetection_body_entered(body):
+func _on_TileDetection_body_entered(body):
+	if body == self:
+		return
 	if body.is_in_group('climb'):
-		can_climb = true
+		climb_tiles += 1
 
-func _on_ClimbDetection_body_exited(body):
+func _on_TileDetection_body_exited(body):
+	if body == self:
+		return 
 	if body.is_in_group('climb'):
-		can_climb = false
+		climb_tiles -= 1
 
 func kill() -> void:
 	$Hurtbox.kill()
