@@ -125,14 +125,14 @@ func slide(_delta: float) -> Vector2:
 	return velocity
 
 func climb(_delta: float) -> Vector2:
-	velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_up"):
+	velocity = Vector2()
+	if Input.is_action_pressed("move_up") and $TileDetection/u.is_colliding():
 		velocity.y = -max_climbing_speed
-	elif Input.is_action_pressed("move_down"):
+	elif Input.is_action_pressed("move_down") and $TileDetection/d.is_colliding():
 		velocity.y = +max_climbing_speed
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") and $TileDetection/l.is_colliding():
 		velocity.x = -max_climbing_speed
-	elif Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed("move_right") and $TileDetection/r.is_colliding():
 		velocity.x = +max_climbing_speed
 	return velocity
 
@@ -190,16 +190,17 @@ func print_stack_states():
 	print("<- ", current_state, ":", current_state._args, " : ", names)
 
 func _on_TileDetection_body_entered(body):
-	if body == self:
-		return
-	if body.is_in_group('climb'):
-		climb_tiles += 1
+	assert(body != self, 'Collision Layers not set correctly')
+	# todo: remove group and group check
+	assert(body.is_in_group('climb'), 'Collision Layers not set correctly')
+	assert(body is TileMap, 'Collision Layers not set correctly')
+	climb_tiles += 1
 
 func _on_TileDetection_body_exited(body):
-	if body == self:
-		return 
-	if body.is_in_group('climb'):
-		climb_tiles -= 1
+	assert(body != self, 'Collision Layers not set correctly')
+	assert(body.is_in_group('climb'), 'Collision Layers not set correctly')
+	assert(body is TileMap, 'Collision Layers not set correctly')
+	climb_tiles -= 1
 
 func kill() -> void:
 	$Hurtbox.kill()
