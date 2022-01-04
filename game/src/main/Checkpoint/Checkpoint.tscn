@@ -4,9 +4,11 @@
 [ext_resource path="res://src/main/Checkpoint/Checkpoint.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 155.625, 140.75 )
+extents = Vector2( 64, 128 )
 
 [node name="Checkpoint" type="Area2D"]
+collision_layer = 128
+collision_mask = 64
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

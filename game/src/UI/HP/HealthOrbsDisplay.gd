@@ -1,19 +1,14 @@
 extends Control
 
 const hp_orb = preload("res://src/UI/HP/HealthOrb.tscn")
-
 onready var orbs = $Entities/Orbs
 
-var max_health
-
-func _ready():
-	pass
+var max_health = 0
 
 func _on_health_updated(health):
 	for n in orbs.get_children():
 		n.queue_free()
 	
-	# Note
 	# No exact reason to use n_orbs
 	# Introduce new mechanic when gaining health over max_health?
 	var n_orbs = max_health / 5 

@@ -1,12 +1,6 @@
 extends KinematicBody2D
 class_name MC
 
-# adding in stuff for UI health bars - Kevin
-signal damaged(amount)
-signal health_updated(health)
-signal dead()
-#
-
 export var max_speed := 300
 export var time_to_max_speed := 20
 export var deceleration := 0.8
@@ -27,12 +21,7 @@ var velocity = Vector2.ZERO
 var stack = []
 var current_state = null
 
-# adding in stuff for UI health bars - Kevin
 export var max_health = 25
-onready var immunity_timer = $Timers/ImmunityTimer
-onready var status_anim = $StatusAnim
-onready var health = max_health setget _set_health
-#
 
 enum STATES {
 	FALLING,
@@ -90,13 +79,6 @@ onready var ground_offset = Vector2(
 )
 
 func _ready():
-	# adding health orbs
-	var health_orbs = get_tree().current_scene.get_node("UI/Interface/HealthOrbsDisplay")
-	health_orbs.set_max_health(max_health)
-	connect("health_updated", health_orbs, "_on_health_updated")
-	var spawn = get_tree().current_scene.get_node("Spawn")
-	connect("dead", spawn, "_on_dead")
-	#
 	current_state = state_dict[entry_state]
 
 func _physics_process(delta) -> void:
@@ -196,35 +178,5 @@ func _on_ClimbDetection_body_exited(body):
 	if body.is_in_group('climb'):
 		can_climb = false
 
-func damage(amount):
-	if immunity_timer.is_stopped():
-		immunity_timer.start()
-		_set_health(health - amount)
-		emit_signal("damaged", amount)
-		status_anim.play("damage")
-		if health != 0:
-			status_anim.queue("flash")
-	return amount
-
-func kill():
-	emit_signal("dead")
-	queue_free()
-
-func connect_signal(sig_name: String, entity: Object, method: String):
-	connect(sig_name, entity, method, [self])
-
-func disconnect_signal(sig_name: String, entity: Object, method: String):
-	disconnect(sig_name, entity, method)
-
-
-func _set_health(value):
-	var prev_health = health
-	health = clamp(value, 0, max_health)
-	if health != prev_health:
-		emit_signal("health_updated", health)
-	if health == 0:
-		kill()
-
-func _on_ImmunityTimer_timeout() -> void:
-	status_anim.play("RESET")
-
+func kill() -> void:
+	$Hurtbox.kill()

@@ -12,32 +12,17 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://src/main/Player/Hitbox.gd"
+"path": "res://src/main/Object/Hitbox.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "MC",
 "language": "GDScript",
 "path": "res://src/Actors/Player/Player.gd"
 }, {
-"base": "Node2D",
-"class": "Obstacle",
+"base": "Area2D",
+"class": "PlayerHP",
 "language": "GDScript",
-"path": "res://src/main/Object/Obstacle.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://src/main/Player/Player.gd"
-}, {
-"base": "StateMachine",
-"class": "PlayerFSM",
-"language": "GDScript",
-"path": "res://src/main/Player/PlayerFSM.gd"
-}, {
-"base": "StateMachine",
-"class": "SleepingAngel",
-"language": "GDScript",
-"path": "res://src/main/Player/SleepingAngel.gd"
+"path": "res://src/Actors/PlayerHP.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -52,10 +37,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Hitbox": "",
 "MC": "",
-"Obstacle": "",
-"Player": "",
-"PlayerFSM": "",
-"SleepingAngel": "",
+"PlayerHP": "",
 "State": "",
 "StateMachine": ""
 }
@@ -66,10 +48,6 @@ config/name="Pillars-of-Nesium"
 run/main_scene="res://src/main/Game.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
-
-[autoload]
-
-Globals="*res://src/main/Globals.gd"
 
 [debug]
 

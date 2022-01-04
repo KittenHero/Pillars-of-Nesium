@@ -24,7 +24,7 @@
 [ext_resource path="res://assets/player/slide_1.png" type="Texture" id=22]
 [ext_resource path="res://src/Actors/Player/Climbing.gd" type="Script" id=23]
 [ext_resource path="res://src/Actors/Player/Slide.gd" type="Script" id=24]
-[ext_resource path="res://src/main/Player/Hitbox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/Actors/PlayerHP.gd" type="Script" id=25]
 
 [sub_resource type="ShaderMaterial" id=2]
 
@@ -552,6 +552,7 @@ tracks/0/keys = {
 }
 
 [node name="MC" type="KinematicBody2D"]
+collision_layer = 64
 script = ExtResource( 21 )
 time_to_max_speed = 5
 time_to_max_air_speed = 7
@@ -579,11 +580,14 @@ position = Vector2( -1, -20 )
 scale = Vector2( 1.916, 5 )
 shape = SubResource( 112 )
 
-[node name="Hitbox" parent="." instance=ExtResource( 25 )]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-modulate = Color( 0.556863, 0.560784, 0.858824, 1 )
+[node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2( -1, 0 )
+collision_layer = 16
+collision_mask = 32
+script = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color( 0.556863, 0.560784, 0.858824, 1 )
 z_index = 1
 shape = SubResource( 116 )
 
@@ -643,6 +647,8 @@ one_shot = true
 
 [connection signal="body_entered" from="ClimbDetection" to="." method="_on_ClimbDetection_body_entered"]
 [connection signal="body_exited" from="ClimbDetection" to="." method="_on_ClimbDetection_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
+[connection signal="area_exited" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeTwo" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Timers/ImmunityTimer" to="." method="_on_ImmunityTimer_timeout"]
+[connection signal="timeout" from="Timers/ImmunityTimer" to="Hurtbox" method="_on_ImmunityTimer_timeout"]

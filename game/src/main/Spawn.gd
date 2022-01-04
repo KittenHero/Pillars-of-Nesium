@@ -3,19 +3,15 @@ extends Node2D
 const MCPS = preload("res://src/Actors/MC.tscn")
 var mc
 
-func _ready():
-  Globals.set_spawnpoint(self)
-
-#func _ready():
-	#Globals.update_spawn(self.global_position)
-
 func spawn_player() -> MC:
+	var scene = get_tree().current_scene
 	if mc:
-		remove_child(mc)
+		scene.remove_child(mc)
 	mc = MCPS.instance()
-	add_child(mc)
-#	mc.global_position = Globals.spawn_point
+	mc.global_position = self.global_position
+	mc.get_node('Hurtbox').connect('dead', self, 'spawn_player')
+	scene.add_child(mc)
 	return mc
 
-func _on_dead() -> void:
-	spawn_player()
+func _on_checkpoint(position: Vector2) -> void:
+	self.global_position = position

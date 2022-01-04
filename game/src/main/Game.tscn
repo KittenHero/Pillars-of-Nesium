@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://src/main/Spawn.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/main/SpeechBubble.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/main/RespwanButton.gd" type="Script" id=7]
 [ext_resource path="res://assets/fonts/Gemerald.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://src/main/Checkpoint/Checkpoint.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 points = PoolVector2Array( 12.9804, 0.959366, 28.3299, 6.30843, 40.1909, 13.7506, 91.5884, 52.5894, 107.17, 60.9619, 128, 64, 0, 64, 0, 0 )
@@ -1313,10 +1314,21 @@ text = "Don't touch me bro"
 font_resource = ExtResource( 8 )
 
 [node name="Spawn" type="Node2D" parent="."]
-position = Vector2( 153, 356 )
+position = Vector2( 106, 394 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RespawnButton" type="Node2D" parent="Spawn"]
 script = ExtResource( 7 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 9 )]
+position = Vector2( 1792, 565 )
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 9 )]
+position = Vector2( 917, 525 )

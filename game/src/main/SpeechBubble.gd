@@ -4,6 +4,7 @@ onready var text_node = RichTextLabel.new()
 onready var text_bg = ColorRect.new()
 onready var tween = Tween.new()
 
+export var autoplay := true
 export var delay = 2
 export var bg_delay = 0.2
 export var color = Color.black
@@ -12,14 +13,14 @@ export var text: String
 export var font_resource: Resource
 export var char_delay = 0.02
 export var read_delay = 2
-
 export var margin_offset = 8
+var font
 
 func _ready() -> void:
 	add_child(tween)
 	add_child(text_bg)
 	add_child(text_node)
-	var font = DynamicFont.new()
+	font = DynamicFont.new()
 	font.font_data = font_resource
 	text_node.add_font_override('normal_font', font)
 	text_node.add_color_override('default_color', color)
@@ -28,9 +29,9 @@ func _ready() -> void:
 	text_node.percent_visible = 0
 	
 	text_bg.color = bg_color
-	animate(font)
+	if autoplay: animate()
 
-func animate(font):
+func animate():
 	#Duration
 	var text_duration = text_node.text.length() * char_delay
 	#Size of speech bubble
