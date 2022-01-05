@@ -65,19 +65,6 @@ onready var terminal_velocity = - sqrt(
 	(2*gravity*(jump_height - min_jump_height))
 )
 onready var slide_jump_velocity = - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
-# Variable slide jump physics
-# Remove if uneeded after long jump is fine
-#onready var init_slide_jump_velocity = - sqrt(2*
-#	gravity*
-#	slide_gravity_multiplier*
-#	jump_height*
-#	slide_jump_multiplier
-#)
-#onready var slide_terminal_velocity = - sqrt(
-#	pow(init_slide_jump_velocity, 2) - 
-#	(2*gravity*slide_gravity_multiplier*slide_jump_multiplier*
-#	(jump_height - min_jump_height))
-#)
 
 onready var ground_offset = Vector2(
 	0,

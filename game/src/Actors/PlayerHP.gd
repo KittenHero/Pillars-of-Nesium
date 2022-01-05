@@ -6,7 +6,7 @@ onready var current_hp = get_parent().max_health setget _set_hp
 var hitboxes = []
 onready var immunity_timer = get_parent().get_node('Timers/ImmunityTimer')
 onready var status_anim = get_parent().get_node('StatusAnim')
-onready var death_timer = get_parent().get_node('Timers/DeathTimer')
+onready var respawn_timer = get_parent().get_node('Timers/RespawnTimer')
 
 
 const hp_ui_scene = preload('res://src/UI/HP/HealthOrbsDisplay.tscn')
@@ -15,6 +15,7 @@ onready var hp_ui = hp_ui_scene.instance()
 
 signal health_updated(health)
 signal dead()
+signal hazard()
 
 func _ready() -> void:
 	ui_interface.add_child(hp_ui)
@@ -24,12 +25,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if !immunity_timer.is_stopped() or hitboxes.size() == 0 or current_hp <= 0: return
 	var max_dmg = 0
+	var hazard = false
 	for hitbox in hitboxes:
+		hazard = hazard or hitbox.hazard
 		max_dmg = max(max_dmg, hitbox.damage_value)
 	immunity_timer.start()
 	_set_hp(current_hp - max_dmg)
 	status_anim.queue("damage")
 	status_anim.queue("flash")
+	if hazard and current_hp > 0 and respawn_timer.is_stopped():
+		get_parent().set_physics_process(false)
+		respawn_timer.start()
 
 func _set_hp(value):
 	var prev_hp = current_hp
@@ -40,15 +46,17 @@ func _set_hp(value):
 		kill()
 
 func kill():
-	death_timer.start()
+	emit_signal("dead")
+	get_parent().queue_free()
+	hp_ui.queue_free()
 
 func _on_ImmunityTimer_timeout() -> void:
 	status_anim.play("RESET")
 
-func _on_DeathTimer_timeout() -> void:
-	emit_signal("dead")
-	get_parent().queue_free()
-	hp_ui.queue_free()
+func _on_RespawnTimer_timeout() -> void:
+	if current_hp > 0:
+		emit_signal("hazard")
+		get_parent().set_physics_process(true)
 
 func _on_Hurtbox_area_entered(hitbox: Area2D) -> void:
 	assert(hitbox is Hitbox, "Hitbox collision layer not set correctly")

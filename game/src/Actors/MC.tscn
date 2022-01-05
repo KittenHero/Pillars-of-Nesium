@@ -787,8 +787,12 @@ anims/flash = SubResource( 115 )
 wait_time = 0.8
 one_shot = true
 
-[node name="DeathTimer" type="Timer" parent="Timers"]
+[node name="RespawnTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
 one_shot = true
+__meta__ = {
+"_editor_description_": "Note: This timer should be shorted than immunity timer"
+}
 
 [connection signal="body_entered" from="TileDetection" to="." method="_on_TileDetection_body_entered"]
 [connection signal="body_exited" from="TileDetection" to="." method="_on_TileDetection_body_exited"]
@@ -797,4 +801,4 @@ one_shot = true
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeOne" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="States/MeleeTwo" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Timers/ImmunityTimer" to="Hurtbox" method="_on_ImmunityTimer_timeout"]
-[connection signal="timeout" from="Timers/DeathTimer" to="Hurtbox" method="_on_DeathTimer_timeout"]
+[connection signal="timeout" from="Timers/RespawnTimer" to="Hurtbox" method="_on_RespawnTimer_timeout"]
