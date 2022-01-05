@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/checkpoint.png-188a0254371b008c17d8ec30269a1103.stex"
+path="res://.import/set-cave_moody.png-58941eddc7944872ce5abcf78bbb4459.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/main/Checkpoint/checkpoint.png"
-dest_files=[ "res://.import/checkpoint.png-188a0254371b008c17d8ec30269a1103.stex" ]
+source_file="res://assets/Tiles/Dark/set-cave_moody.png"
+dest_files=[ "res://.import/set-cave_moody.png-58941eddc7944872ce5abcf78bbb4459.stex" ]
 
 [params]
 

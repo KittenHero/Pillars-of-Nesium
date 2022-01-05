@@ -13,5 +13,5 @@ func spawn_player() -> MC:
 	scene.add_child(mc)
 	return mc
 
-func _on_checkpoint(position: Vector2) -> void:
+func _on_savepoint(position: Vector2) -> void:
 	self.global_position = position

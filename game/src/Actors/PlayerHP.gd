@@ -6,6 +6,7 @@ onready var current_hp = get_parent().max_health setget _set_hp
 var hitboxes = []
 onready var immunity_timer = get_parent().get_node('Timers/ImmunityTimer')
 onready var status_anim = get_parent().get_node('StatusAnim')
+onready var death_timer = get_parent().get_node('Timers/DeathTimer')
 
 
 const hp_ui_scene = preload('res://src/UI/HP/HealthOrbsDisplay.tscn')
@@ -21,13 +22,13 @@ func _ready() -> void:
 	connect("health_updated", hp_ui, "_on_health_updated")
 
 func _process(delta: float) -> void:
-	if !immunity_timer.is_stopped() or hitboxes.size() == 0: return
+	if !immunity_timer.is_stopped() or hitboxes.size() == 0 or current_hp <= 0: return
 	var max_dmg = 0
 	for hitbox in hitboxes:
 		max_dmg = max(max_dmg, hitbox.damage_value)
 	immunity_timer.start()
 	_set_hp(current_hp - max_dmg)
-	status_anim.play("damage")
+	status_anim.queue("damage")
 	status_anim.queue("flash")
 
 func _set_hp(value):
@@ -38,22 +39,23 @@ func _set_hp(value):
 	if current_hp == 0:
 		kill()
 
-
 func kill():
-	emit_signal("dead")
-	get_parent().queue_free()
-	hp_ui.queue_free()
-
+	death_timer.start()
 
 func _on_ImmunityTimer_timeout() -> void:
 	status_anim.play("RESET")
 
+func _on_DeathTimer_timeout() -> void:
+	emit_signal("dead")
+	get_parent().queue_free()
+	hp_ui.queue_free()
 
 func _on_Hurtbox_area_entered(hitbox: Area2D) -> void:
 	assert(hitbox is Hitbox, "Hitbox collision layer not set correctly")
 	hitboxes.append(hitbox)
 
-
 func _on_Hurtbox_area_exited(hitbox: Area2D) -> void:
 	assert(hitbox is Hitbox, "Hitbox collision layer not set correctly")
 	hitboxes.erase(hitbox)
+
+

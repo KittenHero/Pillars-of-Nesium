@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/main/Obstacles/Spikes/Spikes.gd" type="Script" id=1]
+
+[node name="Spikes" type="Area2D"]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource( 1 )
