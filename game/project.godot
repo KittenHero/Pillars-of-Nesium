@@ -29,11 +29,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/PlayerHP.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Scroad",
-"language": "GDScript",
-"path": "res://src/main/Enemies/Scroad.gd"
-}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -49,7 +44,6 @@ _global_script_class_icons={
 "Hurtbox": "",
 "MC": "",
 "PlayerHP": "",
-"Scroad": "",
 "State": "",
 "StateMachine": ""
 }

@@ -1118,20 +1118,21 @@ tile_data = PoolIntArray( 28, 1073741824, 0, 29, 1073741824, 0, 31, 1610612736, 
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Scrode" parent="Entities" instance=ExtResource( 11 )]
-position = Vector2( -857, 577 )
+position = Vector2( -301.783, 577 )
 
-[node name="ColliderTriggerDialogue" type="Node" parent="Entities/Scrode"]
+[node name="Node2D" type="Node2D" parent="Entities/Scrode"]
+position = Vector2( 301.783, -577 )
 script = ExtResource( 10 )
 
-[node name="line 1" parent="Entities/Scrode/ColliderTriggerDialogue" instance=ExtResource( 6 )]
-position = Vector2( -858, 518 )
+[node name="line 1" parent="Entities/Scrode/Node2D" instance=ExtResource( 6 )]
+position = Vector2( -292.289, 524.678 )
 autoplay = false
 delay = 0
 text = "Don't touch me bro"
 font_resource = ExtResource( 8 )
 
-[node name="line 2" parent="Entities/Scrode/ColliderTriggerDialogue" instance=ExtResource( 6 )]
-position = Vector2( -858, 518 )
+[node name="line 2" parent="Entities/Scrode/Node2D" instance=ExtResource( 6 )]
+position = Vector2( -307.553, 526.586 )
 autoplay = false
 delay = 0
 text = "Hey watch it"
@@ -1156,3 +1157,5 @@ position = Vector2( 1855, -355 )
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 9 )]
 position = Vector2( 639, 191 )
+
+[connection signal="touching_player" from="Entities/Scrode" to="Entities/Scrode/Node2D" method="trigger_dialogue"]

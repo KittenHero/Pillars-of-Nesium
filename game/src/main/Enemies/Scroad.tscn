@@ -43,3 +43,5 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="Body"]
 position = Vector2( 0, -14 )
 texture = ExtResource( 1 )
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
