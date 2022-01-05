@@ -204,3 +204,5 @@ func _on_TileDetection_body_exited(body):
 
 func kill() -> void:
 	$Hurtbox.kill()
+
+

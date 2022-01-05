@@ -12,7 +12,12 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://src/main/Object/Hitbox.gd"
+"path": "res://src/main/Enemies/Hitbox.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://src/main/Enemies/Hurtbox.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "MC",
@@ -23,6 +28,11 @@ _global_script_classes=[ {
 "class": "PlayerHP",
 "language": "GDScript",
 "path": "res://src/Actors/PlayerHP.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Scroad",
+"language": "GDScript",
+"path": "res://src/main/Enemies/Scroad.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -36,15 +46,17 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Hitbox": "",
+"Hurtbox": "",
 "MC": "",
 "PlayerHP": "",
+"Scroad": "",
 "State": "",
 "StateMachine": ""
 }
 
 [application]
 
-config/name="Pillars-of-Nesium"
+config/name="Pillars-of-Nesium-all"
 run/main_scene="res://src/main/Game.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
