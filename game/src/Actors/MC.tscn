@@ -664,21 +664,19 @@ slide_jump_height = 75
 max_health = 15
 
 [node name="stand_1" type="RayCast2D" parent="."]
-visible = false
-position = Vector2( -5, 30 )
+position = Vector2( -4.85152, 6 )
 enabled = true
-cast_to = Vector2( 0, -55 )
+cast_to = Vector2( 0, -30 )
 collide_with_areas = true
 
 [node name="stand_2" type="RayCast2D" parent="."]
-visible = false
-position = Vector2( 3, 30 )
+position = Vector2( 4.66365, 6.14848 )
 enabled = true
-cast_to = Vector2( 0, -55 )
+cast_to = Vector2( 0, -30 )
 collide_with_areas = true
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -688,6 +686,7 @@ use_parent_material = true
 shape = SubResource( 3 )
 
 [node name="TileDetection" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
