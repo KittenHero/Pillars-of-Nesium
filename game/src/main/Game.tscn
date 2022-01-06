@@ -5,6 +5,7 @@
 [ext_resource path="res://src/main/Game.gd" type="Script" id=3]
 [ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/main/Object/Obstacle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/vanture/vanture.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/main/RespwanButton.gd" type="Script" id=7]
 [ext_resource path="res://src/main/Checkpoint/Checkpoint.tscn" type="PackedScene" id=8]
 
@@ -1109,6 +1110,7 @@ script = ExtResource( 7 )
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
+<<<<<<< Updated upstream
 [node name="Checkpoint" parent="." instance=ExtResource( 8 )]
 position = Vector2( 512, 509 )
 
@@ -1126,3 +1128,7 @@ position = Vector2( 845, -67 )
 
 [node name="Checkpoint5" parent="Checkpoint" instance=ExtResource( 8 )]
 position = Vector2( 372, 34 )
+=======
+[node name="vanture" parent="." instance=ExtResource( 6 )]
+position = Vector2( 418, 327 )
+>>>>>>> Stashed changes

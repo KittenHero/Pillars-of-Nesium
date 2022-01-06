@@ -555,7 +555,12 @@ tracks/0/keys = {
 }
 
 [node name="MC" type="KinematicBody2D"]
+<<<<<<< Updated upstream:game/src/main/Checkpoint/MC.tscn
 script = ExtResource( 23 )
+=======
+collision_mask = 2
+script = ExtResource( 21 )
+>>>>>>> Stashed changes:game/src/Actors/MC.tscn
 time_to_max_speed = 5
 time_to_max_air_speed = 5
 min_jump_height = 20
