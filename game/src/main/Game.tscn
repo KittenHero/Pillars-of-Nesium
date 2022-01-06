@@ -1149,8 +1149,6 @@ __meta__ = {
 [node name="RespawnButton" type="Node2D" parent="Spawn"]
 script = ExtResource( 7 )
 
-[node name="UI" parent="." instance=ExtResource( 4 )]
-
 [node name="Checkpoints" type="Node" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 9 )]
@@ -1158,5 +1156,7 @@ position = Vector2( 1855, -355 )
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 9 )]
 position = Vector2( 639, 191 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
 
 [connection signal="touching_player" from="Entities/Scrode" to="Entities/Scrode/Node2D" method="trigger_dialogue"]

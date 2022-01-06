@@ -760,7 +760,7 @@ script = ExtResource( 29 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 2, 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 50 )
