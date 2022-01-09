@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://src/main/Spawn.gd" type="Script" id=2]
@@ -13,8 +13,6 @@
 [ext_resource path="res://src/main/Enemies/Scroad.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/Tiles/Dark/set-cave_bright.png" type="Texture" id=12]
 [ext_resource path="res://assets/Tiles/rocks-64x64.png" type="Texture" id=13]
-[ext_resource path="res://src/main/Platforms/Waypoints.gd" type="Script" id=14]
-[ext_resource path="res://src/main/Platforms/FixedPathPlatform.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=76]
 points = PoolVector2Array( 12.9804, 0.959366, 28.3299, 6.30843, 40.1909, 13.7506, 91.5884, 52.5894, 107.17, 60.9619, 128, 64, 0, 64, 0, 0 )
@@ -1052,12 +1050,6 @@ points = PoolVector2Array( 64, 48, 0, 48, 0, 64, 64, 64 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 100, 30 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 100, 6 )
-
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -1167,56 +1159,4 @@ position = Vector2( 1855, -355 )
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 9 )]
 position = Vector2( 639, 191 )
 
-[node name="Platforms" type="Node" parent="."]
-
-[node name="A" type="Node" parent="Platforms"]
-
-[node name="Waypoints" type="Node2D" parent="Platforms/A"]
-script = ExtResource( 14 )
-vanish_at_end = true
-line_color = Color( 0.478431, 0.215686, 0.607843, 1 )
-triangle_color = Color( 0.2, 0.231373, 0.501961, 1 )
-
-[node name="Start" type="Position2D" parent="Platforms/A/Waypoints"]
-position = Vector2( -184, 506 )
-
-[node name="1" type="Position2D" parent="Platforms/A/Waypoints"]
-position = Vector2( -477, 491 )
-
-[node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -317.991, 499.141 )
-motion/sync_to_physics = true
-script = ExtResource( 15 )
-waypoints_path = NodePath("../Waypoints")
-speed = 50.0
-vanish_on_contact = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/A/Platform"]
-shape = SubResource( 1 )
-
-[node name="MCDetection" type="Area2D" parent="Platforms/A/Platform"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/A/Platform/MCDetection"]
-modulate = Color( 0.956863, 0.180392, 0.180392, 1 )
-position = Vector2( 0, -26 )
-shape = SubResource( 2 )
-
-[node name="PauseTimer" type="Timer" parent="Platforms/A/Platform"]
-wait_time = 0.001
-one_shot = true
-
-[node name="RespawnTimer" type="Timer" parent="Platforms/A/Platform"]
-wait_time = 3.0
-one_shot = true
-
-[node name="WobbleTimer" type="Timer" parent="Platforms/A/Platform"]
-wait_time = 2.0
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/A/Platform"]
-
 [connection signal="touching_player" from="Entities/Scrode" to="Entities/Scrode/Node2D" method="trigger_dialogue"]
-[connection signal="body_entered" from="Platforms/A/Platform/MCDetection" to="Platforms/A/Platform" method="_on_MCDetection_body_entered"]
-[connection signal="timeout" from="Platforms/A/Platform/PauseTimer" to="Platforms/A/Platform" method="_on_PauseTimer_timeout"]
-[connection signal="timeout" from="Platforms/A/Platform/RespawnTimer" to="Platforms/A/Platform" method="_on_RespawnTimer_timeout"]
-[connection signal="timeout" from="Platforms/A/Platform/WobbleTimer" to="Platforms/A/Platform" method="_on_WobbleTimer_timeout"]
