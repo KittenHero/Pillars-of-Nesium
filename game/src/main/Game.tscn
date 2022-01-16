@@ -1087,13 +1087,7 @@ cell_size = Vector2( 32, 32 )
 show_collision = true
 collision_use_parent = true
 format = 1
-tile_data = PoolIntArray( -3669932, 536870912, 0, -3669930, 0, 0, -3669928, 0, 0, -3669926, 0, 0, -3669924, 0, 0, -3669922, 0, 0, -3669920, 0, 0, -3669918, 0, 0, -3669904, 1610612736, 0, -3342238, 536870912, 0, -3145633, -1073741824, 0, -3014581, -1610612736, 0, -3014577, -2147483648, 0, -3014570, 536870912, 0, -3014568, 536870912, 0, -3014566, 536870912, 0, -3014564, 536870912, 0, -2883509, -1610612736, 0, -2883505, -2147483648, 0, 458822, 1073741824, 0, 458824, 1073741824, 0, 458826, 1073741824, 0, 655428, 0, 0, 655430, 0, 0, 655432, 0, 0, 655434, 0, 0, 655436, 0, 0 )
-
-[node name="Special Tiles" type="TileMap" parent="Tiles"]
-tile_set = SubResource( 131 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( -3997604, 2, 0, -3932063, 2, 0, -3276696, 1610612739, 0, -3276695, 1610612739, 0, -2621365, -1610612734, 0, -2621361, -1610612734, 0, -2359212, -1610612734, 0, -2031527, -1610612734, 0, -1900460, -1610612734, 0, -1507234, -1610612734, 0, -1441686, -1610612734, 0, -1048471, -1610612734, 0, -327599, -1610612734, 0, -327591, -1610612734, 0 )
+tile_data = PoolIntArray( 28, 1073741824, 0, 29, 1073741824, 0, 31, 1610612736, 0, 32, 1610612736, 0, 393233, -1073741824, 0, 393235, -536870912, 0, 458769, -1073741824, 0, 458771, -536870912, 0, 524305, -1073741824, 0, 524307, -536870912, 0, 983066, 0, 0, 983067, 0, 0, 983068, 0, 0, 983069, 0, 0 )
 
 [node name="Entities" type="YSort" parent="."]
 
@@ -1155,8 +1149,7 @@ position = Vector2( -184, 506 )
 position = Vector2( -477, 491 )
 
 [node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -317.991, 499.141 )
-motion/sync_to_physics = true
+position = Vector2( -189.876, 505.699 )
 script = ExtResource( 15 )
 waypoints_path = NodePath("../Waypoints")
 speed = 50.0
@@ -1173,7 +1166,7 @@ position = Vector2( 0, -26 )
 shape = SubResource( 2 )
 
 [node name="PauseTimer" type="Timer" parent="Platforms/A/Platform"]
-wait_time = 0.001
+wait_time = 0.1
 one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="Platforms/A/Platform"]

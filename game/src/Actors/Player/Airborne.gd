@@ -1,5 +1,7 @@
 extends "res://src/Actors/State.gd"
 
+var initial_x = 0
+
 func handle_normal(parent: MC, delta: float) -> Vector2:
 #	Need air melee sprite to uncomment this
 #	if Input.is_action_just_pressed("melee"):
@@ -9,13 +11,18 @@ func handle_normal(parent: MC, delta: float) -> Vector2:
 	if Input.is_action_just_released("jump"):
 		if parent.velocity.y < parent.terminal_velocity:
 			parent.velocity.y = parent.terminal_velocity
+	
 	var velocity = parent.move_air_horizontal(delta)
 	velocity = parent.apply_gravity(delta)
 	return velocity
 
 func handle_slide_jump(parent: MC, delta: float) -> Vector2:
-	var velocity = parent.move_air_horizontal(delta, 
-		parent.max_speed*parent.slide_speed_multiplier)
+	var velocity
+	if parent.velocity.x * initial_x > 0:
+		velocity = parent.move_air_horizontal(delta, abs(initial_x))
+	else:
+		initial_x = 0
+		velocity = parent.move_air_horizontal(delta)
 	velocity = parent.apply_gravity(delta, parent.slide_gravity_multiplier)
 	return velocity
 
@@ -54,6 +61,7 @@ func enter(parent: MC):
 			parent.velocity.y = parent.init_jump_velocity
 	elif "slide_jump" in _args and _args["slide_jump"]:
 		parent.velocity.y = parent.slide_jump_velocity
+		initial_x = parent.velocity.x
 	
 func exit(parent: MC):
 	.exit(parent) 
