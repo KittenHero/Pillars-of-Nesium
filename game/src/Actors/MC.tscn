@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://assets/player/attack_1.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player/MeleeOne.gd" type="Script" id=2]
@@ -25,9 +25,13 @@
 [ext_resource path="res://src/Actors/Player/Climbing.gd" type="Script" id=23]
 [ext_resource path="res://src/Actors/Player/Slide.gd" type="Script" id=24]
 [ext_resource path="res://src/Actors/PlayerHP.gd" type="Script" id=25]
+[ext_resource path="res://assets/sound/player/Slide_3_34ms.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/sound/player/footstep_sand_3.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/sound/player/footstep_sand_1.wav" type="AudioStream" id=28]
 [ext_resource path="res://src/Actors/Player/Crouching.gd" type="Script" id=29]
 [ext_resource path="res://assets/player/crouch.png" type="Texture" id=30]
 [ext_resource path="res://assets/player/climb.png" type="Texture" id=31]
+[ext_resource path="res://assets/sound/player/footstep_sand_2.wav" type="AudioStream" id=32]
 
 [sub_resource type="ShaderMaterial" id=2]
 
@@ -478,8 +482,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=56]
 resource_name = "run"
-length = 0.6
+length = 1.08
 loop = true
+step = 0.12
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -487,10 +492,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:offset")
@@ -539,6 +544,28 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("SFX/Movement-Sand")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 28 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 32 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 27 )
+} ],
+"times": PoolRealArray( 0, 0.36, 0.72 )
 }
 
 [sub_resource type="Animation" id=68]
@@ -676,7 +703,7 @@ cast_to = Vector2( 0, -30 )
 collide_with_areas = true
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -792,6 +819,16 @@ one_shot = true
 __meta__ = {
 "_editor_description_": "Note: This timer should be shorted than immunity timer"
 }
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Movement-Sand" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 28 )
+volume_db = -10.0
+
+[node name="Slide" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 26 )
+volume_db = -15.0
 
 [connection signal="body_entered" from="TileDetection" to="." method="_on_TileDetection_body_entered"]
 [connection signal="body_exited" from="TileDetection" to="." method="_on_TileDetection_body_exited"]

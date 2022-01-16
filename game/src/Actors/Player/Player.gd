@@ -49,6 +49,7 @@ onready var state_dict = {
 }
 onready var anim_sprite = $Sprite
 onready var anim_player = $AnimationPlayer
+onready var sfx_slide = $SFX/Slide
 onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
 onready var climb_tiles = 0

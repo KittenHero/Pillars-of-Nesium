@@ -36,9 +36,12 @@ func handle_anim_finished(parent: MC):
 	parent.anim_player.stop()
 
 func enter(parent: MC):
+	# Really bad, should figure out better solution | 
 	active = true
 	if not "slide" in _args:
 		parent.pop_state()
+	else:
+		parent.sfx_slide.play()
 	_args["initial"] = parent.frame_count
 	
 func exit(parent: MC):
