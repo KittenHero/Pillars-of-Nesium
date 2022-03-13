@@ -6,6 +6,11 @@ var speed = 30
 var direction = 1
 var velocity = Vector2()
 var state = IDLE
+<<<<<<< Updated upstream
+=======
+var tpath = 0
+
+>>>>>>> Stashed changes
 
 func _ready():
 	pass # Replace with function body.
@@ -53,6 +58,11 @@ func _physics_process(delta):
 				velocity = velocity.move_toward(direction,1)
 				if global_position == player.global_position + Vector2(0,-100):
 					#Soundeffectwarning
+<<<<<<< Updated upstream
+=======
+					global_position == player.global_position + Vector2(0,-100)
+					sprite.play("charge")
+>>>>>>> Stashed changes
 					sprite.play("swoop")
 				
 			else:
