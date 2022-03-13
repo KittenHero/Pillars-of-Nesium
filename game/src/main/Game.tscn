@@ -1152,6 +1152,7 @@ tile_data = PoolIntArray( -2424724, -2147483647, 0, -2424723, -2147483647, 0, -2
 
 [node name="Spikes" type="TileMap" parent="Tiles/Hazard"]
 tile_set = SubResource( 125 )
+cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 show_collision = true
 collision_use_parent = true
@@ -1224,7 +1225,7 @@ position = Vector2( -184, 506 )
 position = Vector2( -477, 491 )
 
 [node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -436.17, 493.091 )
+position = Vector2( -277.211, 501.229 )
 script = ExtResource( 15 )
 waypoints_path = NodePath("../Waypoints")
 speed = 50.0
