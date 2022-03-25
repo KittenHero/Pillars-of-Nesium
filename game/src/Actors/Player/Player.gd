@@ -15,13 +15,12 @@ export var slide_jump_height := 100
 export var slide_duration := 20
 export var stack_buffer := 10
 export var max_climbing_speed := 150
+export var max_health = 25
 
 var frame_count = 0
 var velocity = Vector2.ZERO
 var stack = []
 var current_state = null
-
-export var max_health = 25
 
 enum STATES {
 	FALLING,
@@ -65,7 +64,6 @@ onready var terminal_velocity = - sqrt(
 	(2*gravity*(jump_height - min_jump_height))
 )
 onready var slide_jump_velocity = - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
-
 onready var ground_offset = Vector2(
 	0,
 	$CollisionShape2D.position.y + $CollisionShape2D.shape.height/2

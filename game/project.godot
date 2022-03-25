@@ -34,10 +34,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/PlayerHP.gd"
 }, {
+"base": "Node",
+"class": "SetupMC",
+"language": "GDScript",
+"path": "res://src/Actors/Setup/MC/SetupMC.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Stalactite",
 "language": "GDScript",
 "path": "res://src/main/Obstacles/Stalactite.gd"
+}, {
+"base": "Resource",
+"class": "StartingStatsBoss",
+"language": "GDScript",
+"path": "res://src/Actors/Setup/StartingStats/StartingStatsBoss.gd"
+}, {
+"base": "Resource",
+"class": "StartingStatsEnemy",
+"language": "GDScript",
+"path": "res://src/Actors/Setup/StartingStats/StartingStatsEnemy.gd"
+}, {
+"base": "Resource",
+"class": "StartingStatsMC",
+"language": "GDScript",
+"path": "res://src/Actors/Setup/StartingStats/StartingStatsMC.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -55,7 +75,11 @@ _global_script_class_icons={
 "Hurtbox": "",
 "MC": "",
 "PlayerHP": "",
+"SetupMC": "",
 "Stalactite": "",
+"StartingStatsBoss": "",
+"StartingStatsEnemy": "",
+"StartingStatsMC": "",
 "State": "",
 "StateMachine": ""
 }
@@ -71,6 +95,10 @@ config/icon="res://icon.png"
 
 gdscript/warnings/enable=false
 shapes/collision/shape_color=Color( 0.101961, 0.835294, 0.956863, 0.419608 )
+
+[global]
+
+collision=false
 
 [importer_defaults]
 
