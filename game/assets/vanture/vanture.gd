@@ -7,9 +7,20 @@ var direction = 1
 var velocity = Vector2()
 var state = IDLE
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 var tpath = 0
 
+>>>>>>> Stashed changes
+=======
+
+export var max_health = 25
+
+signal touching_player()
+
+func _on_Hitbox_area_entered(area):
+	if area != $Hurtbox:
+		emit_signal("touching_player")
 >>>>>>> Stashed changes
 
 func _ready():
@@ -59,9 +70,13 @@ func _physics_process(delta):
 				if global_position == player.global_position + Vector2(0,-100):
 					#Soundeffectwarning
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 					global_position == player.global_position + Vector2(0,-100)
 					sprite.play("charge")
+>>>>>>> Stashed changes
+=======
+					sprite.play("attackwindup")
 >>>>>>> Stashed changes
 					sprite.play("swoop")
 				
