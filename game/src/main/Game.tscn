@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=1]
 [ext_resource path="res://src/main/Spawn.gd" type="Script" id=2]
@@ -29,6 +29,9 @@ points = PoolVector2Array( 0, 0, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=79]
 points = PoolVector2Array( 0, 0, 64, 32, 64, 32, 0, 32 )
 
+[sub_resource type="ConvexPolygonShape2D" id=80]
+points = PoolVector2Array( 0, 32, 64, 0, 64, 32, 0, 32 )
+
 [sub_resource type="ConvexPolygonShape2D" id=81]
 points = PoolVector2Array( 0, 0, 32, 32, 64, 64, 0, 64 )
 
@@ -41,6 +44,12 @@ points = PoolVector2Array( 0, 0, 32, 32, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=92]
 points = PoolVector2Array( 28.3297, 21.4648, 37.8586, 26.7945, 50.2945, 30.8321, 64, 32, 0, 32, 0, 0 )
 
+[sub_resource type="ConvexPolygonShape2D" id=93]
+points = PoolVector2Array( 64, 0, 64, 32, 0, 32, 0, 32, 13.8938, 30.7715, 25.8721, 27.0031, 35.1587, 22.0233 )
+
+[sub_resource type="ConvexPolygonShape2D" id=84]
+points = PoolVector2Array( 128, 0, 128, 64, 0, 64, 19.1296, 61.3653, 36.9281, 52.4992, 91.1165, 11.1021, 107.629, 2.96225 )
+
 [sub_resource type="ConvexPolygonShape2D" id=96]
 points = PoolVector2Array( 3.08191, 29.1296, 9.59381, 49.392, 16.8034, 64.7415, 28.3155, 80.6724, 37.4532, 90.8198, 48.1125, 100.672, 62.7356, 110.441, 79.9456, 119.046, 102.737, 126.023, 128, 128, 0, 128, 0, 0 )
 
@@ -50,14 +59,26 @@ points = PoolVector2Array( 19.6165, 1.46689, 33.3444, 4.37399, 50.787, 10.8746, 
 [sub_resource type="ConvexPolygonShape2D" id=94]
 points = PoolVector2Array( 13.603, 1.29851, 23.4279, 4.12485, 34.1949, 10.0467, 64, 32, 0, 32, 0, 0 )
 
+[sub_resource type="ConvexPolygonShape2D" id=95]
+points = PoolVector2Array( 64, 0, 64, 32, 0, 32, 29.6069, 10.1813, 40.5085, 4.39403, 50.6026, 1.43309 )
+
 [sub_resource type="ConvexPolygonShape2D" id=98]
 points = PoolVector2Array( 20.6334, 1.60699, 40.6343, 6.25833, 63.4322, 16.7397, 79.3243, 27.2053, 128, 64, 0, 64, 0, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=99]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0 )
 
+[sub_resource type="ConvexPolygonShape2D" id=100]
+points = PoolVector2Array( 0, 64, 128, 0, 128, 64, 0, 64 )
+
 [sub_resource type="ConvexPolygonShape2D" id=101]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 0, 0, 60.1328, 45.0025, 77.6309, 54.0523, 94.4921, 59.8665, 108.446, 62.9674 )
+
+[sub_resource type="ConvexPolygonShape2D" id=102]
+points = PoolVector2Array( 20.0241, 62.6389, 33.9782, 59.9256, 50.0606, 54.0031, 68.2009, 44.4678, 128, 0, 128, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=103]
+points = PoolVector2Array( 128, 0, 128, 64, 0, 64, 48.2288, 27.2973, 70.7878, 12.8781, 91.719, 4.97076, 107.999, 1.48224 )
 
 [sub_resource type="ConvexPolygonShape2D" id=104]
 points = PoolVector2Array( 19.9357, 1.62131, 42.2623, 6.73779, 61.798, 16.0405, 79.9383, 27.6689, 128, 64, 0, 64, 0, 0 )
@@ -65,29 +86,11 @@ points = PoolVector2Array( 19.9357, 1.62131, 42.2623, 6.73779, 61.798, 16.0405, 
 [sub_resource type="ConvexPolygonShape2D" id=105]
 points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 58.6834, 44.1812, 77.2888, 53.9491, 91.6457, 59.3188, 108.22, 62.5541 )
 
-[sub_resource type="ConvexPolygonShape2D" id=115]
-points = PoolVector2Array( 1.45267, 13.7455, 4.16595, 23.8234, 8.42969, 33.7076, 13.6625, 40.6846, 22.9652, 49.5997, 30.5237, 55.0263, 40.4078, 60.2591, 50.0981, 62.5847, 64, 64, 0, 64, 0, 0 )
+[sub_resource type="ConvexPolygonShape2D" id=106]
+points = PoolVector2Array( 20.1415, 62.7477, 33.5375, 59.6778, 50.8405, 53.538, 69.8181, 44.0493, 128, 0, 128, 64, 0, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=116]
-points = PoolVector2Array( 13.8988, 1.86026, 24.1275, 4.8212, 32.0682, 8.8252, 41.2202, 14.8817, 49.0262, 22.8223, 55.0827, 31.7051, 59.1203, 39.915, 62.0813, 49.5717, 64, 64, 0, 64, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=117]
-points = PoolVector2Array( 1.05185, 13.4552, 4.92798, 25.8104, 8.96564, 33.8857, 13.9723, 40.3459, 22.8551, 49.7132, 29.9614, 55.0429, 39.8132, 59.8881, 50.1495, 62.7952, 64, 64, 0, 64, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=118]
-points = PoolVector2Array( 14.09, 1.82684, 24.1033, 4.89545, 32.0171, 9.09459, 40.8999, 14.7069, 48.9752, 22.9437, 55.2739, 31.665, 59.15, 40.0229, 62.0571, 49.7132, 64, 64, 0, 64, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=119]
-points = PoolVector2Array( 96, 64, 0, 64, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=121]
-points = PoolVector2Array( 96, 64, 0, 64, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=126]
-points = PoolVector2Array( 128, 96, 0, 96, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=127]
-points = PoolVector2Array( 128, 96, 0, 96, 0, 0 )
+[sub_resource type="ConvexPolygonShape2D" id=107]
+points = PoolVector2Array( 128, 0, 128, 64, 0, 64, 48.9265, 26.7302, 70.5553, 13.4738, 92.8818, 4.40369, 107.999, 1.61285 )
 
 [sub_resource type="ConvexPolygonShape2D" id=75]
 points = PoolVector2Array( 3.29669, 29.9722, 10.5063, 49.6241, 17.4833, 65.2062, 27.7163, 79.6254, 36.7865, 90.3235, 47.4846, 99.8588, 60.2758, 109.162, 76.5556, 117.534, 98.1844, 125.209, 128, 128, 128, 128, 0, 128, 0, 0 )
@@ -120,6 +123,41 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
+2/name = "Sand Ramp Long 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 192, 128, 128, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 84 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 84 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+4/name = "Sky"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 320, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = -1
 5/name = "Sand Ramp Big 1"
 5/texture = ExtResource( 1 )
 5/tex_offset = Vector2( 0, 0 )
@@ -187,7 +225,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 10/texture = ExtResource( 1 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 384, 128, 32, 32 )
+10/region = Rect2( 64, 256, 32, 32 )
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
@@ -208,7 +246,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 11/texture = ExtResource( 1 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 416, 128, 32, 32 )
+11/region = Rect2( 96, 256, 32, 32 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 0, 0 )
 11/navigation_offset = Vector2( 0, 0 )
@@ -225,7 +263,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 11/z_index = 0
-13/name = "Small Stone Ramp Long 1"
+13/name = "Stone Ramp Small Long 1"
 13/texture = ExtResource( 1 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
@@ -246,6 +284,27 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 13/z_index = 0
+14/name = "Stone Ramp Small Long 2"
+14/texture = ExtResource( 1 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 384, 32, 64, 32 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 80 )
+14/shape_one_way = false
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 80 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
 15/name = "Stone Ramp"
 15/texture = ExtResource( 1 )
 15/tex_offset = Vector2( 0, 0 )
@@ -271,7 +330,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 16/texture = ExtResource( 1 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 384, 0, 32, 32 )
+16/region = Rect2( 64, 288, 32, 32 )
 16/tile_mode = 0
 16/occluder_offset = Vector2( 0, 0 )
 16/navigation_offset = Vector2( 0, 0 )
@@ -292,7 +351,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 17/texture = ExtResource( 1 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 416, 0, 32, 32 )
+17/region = Rect2( 96, 288, 32, 32 )
 17/tile_mode = 0
 17/occluder_offset = Vector2( 0, 0 )
 17/navigation_offset = Vector2( 0, 0 )
@@ -309,7 +368,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 17/z_index = 0
-18/name = "Small Sand Ramp Long 3"
+18/name = "Sand Ramp Small Long 3"
 18/texture = ExtResource( 1 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
@@ -330,6 +389,27 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 18/z_index = 0
+19/name = "Sand Ramp Small Long 4"
+19/texture = ExtResource( 1 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 384, 160, 64, 32 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape = SubResource( 93 )
+19/shape_one_way = false
+19/shape_one_way_margin = 1.0
+19/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 93 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+19/z_index = 0
 20/name = "Stone Ramp Big 1"
 20/texture = ExtResource( 1 )
 20/tex_offset = Vector2( 0, 0 )
@@ -372,7 +452,21 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 21/z_index = 0
-23/name = "Small Sand Ramp Long 1"
+22/name = "Climb Small"
+22/texture = ExtResource( 1 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 160, 256, 32, 32 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape_one_way = false
+22/shape_one_way_margin = 0.0
+22/shapes = [  ]
+22/z_index = -5
+23/name = "Sand Ramp Small Long 1"
 23/texture = ExtResource( 1 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
@@ -393,11 +487,46 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 23/z_index = 0
+24/name = "Sand Ramp Small Long 2"
+24/texture = ExtResource( 1 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 384, 128, 64, 32 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape = SubResource( 95 )
+24/shape_one_way = false
+24/shape_one_way_margin = 1.0
+24/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 95 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+24/z_index = 0
+25/name = "Razor Rock"
+25/texture = ExtResource( 1 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 160, 288, 32, 32 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
 26/name = "Stone Ramp Long 3"
 26/texture = ExtResource( 1 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
-26/region = Rect2( 192, 0, 128, 64 )
+26/region = Rect2( 192, 256, 128, 64 )
 26/tile_mode = 0
 26/occluder_offset = Vector2( 0, 0 )
 26/navigation_offset = Vector2( 0, 0 )
@@ -435,11 +564,32 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 27/z_index = 0
+28/name = "Stone Ramp Long 2"
+28/texture = ExtResource( 1 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 192, 0, 128, 64 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape = SubResource( 100 )
+28/shape_one_way = false
+28/shape_one_way_margin = 1.0
+28/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 100 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+28/z_index = 0
 29/name = "Stone Ramp Long 4"
 29/texture = ExtResource( 1 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
-29/region = Rect2( 192, 64, 128, 64 )
+29/region = Rect2( 320, 256, 128, 64 )
 29/tile_mode = 0
 29/occluder_offset = Vector2( 0, 0 )
 29/navigation_offset = Vector2( 0, 0 )
@@ -456,11 +606,53 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 29/z_index = 0
+30/name = "Stone Ramp Long 5"
+30/texture = ExtResource( 1 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 448, 256, 128, 64 )
+30/tile_mode = 0
+30/occluder_offset = Vector2( 0, 0 )
+30/navigation_offset = Vector2( 0, 0 )
+30/shape_offset = Vector2( 0, 0 )
+30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape = SubResource( 102 )
+30/shape_one_way = false
+30/shape_one_way_margin = 1.0
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 102 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+30/z_index = 0
+31/name = "Stone Ramp Long 6"
+31/texture = ExtResource( 1 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 576, 256, 128, 64 )
+31/tile_mode = 0
+31/occluder_offset = Vector2( 0, 0 )
+31/navigation_offset = Vector2( 0, 0 )
+31/shape_offset = Vector2( 0, 0 )
+31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape = SubResource( 103 )
+31/shape_one_way = false
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 103 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+31/z_index = 0
 32/name = "Sand Ramp Long 3"
 32/texture = ExtResource( 1 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
-32/region = Rect2( 192, 128, 128, 64 )
+32/region = Rect2( 192, 320, 128, 64 )
 32/tile_mode = 0
 32/occluder_offset = Vector2( 0, 0 )
 32/navigation_offset = Vector2( 0, 0 )
@@ -481,7 +673,7 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 33/texture = ExtResource( 1 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
-33/region = Rect2( 192, 192, 128, 64 )
+33/region = Rect2( 320, 320, 128, 64 )
 33/tile_mode = 0
 33/occluder_offset = Vector2( 0, 0 )
 33/navigation_offset = Vector2( 0, 0 )
@@ -498,174 +690,48 @@ points = PoolVector2Array( 0, 0, 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 33/z_index = 0
-36/name = "Sand Ramp 2"
-36/texture = ExtResource( 1 )
-36/tex_offset = Vector2( 0, 0 )
-36/modulate = Color( 1, 1, 1, 1 )
-36/region = Rect2( 320, 192, 64, 64 )
-36/tile_mode = 0
-36/occluder_offset = Vector2( 0, 0 )
-36/navigation_offset = Vector2( 0, 0 )
-36/shape_offset = Vector2( 0, 0 )
-36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-36/shape = SubResource( 115 )
-36/shape_one_way = false
-36/shape_one_way_margin = 1.0
-36/shapes = [ {
+34/name = "Sand Ramp Long 5"
+34/texture = ExtResource( 1 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 448, 320, 128, 64 )
+34/tile_mode = 0
+34/occluder_offset = Vector2( 0, 0 )
+34/navigation_offset = Vector2( 0, 0 )
+34/shape_offset = Vector2( 0, 0 )
+34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+34/shape = SubResource( 106 )
+34/shape_one_way = false
+34/shape_one_way_margin = 1.0
+34/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 115 ),
+"shape": SubResource( 106 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-36/z_index = 0
-37/name = "Sand Ramp 3"
-37/texture = ExtResource( 1 )
-37/tex_offset = Vector2( 0, 0 )
-37/modulate = Color( 1, 1, 1, 1 )
-37/region = Rect2( 384, 192, 64, 64 )
-37/tile_mode = 0
-37/occluder_offset = Vector2( 0, 0 )
-37/navigation_offset = Vector2( 0, 0 )
-37/shape_offset = Vector2( 0, 0 )
-37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-37/shape = SubResource( 116 )
-37/shape_one_way = false
-37/shape_one_way_margin = 1.0
-37/shapes = [ {
+34/z_index = 0
+35/name = "Sand Ramp Long 6"
+35/texture = ExtResource( 1 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 576, 320, 128, 64 )
+35/tile_mode = 0
+35/occluder_offset = Vector2( 0, 0 )
+35/navigation_offset = Vector2( 0, 0 )
+35/shape_offset = Vector2( 0, 0 )
+35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape = SubResource( 107 )
+35/shape_one_way = false
+35/shape_one_way_margin = 1.0
+35/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 116 ),
+"shape": SubResource( 107 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-37/z_index = 0
-38/name = "Stone Ramp 2"
-38/texture = ExtResource( 1 )
-38/tex_offset = Vector2( 0, 0 )
-38/modulate = Color( 1, 1, 1, 1 )
-38/region = Rect2( 320, 64, 64, 64 )
-38/tile_mode = 0
-38/occluder_offset = Vector2( 0, 0 )
-38/navigation_offset = Vector2( 0, 0 )
-38/shape_offset = Vector2( 0, 0 )
-38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-38/shape = SubResource( 117 )
-38/shape_one_way = false
-38/shape_one_way_margin = 1.0
-38/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 117 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-38/z_index = 0
-39/name = "Stone Ramp 3"
-39/texture = ExtResource( 1 )
-39/tex_offset = Vector2( 0, 0 )
-39/modulate = Color( 1, 1, 1, 1 )
-39/region = Rect2( 384, 64, 64, 64 )
-39/tile_mode = 0
-39/occluder_offset = Vector2( 0, 0 )
-39/navigation_offset = Vector2( 0, 0 )
-39/shape_offset = Vector2( 0, 0 )
-39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-39/shape = SubResource( 118 )
-39/shape_one_way = false
-39/shape_one_way_margin = 1.0
-39/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 118 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-39/z_index = 0
-40/name = "Stone Ramp 4"
-40/texture = ExtResource( 1 )
-40/tex_offset = Vector2( 0, 0 )
-40/modulate = Color( 1, 1, 1, 1 )
-40/region = Rect2( 64, 64, 96, 64 )
-40/tile_mode = 0
-40/occluder_offset = Vector2( 0, 0 )
-40/navigation_offset = Vector2( 0, 0 )
-40/shape_offset = Vector2( 0, 0 )
-40/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-40/shape = SubResource( 119 )
-40/shape_one_way = false
-40/shape_one_way_margin = 1.0
-40/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 119 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-40/z_index = 0
-42/name = "Sand Ramp 4"
-42/texture = ExtResource( 1 )
-42/tex_offset = Vector2( 0, 0 )
-42/modulate = Color( 1, 1, 1, 1 )
-42/region = Rect2( 64, 192, 96, 64 )
-42/tile_mode = 0
-42/occluder_offset = Vector2( 0, 0 )
-42/navigation_offset = Vector2( 0, 0 )
-42/shape_offset = Vector2( 0, 0 )
-42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-42/shape = SubResource( 121 )
-42/shape_one_way = false
-42/shape_one_way_margin = 1.0
-42/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 121 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-42/z_index = 0
-43/name = "Stone Ramp 4x3"
-43/texture = ExtResource( 1 )
-43/tex_offset = Vector2( 0, 0 )
-43/modulate = Color( 1, 1, 1, 1 )
-43/region = Rect2( 704, 0, 128, 96 )
-43/tile_mode = 0
-43/occluder_offset = Vector2( 0, 0 )
-43/navigation_offset = Vector2( 0, 0 )
-43/shape_offset = Vector2( 0, 0 )
-43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-43/shape = SubResource( 126 )
-43/shape_one_way = false
-43/shape_one_way_margin = 1.0
-43/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 126 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-43/z_index = 0
-44/name = "Sand Ramp 4x3"
-44/texture = ExtResource( 1 )
-44/tex_offset = Vector2( 0, 0 )
-44/modulate = Color( 1, 1, 1, 1 )
-44/region = Rect2( 704, 128, 128, 96 )
-44/tile_mode = 0
-44/occluder_offset = Vector2( 0, 0 )
-44/navigation_offset = Vector2( 0, 0 )
-44/shape_offset = Vector2( 0, 0 )
-44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-44/shape = SubResource( 127 )
-44/shape_one_way = false
-44/shape_one_way_margin = 1.0
-44/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 127 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-44/z_index = 0
+35/z_index = 0
 
 [sub_resource type="ConvexPolygonShape2D" id=87]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -741,31 +807,31 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 32, 64, 32 )
 } ]
 2/z_index = 5
 
-[sub_resource type="ConvexPolygonShape2D" id=128]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+[sub_resource type="ConvexPolygonShape2D" id=114]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="TileSet" id=113]
-1/name = "Climb"
-1/texture = ExtResource( 16 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 96, 0, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 128 )
-1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
+0/name = "Tiles.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 256, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 114 )
+0/shape_one_way = true
+0/shape_one_way_margin = 0.0
+0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 128 ),
+"one_way": true,
+"one_way_margin": 0.0,
+"shape": SubResource( 114 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
-1/z_index = 0
+0/z_index = 0
 
 [sub_resource type="TileSet" id=109]
 0/name = "Sand Ramp Small 1"
@@ -903,7 +969,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0 )
 7/texture = ExtResource( 1 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 192, 192, 128, 64 )
+7/region = Rect2( 320, 320, 128, 64 )
 7/tile_mode = 0
 7/occluder_offset = Vector2( 0, 0 )
 7/navigation_offset = Vector2( 0, 0 )
@@ -913,6 +979,20 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0 )
 7/shape_one_way_margin = 0.0
 7/shapes = [  ]
 7/z_index = 0
+8/name = "Sand Curve Long 4"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 448, 320, 128, 64 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
 9/name = "Sand Ramp"
 9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
@@ -934,13 +1014,41 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 9/z_index = 0
+10/name = "Sand Curve Long 5"
+10/texture = ExtResource( 1 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 192, 320, 128, 64 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "Sand Curve Long 6"
+11/texture = ExtResource( 1 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 576, 320, 128, 64 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
 
 [sub_resource type="TileSet" id=74]
 0/name = "Sky"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 320, 64, 64 )
+0/region = Rect2( 192, 64, 64, 64 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -1225,7 +1333,7 @@ position = Vector2( -184, 506 )
 position = Vector2( -477, 491 )
 
 [node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -277.211, 501.229 )
+position = Vector2( -303.843, 499.865 )
 script = ExtResource( 15 )
 waypoints_path = NodePath("../Waypoints")
 speed = 50.0
