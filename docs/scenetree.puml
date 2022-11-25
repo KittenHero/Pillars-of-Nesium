@@ -1,0 +1,83 @@
+@startuml
+left to right direction
+
+rectangle Game
+rectangle UI
+rectangle "Game data" as Data
+rectangle Inventory
+rectangle Map
+rectangle "Audio Settings" as Audio
+rectangle "General Settings" as General
+rectangle "Graphics Settings" as Display
+rectangle Shop
+rectangle Levels
+rectangle Menus
+rectangle "Player HUD" as PlayerHUD
+rectangle "Health Orb Display" as HealthOrbDisplay
+rectangle PlayerMC
+rectangle Enemy
+rectangle Hitbox
+rectangle Hurtbox
+rectangle Neutral
+rectangle Menus
+rectangle Terrain
+rectangle Checkpoints
+rectangle Savepoints
+rectangle Collectibles
+rectangle Controller
+rectangle SpeechBubble
+rectangle Physics
+rectangle Skills
+rectangle Platforms
+rectangle Traps
+rectangle "VFX & SFX" as FX 
+
+
+Game <-- UI
+Game <-- Data
+
+UI <-- Menus
+UI <-- PlayerHUD
+UI <-- Dynamic
+
+Menus <-- Display
+Menus <-- Audio
+Menus <-- General
+
+Dynamic <.. Shop
+
+PlayerHUD <-- Inventory
+PlayerHUD <-- Map
+PlayerHUD <-- HealthOrbDisplay
+
+Game <-- Levels
+
+Levels <-- PlayerMC
+Levels <-- Enemy
+Levels <-- Neutral
+Levels <-- Terrain
+Levels <-- Checkpoints
+Levels <-- Savepoints
+Levels <-- Collectibles
+
+PlayerMC <-- Controller
+PlayerMC <-- Hitbox
+PlayerMC <-- Hurtbox
+PlayerMC <-- SpeechBubble
+
+Enemy <-- Controller
+Enemy <-- Hitbox
+Enemy <-- Hurtbox
+Enemy <-- SpeechBubble
+
+Neutral <-- Controller
+Neutral <-- SpeechBubble
+
+Controller <-- Physics
+Controller <-- Skills
+
+Terrain <-- Platforms
+Terrain <-- Traps
+Terrain <-- FX
+
+@enduml

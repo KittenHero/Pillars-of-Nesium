@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+
+rectangle Game
+rectangle UI
+rectangle Data
+rectangle "Flesh Pits Level" as FleshPitsLevel
+rectangle "Flesh Pits" as FleshPits
+rectangle Scroad
+rectangle MovingPlatform
+rectangle DisappearingPlatform
+
+Game <-- UI
+Game <-- Data
+Game <-- FleshPitsLevel
+
+'Terrain
+FleshPitsLevel <-- FleshPits
+
+'Enemies
+FleshPitsLevel <-- Scroad
+
+FleshPits <-- MovingPlatform
+FleshPits <-- DisappearingPlatform
+
+
+@enduml
