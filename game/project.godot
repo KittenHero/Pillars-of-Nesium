@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/main/terrain/obstacles/Boulder.gd"
 }, {
+"base": "Node",
+"class": "CommonPhysics",
+"language": "GDScript",
+"path": "res://src/main/common/CommonPhysics.gd"
+}, {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
@@ -35,9 +40,19 @@ _global_script_classes=[ {
 "path": "res://src/main/player/PlayerHP.gd"
 }, {
 "base": "Node",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://src/main/player/states/PlayerState.gd"
+}, {
+"base": "Node",
 "class": "SetupMC",
 "language": "GDScript",
 "path": "res://src/main/player/controller/Controller.gd"
+}, {
+"base": "Node",
+"class": "SetupUser",
+"language": "GDScript",
+"path": "res://src/main/user/controller/Controller.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Stalactite",
@@ -68,26 +83,47 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://src/main/common/StateMachine.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "User",
+"language": "GDScript",
+"path": "res://src/main/user/User.gd"
+}, {
+"base": "CommonPhysics",
+"class": "UserMain",
+"language": "GDScript",
+"path": "res://src/main/user/controller/UserMain.gd"
+}, {
+"base": "State",
+"class": "UserState",
+"language": "GDScript",
+"path": "res://src/main/user/states/UserState.gd"
 } ]
 _global_script_class_icons={
 "Boulder": "",
+"CommonPhysics": "",
 "Hitbox": "",
 "Hurtbox": "",
 "MC": "",
 "PlayerHP": "",
+"PlayerState": "",
 "SetupMC": "",
+"SetupUser": "",
 "Stalactite": "",
 "StartingStatsBoss": "",
 "StartingStatsEnemy": "",
 "StartingStatsMC": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"User": "",
+"UserMain": "",
+"UserState": ""
 }
 
 [application]
 
 config/name="Pillars-of-Nesium-all"
-run/main_scene="res://src/main/Game.tscn"
+run/main_scene="res://src/main/levels/Playground.tscn"
 run/flush_stdout_on_print=true
 config/icon="res://icon.png"
 
@@ -95,10 +131,6 @@ config/icon="res://icon.png"
 
 gdscript/warnings/enable=false
 shapes/collision/shape_color=Color( 0.101961, 0.835294, 0.956863, 0.419608 )
-
-[global]
-
-collision=false
 
 [importer_defaults]
 
@@ -186,8 +218,21 @@ climb={
 
 [layer_names]
 
-2d_render/layer_2="Climb-able"
-2d_physics/layer_2="Climb-able"
+2d_render/layer_1="World"
+2d_render/layer_2="Background"
+2d_render/layer_3="Foreground"
+2d_render/layer_4="Decoration"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Background"
+2d_physics/layer_3="Foreground"
+2d_physics/layer_4="Decoration"
+2d_physics/layer_5="Climb-able"
+2d_physics/layer_6="Neutral"
+2d_physics/layer_7="Destructible"
+2d_physics/layer_8="Collectible"
+2d_physics/layer_9="Hostile"
+2d_physics/layer_10="Player attack"
+2d_physics/layer_11="Debug"
 
 [physics]
 

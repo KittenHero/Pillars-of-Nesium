@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 func physics_process(_parent: MC, _delta: float):
 	pass

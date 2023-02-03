@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 var active: bool
 

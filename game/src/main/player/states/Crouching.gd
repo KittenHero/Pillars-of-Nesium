@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 func physics_process(parent: MC, delta: float):
 	parent.crouch_look(delta)

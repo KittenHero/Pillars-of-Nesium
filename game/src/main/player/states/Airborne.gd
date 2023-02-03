@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 func handle_normal(parent: MC, delta: float) -> Vector2:
 #	Need air melee sprite to uncomment this

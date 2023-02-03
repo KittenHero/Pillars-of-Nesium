@@ -51,8 +51,8 @@ onready var anim_player = $AnimationPlayer
 onready var entry_state = STATES.IDLE
 onready var anim_direction = Vector2.RIGHT
 onready var climb_tiles = 0
-onready var stand_left = $stand_1
-onready var stand_right = $stand_2
+onready var stand_left = $Stand1
+onready var stand_right = $Stand2
 
 onready var acc_per_frame = max_speed/time_to_max_speed
 onready var air_acc_per_frame = max_air_speed/time_to_max_air_speed

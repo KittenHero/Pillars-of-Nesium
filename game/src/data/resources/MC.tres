@@ -2,7 +2,6 @@
 
 [ext_resource path="res://src/main/common/stats/StartingStatsMC.gd" type="Script" id=1]
 
-
 [resource]
 script = ExtResource( 1 )
 version = 1.0

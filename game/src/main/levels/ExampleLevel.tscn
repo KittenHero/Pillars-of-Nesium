@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/main/user/User.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/main/terrain/example/ExampleTerrain.tscn" type="PackedScene" id=2]
+
+[node name="ExampleLevel" type="Node2D"]
+
+[node name="User" parent="." instance=ExtResource( 1 )]
+position = Vector2( 147, 499 )
+
+[node name="ExampleTerrain" parent="." instance=ExtResource( 2 )]

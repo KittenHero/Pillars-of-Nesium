@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 func physics_process(parent: MC, delta: float):
 	if not "melee" in self._args:

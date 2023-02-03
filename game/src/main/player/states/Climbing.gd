@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 var anim_direction := Vector2.RIGHT
 

@@ -1,4 +1,4 @@
-extends State
+extends PlayerState
 
 func physics_process(parent: MC, delta: float):
 	var is_movement_input = (Input.is_action_pressed("move_left") 
