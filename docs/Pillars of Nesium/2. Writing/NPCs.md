@@ -18,7 +18,7 @@ In the final encounter, the Nomad learns to Deflect projectiles, which is used i
 
 ## Skeleton Merchant
 [Lore](Lore.md): Undead
-A merchant that can be seen at different locations throughout the pillar, appearing to follow the player. Will trade [unlockables](Unlockables.md) for [[Unlockables|Bone PIles]]
+A merchant that can be seen at different locations throughout the pillar, appearing to follow the player. Will trade [unlockables](4.%20Unlockables.md) for [[4. Unlockables|Bone PIles]]
 **Personality**: Always grinning, laughs a lot.
 **Appearance**: Cloaked, carries a lantern with a sickly green glow.
 
