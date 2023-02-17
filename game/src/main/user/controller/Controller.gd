@@ -19,7 +19,6 @@ var target: KinematicBody2D
 
 onready var main = $UserMain
 
-var frame_count = 0
 var stack = []
 var stack_buffer: int
 var current_state = null
@@ -42,6 +41,11 @@ onready var state_dict = {
 	"idle": $States/Idle,
 	"airborne": $States/Airborne,
 	"running": $States/Running,
+	"sliding": $States/Sliding,
+	"meleeone": $States/MeleeOne,
+	"meleetwo": $States/MeleeTwo,
+	"climbing": $States/Climbing,
+	"crouching": $States/Crouching
 }
 onready var entry_state = "idle"
 
@@ -68,6 +72,7 @@ func setup():
 	main.tile_detection_r = tile_detection_r
 	main.target = target	
 	main.initialize_stats(starting_stats)
+	main.frame_count = 0
 	
 	stack_buffer = starting_stats.stack_buffer
 	
@@ -75,6 +80,9 @@ func setup():
 		state_dict[state]._user = main
 		state_dict[state].connect("push_state", self, '_on_push_state')
 		state_dict[state].connect("pop_state", self, '_on_pop_state')
+	
+	anim_player.connect("animation_finished", state_dict["meleeone"], '_on_AnimationPlayer_animation_finished')
+	anim_player.connect("animation_finished", state_dict["meleetwo"], '_on_AnimationPlayer_animation_finished')
 	
 	ready = true
 
@@ -84,7 +92,6 @@ func _ready():
 	
 func _physics_process(delta) -> void:
 	if(ready):
-		frame_count += 1
 		current_state.physics_process(delta)
 
 func _on_push_state(state, args = {}) -> void:

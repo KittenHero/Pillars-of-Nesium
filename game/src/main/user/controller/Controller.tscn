@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/main/user/controller/Controller.gd" type="Script" id=1]
 [ext_resource path="res://src/main/user/controller/UserMain.gd" type="Script" id=2]
 [ext_resource path="res://src/main/user/states/Idle.gd" type="Script" id=3]
 [ext_resource path="res://src/main/user/states/Running.gd" type="Script" id=4]
 [ext_resource path="res://src/main/user/states/Airborne.gd" type="Script" id=5]
+[ext_resource path="res://src/main/user/states/Sliding.gd" type="Script" id=6]
+[ext_resource path="res://src/main/user/states/MeleeOne.gd" type="Script" id=7]
+[ext_resource path="res://src/main/user/states/MeleeTwo.gd" type="Script" id=8]
+[ext_resource path="res://src/main/user/states/Climbing.gd" type="Script" id=9]
+[ext_resource path="res://src/main/user/states/Crouching.gd" type="Script" id=10]
 
 [node name="Controller" type="Node"]
 script = ExtResource( 1 )
@@ -26,11 +31,16 @@ script = ExtResource( 5 )
 [node name="Rolling" type="Node" parent="States"]
 
 [node name="MeleeOne" type="Node" parent="States"]
+script = ExtResource( 7 )
 
 [node name="MeleeTwo" type="Node" parent="States"]
+script = ExtResource( 8 )
 
 [node name="Sliding" type="Node" parent="States"]
+script = ExtResource( 6 )
 
 [node name="Climbing" type="Node" parent="States"]
+script = ExtResource( 9 )
 
 [node name="Crouching" type="Node" parent="States"]
+script = ExtResource( 10 )

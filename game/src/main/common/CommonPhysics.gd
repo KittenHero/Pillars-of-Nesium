@@ -34,7 +34,7 @@ func calculate_slide_jump_velocity(slide_jump_height, slide_gravity_multiplier, 
 	return - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
 
 func calculate_ground_offset(collision_shape: CollisionShape2D):
-	Vector2(
+	return Vector2(
 	0,
 	collision_shape.position.y + collision_shape.shape.height/2
 )

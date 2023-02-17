@@ -1213,7 +1213,7 @@ position = Vector2( 639, 191 )
 [node name="A" type="Node" parent="Platforms"]
 
 [node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -259.784, 502.119 )
+position = Vector2( -377.913, 496.074 )
 script = ExtResource( 7 )
 waypoints_path = NodePath("WobbleTimer/Waypoints")
 speed = 50.0

@@ -23,8 +23,10 @@ var anim_direction := Vector2.RIGHT
 
 var climb_tiles = 0
 
+
 var acc_per_frame
 var air_acc_per_frame
+var frame_count
 var init_jump_velocity
 var terminal_velocity
 var slide_jump_velocity
@@ -61,10 +63,14 @@ func initialize_stats(stats: StartingStatsMC):
 	self.slide_jump_velocity = calculate_slide_jump_velocity(stats.slide_jump_height, stats.slide_gravity_multiplier, stats.gravity)
 	self.ground_offset = calculate_ground_offset(player_collision_shape)
 	self.velocity = Vector2.ZERO
+	self.frame_count = 0
 
 
 func _ready():
-	pass
+	self.frame_count = 0
+
+func _physics_process(delta):
+	self.frame_count += 1
 
 # Rays
 func can_climb() -> bool:
@@ -78,6 +84,9 @@ func is_too_slow() -> bool:
 	var is_movement_input = (Input.is_action_pressed("move_left") 
 	or Input.is_action_pressed("move_right"))
 	return self.velocity.length_squared() < acc_per_frame and not is_movement_input
+
+func has_completed_slide(frame_count) -> bool:
+	return self.frame_count - frame_count > self.slide_duration
 
 # General physics
 func move_horizontal(_delta: float) -> void:
@@ -104,24 +113,16 @@ func move_air_horizontal(_delta: float, speed = max_air_speed):
 	elif self.velocity.x < - speed:
 		self.velocity.x = - speed
 
-func slide(_delta: float) -> Vector2:
-	if anim_direction == Vector2.LEFT:
-		velocity.x = - max_speed * slide_speed_multiplier
-	elif anim_direction == Vector2.RIGHT:
-		velocity.x = max_speed * slide_speed_multiplier
-	return velocity
-
-func climb(_delta: float) -> Vector2:
-	velocity = Vector2()
+func climb(_delta: float) -> void:
 	if Input.is_action_pressed("move_up") and tile_detection_u.is_colliding():
-		velocity.y = -max_climbing_speed
+		self.velocity.y = -max_climbing_speed
 	elif Input.is_action_pressed("move_down") and tile_detection_d.is_colliding():
-		velocity.y = +max_climbing_speed
+		self.velocity.y = +max_climbing_speed
 	if Input.is_action_pressed("move_left") and tile_detection_l.is_colliding():
-		velocity.x = -max_climbing_speed
+		self.velocity.x = -max_climbing_speed
 	elif Input.is_action_pressed("move_right") and tile_detection_r.is_colliding():
-		velocity.x = +max_climbing_speed
-	return velocity
+		self.velocity.x = +max_climbing_speed
+
 
 func apply_normal_jump(_delta: float):
 	if Input.is_action_just_released("jump"):
@@ -134,6 +135,11 @@ func apply_slide_jump(_delta: float):
 	move_air_horizontal(_delta, max_speed*slide_speed_multiplier)
 	apply_gravity(_delta, slide_gravity_multiplier)
 
+func apply_airborne(delta: float):
+	move_air_horizontal(delta)
+	apply_gravity(delta)
+	self.velocity = self.target.move_and_slide(self.velocity, Vector2.UP)
+
 func apply_terminal_velocity():
 	self.velocity.y = terminal_velocity
 
@@ -142,6 +148,16 @@ func apply_jump_velocity():
 
 func apply_slide_jump_velocity():
 	self.velocity.y = slide_jump_velocity
+
+func apply_slide(_delta: float) -> void:
+	if anim_direction == Vector2.LEFT:
+		self.velocity.x = - max_speed * slide_speed_multiplier
+	elif anim_direction == Vector2.RIGHT:
+		self.velocity.x = max_speed * slide_speed_multiplier
+
+func reset_velocity() -> void:
+	self.velocity = Vector2.ZERO
+
 
 # Target physics 
 func is_on_floor() -> bool:
@@ -174,6 +190,17 @@ func apply_running_physics(_delta: float) -> void:
 func apply_airborne_physics(_delta: float) -> void:
 	self.velocity = self.target.move_and_slide(self.velocity, Vector2.UP)
 
+
+func apply_sliding_physics(delta: float):
+	apply_slide(delta)
+	apply_gravity(delta)
+	self.velocity = self.target.move_and_slide_with_snap(
+		self.velocity, calculate_ground_offset(self.player_collision_shape), Vector2.UP
+	)
+	
+func apply_climbing_physocs(delta: float):
+	self.velocity = self.target.move_and_slide(self.velocity, Vector2.UP)
+
 # Animation
 func crouch_look(_delta: float) -> void:
 	if Input.is_action_pressed("move_left"):
@@ -186,6 +213,24 @@ func handle_anim_sprite():
 		anim_sprite.set_flip_h(true)
 	else:
 		anim_sprite.set_flip_h(false)		
+		
+func handle_climbing_anim(delta: float):
+	if (
+		self.velocity == Vector2.ZERO
+		and self.anim_player.assigned_animation == "climbing"
+	):
+		self.anim_player.stop(false)
+	else:
+		self.anim_player.play("climbing")
+
+func rotate_anim_sprite():
+	anim_sprite.rotation = Vector2.UP.angle_to(self.target.get_floor_normal())
+
+func reset_anim_sprite_rotation():
+	anim_sprite.rotation = 0
+
+func play_anim_player(name):
+	anim_player.play(name)
 
 func check_anim_player(name):
 	var current_anim = anim_player.assigned_animation
@@ -199,4 +244,5 @@ func check_anim_player_fall_jump():
 		anim_player.play("jump")
 
 func stop_anim_player():
-	anim_player.stop()
+	if anim_player.is_playing():
+		anim_player.stop()
