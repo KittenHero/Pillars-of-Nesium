@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. The Nomad/4. Unlockables.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. The Nomad/4. Unlockables.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. The Nomad/4. Unlockables.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. The Nomad/4. Unlockables.md"
+                "file": "1. Design/2. The Nomad/1. Abilities.md"
               }
             }
           }
@@ -162,15 +162,15 @@
   },
   "active": "1792bc94ebd55904",
   "lastOpenFiles": [
+    "1. Design/2. The Nomad/0. The Nomad.md",
     "1. Design/2. The Nomad/3. Magic.md",
     "1. Design/2. The Nomad/2. Life & Death.md",
     "1. Design/2. The Nomad/1. Abilities.md",
-    "1. Design/2. The Nomad/0. The Nomad.md",
-    "1. Design/2. The Nomad/4. Unlockables.md",
-    "The Archive/Low Priority Fishing.md",
-    "The Archive/Additional Weapons.md",
+    "1. Design/2. Stage Design/Zones & Stages.md",
+    "1. Design/2. Stage Design/Map Features.md",
+    "1. Design/2. Stage Design/Level Mechanics.md",
+    "1. Design/2. Stage Design/Level Design.md",
     "1. Design/1. Core Mechanics/Collectibles & Currencies.md",
-    "1. Design/0. Design Notes/1. Terminology.md",
     "1. Design/0. Design Notes/0. Design.md"
   ]
 }
