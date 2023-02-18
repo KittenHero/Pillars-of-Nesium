@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fly_2.png-79242f3796d9eaf44a5dd09b9b5e25a0.stex"
+path="res://.import/fly_2.png-66b0b52b1802dadf3b19943ced683afd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vanture/fly_2.png"
-dest_files=[ "res://.import/fly_2.png-79242f3796d9eaf44a5dd09b9b5e25a0.stex" ]
+source_file="res://assets/Flying enemies/vanture/fly_2.png"
+dest_files=[ "res://.import/fly_2.png-66b0b52b1802dadf3b19943ced683afd.stex" ]
 
 [params]
 

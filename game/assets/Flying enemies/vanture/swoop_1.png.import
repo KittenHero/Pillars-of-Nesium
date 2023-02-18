@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/swoop_1.png-9763d6bd6a984128523e1468ded5c12e.stex"
+path="res://.import/swoop_1.png-a3102fe27e951d0316e51a4bd4552c8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vanture/swoop_1.png"
-dest_files=[ "res://.import/swoop_1.png-9763d6bd6a984128523e1468ded5c12e.stex" ]
+source_file="res://assets/Flying enemies/vanture/swoop_1.png"
+dest_files=[ "res://.import/swoop_1.png-a3102fe27e951d0316e51a4bd4552c8e.stex" ]
 
 [params]
 

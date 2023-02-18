@@ -3,13 +3,17 @@ onready var playerdect = $Playerdetection
 onready var sprite = $AnimatedSprite
 const Floor = Vector2(0,1)
 var speed = 30
-var direction = 1
 var velocity = Vector2()
 var state = IDLE
 var tpath = 0
+var _centre
+var _angle = 0
+var RotateSpeed = 5
+var playercentre = player.global_position + Vector2(0,-100)
 
 func _ready():
 	pass # Replace with function body.
+	_centre = self.get_pos()
 
 enum{
 	IDLE,
@@ -18,31 +22,14 @@ enum{
 }
 
 func _physics_process(delta):
-	
-	#Gravity for death
-	#velocity.y = Globals.gravity
-
-	if direction == 1:
-		sprite.flip_h = false
-	else:
-		sprite.flip_h = true		
-		
-
-	
-	velocity = move_and_slide(velocity, Floor)
-	
-	if is_on_wall():
-		direction = -direction
-
-	#if $Position2D.is_colliding() == true:
-	#	direction = -direction
-	#if $Position2D2.is_colliding() == true:
-	#	direction = -direction
 		
 	match state:
 		IDLE:
 			sprite.play("flap")
-			velocity.x = -speed * direction
+			_angle += RotateSpeed * delta
+			var offset = Vector2(sin(_angle),cos(_angle))*Radius
+			var pos = _centre + offset
+			move(pos) 
 			seek_player()
 		WANDER:
 			pass
@@ -55,14 +42,15 @@ func _physics_process(delta):
 				if global_position == player.global_position + Vector2(0,-100):
 					#Soundeffectwarning<<<<<<< Updated upstream
 					global_position == player.global_position + Vector2(0,-100)
-					sprite.play("charge")
-					sprite.play("swoop")
-				
+					sprite.play("charge") #faster flapping in place
+					sprite.play("swoop") #Audio file
+					var offsetattack = Vector2(sin(_angle),cos(_angle))*Radius
+					var posattack = playercentre + offset
+					move(posattack) 
 			else:
 				state = IDLE
 				velocity.y = 0
 			sprite.flip_h = velocity.x >0
-
 func seek_player():
 	if playerdect.can_see_player():
 		state = CHASE

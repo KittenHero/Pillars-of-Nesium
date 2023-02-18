@@ -1333,7 +1333,7 @@ position = Vector2( -184, 506 )
 position = Vector2( -477, 491 )
 
 [node name="Platform" type="KinematicBody2D" parent="Platforms/A"]
-position = Vector2( -288.08, 500.671 )
+position = Vector2( -258.902, 502.166 )
 script = ExtResource( 15 )
 waypoints_path = NodePath("../Waypoints")
 speed = 50.0
