@@ -26,25 +26,6 @@ Creatures may have a number of features that describe general characteristics. H
 - Ambush: Enemy waits in hiding until the player triggers it. All other enemies are plain to see, and probably walk around the level on a fixed path.
 - Mini-Boss: Encountered very infrequently and don't respawn. Highly challenging, often with great rewards.
 
-# Desert
-
-## Desert Enemies
-
-| Enemy | Zone | HP | Features | Description | Attacks |
-| --- | --- | --- | --- | --- | --- |
-| Flying Insect | Desert | 1 |  | A pesky flying insect that moves on a fixed pathway. Basically a killable level hazard. |  |
-| Scarab | Desert | 1 |  |  |  |
-| Scroad | Desert, Garden Zone | 3 | Ground, Ambush | A giant brown toad with a scorpion's tail. Disguises itself as a cactus, hiding under the sand with its tail sticking out.  | Sting: Hops forward and performs a ranged sting. Can slide underneath to avoid its attack, or slash at its stinging tail with good timing and distancing. |
-| Vanture | Desert, Garden Zone | 2 | Flying | A bird as large as a man with enormous insect pincers. Encountered at high altitudes. | Swoop: Flies low to the ground and passes the player to attack. Can be avoided with a simple jump. |
-
-## Flesh Pits
-
-| Enemy | Zone | HP | Features | Description | Attacks |
-| --- | --- | --- | --- | --- | --- |
-| Blood Fly | Flesh Pits | 1 |  | A pesky flying insect that darts toward the player with its probiscus extended. |  |
-| Blood Beetle | Desert | 1 |  | A ground insect that walks along a fixed path. Can walk on walls or bounce between two walls. Dies in one hit, killable level hazard. |  |
-| Skeleton | Desert + Pillar | 3 | Ground | A skeleton wielding a scimitar. The scimitar is a traditional weapon of the protagonist's home village. | Windmill: Waves his sword in an upward circular motion attacking in front and above him.
-Lunge: Jumps forward, sword raised above head, then slams it down on the ground. |
 
 ## Generic
 

@@ -27,3 +27,8 @@ A mini-game where the player can capture fish to recover HP.
 - Match the bait. Machine fish want machine parts, while regular fish want meat.
     - You can also use Big Bait.
 - Wait for the moment, and cast close to the fish you want. All fish will be attracted to your bait, so getting close to the fish you want will ensure you snag it. Waiting until other fish are far from the fish you do want is also a good bet.
+
+### Fishing Spot
+The player can go [Fishing](Low%20Priority%20Fishing.md) in any pool of water once he gets the Fishing Rod from the [Merchant](https://www.notion.so/d3170d1efc3a4195bf1a9fefc3b0580e).
+Interact near the edge of a Pond to sit down and pull out the rod and start fishing.
+The [Fisherman](https://www.notion.so/d3170d1efc3a4195bf1a9fefc3b0580e) can be encountered at any Fishing Spot, but leaves the next time the player uses a checkpoint, or finds a new Fishing Spot.
