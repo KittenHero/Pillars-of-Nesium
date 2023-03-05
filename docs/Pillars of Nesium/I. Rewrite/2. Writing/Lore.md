@@ -1,5 +1,5 @@
 # Lore
-Notion - Lore
+This is old as fuck. Needs a big comb through and re-write.
 
 ## TIMELINE
 
@@ -120,3 +120,10 @@ Unknown:
 1.  The Lich is a scholar of Ancient history, having lived since Nostallos’ reign. He is aware of the imminent destruction of Nostallos, but welcomes it, and seeks to bring the day closer. Reasoning: Life would surely be better if all men died and rose anew, with no need to fight any wars, no more suffering, no hunger, no sickness, no pain.
     
 2.  The Lich is a scholar of Ancient history, having lived since Nostallos’ reign. He knows that Nostallos once used the pillar to develop machines of war, and wishes to use that same power once again. He is on the cusp of figuring it out.
+
+## The Magic of the Pillar
+- The pillar is an ancient relic of the Archons (Ancients) that built the Torus. It is part of a deep and grand scaffolding that runs throughout the entire planet. They were hollowed out by the First Men and used to house incredible industry that has long fallen into disrepair. 
+- The pillar is drenched in chaotic magic - the residue from millenia of magical contamination. Stores of unstable Ether have left their mark. 
+	- Anything that dies in the pillar is animated (the player's remains, for example)
+	- Any remains that enter the pillar are animated (the player's dead tribe, for example)
+	- The pillar is highly corrupting to spirits (the player's guardian spirit, for example)

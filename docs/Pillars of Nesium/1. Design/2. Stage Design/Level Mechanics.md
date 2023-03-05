@@ -2,22 +2,29 @@
 
 # Hazards
 
+## Terms
+Hazard: Damages player.
+Reset: Player resets to recent checkpoint.
+Knockdown: Player is knocked down.
+
 ### Stillsand
 Trap
 
 This is a kind of trap, indicated by shimmering sand on the surface. Walking over Stillsand will cause the grains to rocket upward, damaging the player. This is one of many phenomenon caused by Solvat.
 
 ### Razor Rock
-Reset to Checkpoint
+Reset Hazard
 
 These jagged, razor sharp rocks are formed by a certain mineral found in the deserts of Nesium. Simply touching them from any angle will damage the player.
 
 ### Bottomless Pit
-Rest to Checkpoint
+Reset Hazard
 
 Camera should stop moving once the player falls into the bottomless pit zone, then after a short period the player is revived at a Checkpoint.
 
 ### Boulders
+Hazard
+Knockdown
 Rolling boulders that hit the player cause heavy knockback. Move in a fixed direction when player enters the trigger zone. Break on contact with any wall.
 
 ### Stalactites
