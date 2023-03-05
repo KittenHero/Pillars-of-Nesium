@@ -1,15 +1,17 @@
-## Core Level Mechanics
-### Primary Checkpoint
-**Appearance**: Fountain 
-At the checkpoint, the player can Rest, which activates the checkpoint. Doing so causes the following to occur:
-- Restores the Guardian Spirit
-- Respawns all Enemies
-- The Nomad respawns at the most recently used checkpoint on Death
-- Plays the Rest Theme until the player leaves the area
+## Checkpoints
+### Primary Checkpoint / "Save Point"
+**Appearance**: Fountain
+- [ ] *Player can Rest at save point*: At the save point, the player can Rest, which activates the save point. Doing so causes the following to occur:
+	- [ ] Replenishes HPP1
+	- [ ] Respawns all Enemies
+	- [ ] The Nomad respawns at the most recently used checkpoint on Death
+	- [ ] Plays the Rest Theme until the player leaves the area
+	- [ ] Changes animation
 
-### Secondary Checkpoint
+### Secondary Checkpoint / "Checkpoint"
 Appearance: None
 At certain points, secondary checkpoints are placed. When the player's position needs to be reset, for example after fallinginto a pit hazard, the secondary checkpoint is used.
+- [x] Player position reset to checkpoint when taking Reset damage.
 
 ## Other Features
 ### Fishing Spot
@@ -18,8 +20,10 @@ Interact near the edge of a Pond to sit down and pull out the rod and start fish
 The [Fisherman](https://www.notion.so/d3170d1efc3a4195bf1a9fefc3b0580e) can be encountered at any Fishing Spot, but leaves the next time the player uses a checkpoint, or finds a new Fishing Spot.
 
 ### Workshop
-Lets the player use a [Solvat Chunk](Collectibles%20&%20Currencies.md) to upgrade a weapon, or repair broken objects. The first Workshop fixes the Blaster.
+Lets the player upgrade his gear, or repair broken objects.
 
-### Travel **Runes**
+### Travel Runes
 Left behind by [Rune Makers](Lore.md) of old, when activated these Runes allow one to travel between any other activated rooms bearing the same key. They are placed throughout the pillar, allowing travel between each Zone. Always found near a Fountain.
+- [ ] Fast travel menu
+- [ ] Nomad can fast travel
 

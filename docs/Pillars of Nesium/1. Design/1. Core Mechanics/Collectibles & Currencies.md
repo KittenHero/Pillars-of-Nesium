@@ -25,9 +25,9 @@ This section includes all items that aren't Unique - that is to say, there are m
 - Description: Local villagers and explorers are turned undead by the liches within the pillar. The Skeleton Merchant will buy them for a tidy sum, so that he can bury them.
 
 ### Raw Ether
-- Source: Selling, killing monsters/NPCs.
-- Use: Buy stuff
-- Description: Used to buy stuff from merchants. The refinement process for Ether has been long lost.
+- **Source**: Selling, killing monsters/NPCs.
+- **Use**: Buy stuff
+- **Description**: Used to buy stuff from merchants. The refinement process for Ether has been long lost.
 
 ### Refined Ether
 Source: Story, bosses

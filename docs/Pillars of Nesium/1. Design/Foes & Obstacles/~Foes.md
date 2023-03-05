@@ -7,25 +7,19 @@ Enemies are arranged by Zone. There is a generic list for unassigned enemies, or
 Below is a list of relevant statistics.
 
 ### Naming Conventions
-
 Come up with a vaguely arabic/egyptian name for each enemy and boss, in addition to their ‘thematic’ name.
 
 ### Enemy
-
 The name of the enemy.
 
 ### Zone
-
 The Zones the enemy can be found.
 
 ### HP
-
 The creature dies when HP reaches 0 or less. Listed values are not final, but gives an indication of relevant strengths. Keep in mind the player starts with 2 HP, and 90% of enemy attacks deal 1 Damage. Even then, the Guardian Spirit system ensures the player dies in no less than 2 hits.
 
 ### Features
-
 Creatures may have a number of features that describe general characteristics. Here is a list:
-
 - Ground: Enemy is ground based.
 - Flying: Enemy can move freely through space.
 - Climber: Enemy can move on walls.
@@ -132,4 +126,4 @@ Steam Cloud: Solomon blasts fire at the ground, turning the water into steam and
 
 Found in the Flesh Pits
 
-[Stats](Stats.md)
+[~Stats](~Stats.md)

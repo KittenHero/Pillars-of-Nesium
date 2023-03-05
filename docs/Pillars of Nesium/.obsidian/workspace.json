@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "I. Rewrite/Music/Music.md",
+                "file": "I. Rewrite/3. Sound/Music/Music.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "I. Rewrite/2. Writing/NPCs.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "I. Rewrite/2. Writing/NPCs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "I. Rewrite/2. Writing/NPCs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md"
+                "file": "I. Rewrite/2. Writing/NPCs.md"
               }
             }
           }
@@ -186,34 +186,36 @@
   },
   "active": "dc3a1981a3a2fc9d",
   "lastOpenFiles": [
-    "1. Design/2. The Nomad/0. The Nomad.md",
-    "1. Design/1. Core Mechanics/Collectibles & Currencies.md",
-    "1. Design/2. Stage Design/Zones & Stages.md",
-    "1. Design/2. Stage Design/Level Mechanics.md",
-    "1. Design/2. Stage Design/Level Design.md",
-    "1. Design/0. Design Notes/1. Terminology.md",
-    "1. Design/0. Design Notes/0. Design.md",
-    "I. Rewrite/2. Writing/Scenes/The Storm.md",
-    "3. Sound",
-    "I. Rewrite/2. Writing/Scenes/The Graveyard.md",
-    "I. Rewrite/2. Writing/Scenes/New Fishing Spot.md",
-    "I. Rewrite/2. Writing/Scenes/Meeting Solomon.md",
-    "I. Rewrite/2. Writing/Scenes/Meeting Geildukhuk.md",
-    "I. Rewrite/2. Writing/Scenes/First Customer.md",
-    "1. Design/Foes & Obstacles/Stats.md",
-    "1. Design/Foes & Obstacles/Foes.md",
-    "I. Rewrite/Visual/User Interface/=Controls/Controls (Pad) 85ceda47d4d9422386149bd170c6248e.md",
-    "I. Rewrite/Visual/User Interface/=Controls/Controls (M+KB) c9208e852ca341f08ac74bfe4e787443.md",
-    "I. Rewrite/Visual/User Interface/=Controls/Controls (KB) 501fbc68fb90460ca7374667cc54460c.md",
-    "I. Rewrite/Music/Music.md",
-    "1. Design/2. Stage Design/Levels/Desert.md",
-    "I. Rewrite",
-    "1. Design/2. Stage Design/Levels.md",
-    "1. Design/2. Stage Design/Levels",
+    "2. Writing/Scenes/Attaining the Blaster.md",
     "I. Rewrite/2. Writing/NPCs.md",
     "I. Rewrite/2. Writing/Lore.md",
+    "I. Rewrite/2. Writing/Scenes/The Graveyard.md",
+    "I. Rewrite/2. Writing/Scenes/New Fishing Spot.md",
+    "2. Writing/0. Narrative Overview.md",
+    "2. Writing/Scenes/The Storm.md",
+    "2. Writing/Scenes/First Customer.md",
+    "2. Writing/Scenes/Meeting Solomon.md",
+    "2. Writing/Scenes",
+    "Untitled.md",
+    "2. Writing",
+    "0. Admin/Important Links.md",
+    "Trello.md",
+    "Github.md",
+    "Sample.md",
+    "1. Design/Foes & Obstacles/~Stats.md",
+    "1. Design/Foes & Obstacles/~Foes.md",
     "1. Design/2. The Nomad/2. Life & Death.md",
-    "1. Design/2. The Nomad/1. Abilities.md",
-    "1. Design/2. The Nomad/3. Magic.md"
+    "1. Design/0. Design Notes/2. The Demo.md",
+    "1. Design/0. Design Notes/1. Terminology.md",
+    "1. Design/1. Core Mechanics/Collectibles & Currencies.md",
+    "1. Design/2. Stage Design/Zones & Stages.md",
+    "1. Design/2. Stage Design/Stage Mechanics.md",
+    "1. Design/2. Stage Design/Level Design.md",
+    "1. Design/2. Stage Design/Zones/Desert.md",
+    "1. Design/2. Stage Design/Zones/Flesh Pits.md",
+    "1. Design/2. Stage Design/Level Mechanics.md",
+    "I. Rewrite/3. Sound",
+    "I. Rewrite",
+    "1. Design/2. Stage Design/Zones"
   ]
 }

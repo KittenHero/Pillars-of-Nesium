@@ -89,5 +89,6 @@ Found in the Garden Zone.
 
 Geildukhuk will help the player out at a key moment. He will later die and request the player complete his quest. The player should be inclined to do so, feeling both indebted to the frogling and having his own personal reasons to want the pillar destroyed. The desert is his home too, after all.
 **Story**: Geildukhuk is one of few surviving desert froglings, that lives in one of the oases scattered throughout. He has been sent on a quest to destroy the pillars, as his people know of the damage they caused to the old forests of Nesium, now gone.
+**Alt Story**: Geildukhuk is met in the depths of the flesh pits. Geildukhuk has his own quest, to find revive the ancient technology of the pillar and restore the forest. His quest will take him deep into the pillar. He is also being followed by a Guardian Spirit of his own.
 
 ## Construct

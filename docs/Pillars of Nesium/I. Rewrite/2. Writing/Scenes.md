@@ -15,4 +15,4 @@ I have written some example scenes below, though some are unfinished.
 [First Customer](First%20Customer.md)
 [The Graveyard](The%20Graveyard.md)
 [New Fishing Spot](New%20Fishing%20Spot.md)
-[Meeting Geildukhuk](Meeting%20Geildukhuk.md)
+[Attaining the Blaster](Attaining%20the%20Blaster.md)
