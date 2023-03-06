@@ -7,9 +7,9 @@
 A zone is a thematically distinct area within the map. Below is a list of the game's zones, including how they're accessed, and a brief description. Access refers to the specific abilities or items required to access the Zone. Listed below in order of appearance.
 
 ### Confirmed Zone List
-- **Desert**
-- **Flesh Pits**
-- The Deluge: A place full of wide expanses, great pools of water, flowing waterfalls, and ambient thunder
+- **[[1. Desert|Desert]]**
+- **[[2. Flesh Pits|Flesh Pits]]**
+- [[3. Deluge|Deluge]]: A place full of wide expanses, great pools of water, flowing waterfalls, and ambient thunder
 
 ### Shortlisted Zones
 Not necessarily going to be implemented. Worth considering.

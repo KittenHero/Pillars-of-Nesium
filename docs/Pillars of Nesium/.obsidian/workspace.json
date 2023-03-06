@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones & Stages.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "mode": "source",
                 "source": false
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones & Stages.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones & Stages.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones & Stages.md"
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md"
               }
             }
           }
@@ -204,6 +204,10 @@
   },
   "active": "5a9305487b08b46f",
   "lastOpenFiles": [
+    "1. Design/2. Stage Design/Zones/1. Desert.md",
+    "1. Design/2. Stage Design/Zones/0. Zone Template.md",
+    "1. Design/2. Stage Design/Zones/3. Deluge.md",
+    "1. Design/2. Stage Design/Zones & Stages.md",
     "1. Design/2. Stage Design/Level Design.md",
     "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
     "1. Design/1. Global Mechanics/Fast Travel.md",
@@ -214,9 +218,6 @@
     "I. Rewrite/2. Writing/Scenes/New Fishing Spot.md",
     "I. Rewrite/2. Writing/Story & Gameplay.md",
     "I. Rewrite/2. Writing/Traveler's Journals.md",
-    "1. Design/2. Stage Design/Zones & Stages.md",
-    "1. Design/2. Stage Design/Zones/1. Desert.md",
-    "1. Design/2. Stage Design/Zones/0. Zone Template.md",
     "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
     "1. Design/Foes & Obstacles/~Stats.md",
     "1. Design/Foes & Obstacles/~Foes.md",
@@ -229,7 +230,6 @@
     "I. Rewrite/3. Sound/Sound.md",
     "Task List.md",
     "Sample.md",
-    "2. Writing/Scenes/Attaining the Blaster.md",
     "2. Writing/Scenes",
     "2. Writing",
     "I. Rewrite/3. Sound",
