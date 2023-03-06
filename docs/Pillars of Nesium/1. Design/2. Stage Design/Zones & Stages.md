@@ -8,7 +8,7 @@ A zone is a thematically distinct area within the map. Below is a list of the ga
 
 ### Confirmed Zone List
 - **[[1. Desert|Desert]]**
-- **[[2. Flesh Pits|Flesh Pits]]**
+- **[[1. Design/2. Stage Design/Zones/2. Flesh Pits|Flesh Pits]]**
 - [[3. Deluge|Deluge]]: A place full of wide expanses, great pools of water, flowing waterfalls, and ambient thunder
 
 ### Shortlisted Zones

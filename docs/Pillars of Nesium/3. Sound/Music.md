@@ -1,16 +1,26 @@
 # Music
 
 ## Track List
-- Pillars of Nesium
-- Sea of Sand
-- Ascent
-- Deluge
-- Spirit's Embrace
-- By the Falls
+### Universal
+- [x] **Main Theme: Pillars of Nesium**
+- [ ] **Save Menu Theme**
+- [ ] **Save Point Theme: Spirit's Embrace**
 
+### Desert Zone
+- [x] **Zone Theme: Sea of Sand**
+- [ ] **Boss Theme: Solomon
+
+### Flesh Pits Zone
+- [ ] **Zone Theme: Marrow**
+- [ ] **Boss Theme: Demon**
+
+### Deluge Zone
+- [ ] **Zone Theme: Ascent**
+- [ ] **Hub Theme 1: By the Falls**
+
+## Track Details
 ### Pillars of Nesium
-- Game's theme
-
+- Game's Theme
 ### Endless Sands
 - Ambient, mostly acoustic
 - Droning strings & super saw, very low
