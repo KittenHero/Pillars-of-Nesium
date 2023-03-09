@@ -1,11 +1,18 @@
-# NPCs
+# Characters
 
 Can be encountered throughout the game. Some provide a mechanical function and either help or hinder the player, while others just exist in the world, doing their own thing. The player can help or ignore the NPCs, which leads them to different endings. 
 
 NPCs sell items for money. Money can be gained by selling the appropriate item to the appropriate NPC.
 
+## The Guardian Spirit
+**Purpose**: Narrative element & mechanic. Forms the player's mana & health pool. The hero's helper.
+Over the course of the game the spirit's relationship with the nomad deepens creating a greater sense of grief when it is lost.
+
 ## The Survivor
-A tribesman that survived the battle with Solomon. Crippled, but willing to teach the player scimitar techniques. 
+**Purpose**:
+- To teach the Nomad new abilities.
+- To expand on the Nomad's culture.
+**Description**: A tribesman that survived the battle with Solomon. Crippled, but willing to teach the player scimitar techniques. 
 **Personality**
 **Appearance**
 **Story**: The survivor was a member of the hunting party, and one of the most skilled warriors of the tribe. The only one to fight Solomon and survive.

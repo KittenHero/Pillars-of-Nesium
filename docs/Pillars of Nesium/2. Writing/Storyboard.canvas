@@ -1,0 +1,14 @@
+{
+	"nodes":[
+		{"type":"text","text":"","id":"e2c99fc212113880","x":129,"y":-54,"width":250,"height":60},
+		{"type":"file","file":"2. Writing/Scenes/The Storm.md","id":"489110bd15fd3347","x":-480,"y":-540,"width":400,"height":400},
+		{"type":"file","file":"2. Writing/Scenes/Meeting Solomon.md","id":"7c28aa6200c71e2f","x":0,"y":-540,"width":400,"height":400},
+		{"type":"file","file":"2. Writing/Scenes/Death & Rebirth.md","id":"00f3da3f8bab925e","x":480,"y":-540,"width":400,"height":400},
+		{"type":"file","file":"2. Writing/Scenes/Attaining the Spirit.md","id":"e509514f34dc1413","x":960,"y":-540,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"18cccc2c74b51551","fromNode":"489110bd15fd3347","fromSide":"right","toNode":"7c28aa6200c71e2f","toSide":"left"},
+		{"id":"d110622e6d391100","fromNode":"7c28aa6200c71e2f","fromSide":"right","toNode":"00f3da3f8bab925e","toSide":"left"},
+		{"id":"bc14430c9031b49a","fromNode":"00f3da3f8bab925e","fromSide":"right","toNode":"e509514f34dc1413","toSide":"left"}
+	]
+}

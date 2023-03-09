@@ -54,9 +54,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c5cb95fb043a2dea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. Design/2. Stage Design/Zones/1. Desert.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "77329ae1cc607558",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       },
       {
         "id": "df34dbbdf6c1df25",
@@ -92,7 +116,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4. Visuals/By Zone/2. Flesh Pits.md",
+                "file": "1. Design/0. Design Notes/0. Design.md",
                 "mode": "source",
                 "source": false
               }
@@ -165,7 +189,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -182,7 +206,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -205,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md"
+                "file": "1. Design/2. The Nomad/1. Abilities.md"
               }
             }
           }
@@ -227,42 +251,43 @@
       "obsidian-excalidraw-plugin:New Excalidraw drawing": false
     }
   },
-  "active": "5a9305487b08b46f",
+  "active": "77329ae1cc607558",
   "lastOpenFiles": [
-    "4. Visuals/By Zone/2. Flesh Pits.md",
+    "2. Writing/Storyboard.canvas",
     "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+    "1. Design/2. Stage Design/Zones/1. Desert.md",
+    "1. Design/2. The Nomad/1. Abilities.md",
+    "1. Design/2. Stage Design/Zones/0. Zone Template.md",
+    "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
+    "1. Design/1. Global Mechanics/Fast Travel.md",
+    "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
+    "I. Rewrite/2. Writing/NPCs.md",
+    "1. Design/0. Design Notes/0. Design.md",
+    "2. Writing/Scenes/Attaining the Spirit.md",
+    "2. Writing/0. Narrative Overview.md",
+    "4. Visuals/By Zone/2. Flesh Pits.md",
+    "I. Rewrite/2. Writing/Lore.md",
+    "2. Writing/Scenes/The Storm.md",
+    "2. Writing/Scenes/Side/First Customer.md",
+    "2. Writing/Scenes/Side",
+    "2. Writing/Scenes/Main",
+    "2. Writing/Scenes/Death & Rebirth.md",
+    "1. Design/2. Stage Design/Zones/3. Deluge.md",
     "3. Sound/By Zone/2. Flesh Pits.md",
     "3. Sound/Music.md",
     "3. Sound/By Zone",
     "4. Visuals/Visuals.md",
     "4. Visuals/By Zone",
-    "1. Design/0. Design Notes/0. Design.md",
     "Task List.md",
     "Sample.md",
     "0. Admin/Important Links.md",
     "Visuals.md",
     "4. Visuals",
-    "1. Design/1. Global Mechanics/Fast Travel.md",
     "3. Sound",
     "I. Rewrite/4. Unlockables.md",
-    "1. Design/2. The Nomad/1. Abilities.md",
-    "1. Design/2. The Nomad/0. The Nomad.md",
-    "2. Writing/Scenes/Attaining the Blaster.md",
-    "2. Writing/Scenes/First Customer.md",
-    "2. Writing/Scenes/Meeting Solomon.md",
-    "2. Writing/Scenes/The Storm.md",
-    "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
-    "1. Design/2. Stage Design/Zones/1. Desert.md",
-    "1. Design/2. Stage Design/Zones/0. Zone Template.md",
-    "1. Design/2. Stage Design/Zones/3. Deluge.md",
-    "1. Design/2. Stage Design/Zones & Stages.md",
-    "1. Design/2. Stage Design/Level Design.md",
-    "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
-    "1. Design/1. Global Mechanics/Advancement.md",
     "2. Writing/Scenes",
     "2. Writing",
     "I. Rewrite/3. Sound",
-    "I. Rewrite",
-    "1. Design/2. Stage Design/Zones"
+    "I. Rewrite"
   ]
 }
