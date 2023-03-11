@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "mode": "source",
                 "source": false
               }
@@ -189,7 +189,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -206,7 +206,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -229,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md"
+                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md"
               }
             }
           }
@@ -240,54 +240,17 @@
     "width": 300,
     "collapsed": true
   },
-  "left-ribbon": {
-    "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:New Excalidraw drawing": false
-    }
-  },
   "active": "77329ae1cc607558",
   "lastOpenFiles": [
+    "1. Design/2. The Nomad/1. Abilities.md",
     "2. Writing/Storyboard.canvas",
     "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
     "1. Design/2. Stage Design/Zones/1. Desert.md",
-    "1. Design/2. The Nomad/1. Abilities.md",
     "1. Design/2. Stage Design/Zones/0. Zone Template.md",
     "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
     "1. Design/1. Global Mechanics/Fast Travel.md",
     "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
     "I. Rewrite/2. Writing/NPCs.md",
-    "1. Design/0. Design Notes/0. Design.md",
-    "2. Writing/Scenes/Attaining the Spirit.md",
-    "2. Writing/0. Narrative Overview.md",
-    "4. Visuals/By Zone/2. Flesh Pits.md",
-    "I. Rewrite/2. Writing/Lore.md",
-    "2. Writing/Scenes/The Storm.md",
-    "2. Writing/Scenes/Side/First Customer.md",
-    "2. Writing/Scenes/Side",
-    "2. Writing/Scenes/Main",
-    "2. Writing/Scenes/Death & Rebirth.md",
-    "1. Design/2. Stage Design/Zones/3. Deluge.md",
-    "3. Sound/By Zone/2. Flesh Pits.md",
-    "3. Sound/Music.md",
-    "3. Sound/By Zone",
-    "4. Visuals/Visuals.md",
-    "4. Visuals/By Zone",
-    "Task List.md",
-    "Sample.md",
-    "0. Admin/Important Links.md",
-    "Visuals.md",
-    "4. Visuals",
-    "3. Sound",
-    "I. Rewrite/4. Unlockables.md",
-    "2. Writing/Scenes",
-    "2. Writing",
-    "I. Rewrite/3. Sound",
-    "I. Rewrite"
+    "1. Design/0. Design Notes/0. Design.md"
   ]
 }
