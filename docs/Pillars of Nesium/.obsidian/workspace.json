@@ -61,19 +61,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/1. Desert.md",
+                "file": "II. The Archive/Extra Material/1. Desert.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "77329ae1cc607558",
+            "id": "6c229897e300ae46",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+                "file": "3. Sound/Sound.md",
                 "mode": "source",
                 "source": false
               }
@@ -83,47 +83,22 @@
         "currentTab": 5
       },
       {
-        "id": "df34dbbdf6c1df25",
+        "id": "b3ed4bed1624b0a5",
         "type": "tabs",
         "children": [
           {
-            "id": "60b01dbdbea90aa0",
+            "id": "68b9842a1b66ccc3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4. Visuals/Visuals.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "825d5aa0739348ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "4. Visuals/By Zone/2. Flesh Pits.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6db981e84fe37c6d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Design/0. Design Notes/0. Design.md",
+                "file": "1. Design/2. The Nomad/0. The Nomad.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -168,6 +143,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "7dd238f8e8828a2c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -189,7 +172,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+                "file": "3. Sound/Sound.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -206,7 +189,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+                "file": "3. Sound/Sound.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -229,7 +212,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md"
+                "file": "3. Sound/Sound.md"
               }
             }
           }
@@ -240,17 +223,48 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "77329ae1cc607558",
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "6c229897e300ae46",
   "lastOpenFiles": [
-    "1. Design/2. The Nomad/1. Abilities.md",
-    "2. Writing/Storyboard.canvas",
+    "1. Design/2. The Nomad/0. The Nomad.md",
+    "3. Sound/Sound.md",
+    "II. The Archive/Extra Material/3. Magic.md",
+    "II. The Archive/Extra Material/4. Unlockables.md",
+    "2. Writing/Lore.md",
+    "II. The Archive/Extra Material/2. Writing/Scenes/The Graveyard.md",
+    "II. The Archive/Extra Material/2. Writing/Scenes/New Fishing Spot.md",
+    "II. The Archive/Extra Material/2. Writing/Traveler's Journals.md",
+    "2. Writing/NPCs.md",
+    "2. Writing/Scenes/Scenes.md",
+    "2. Writing/Scenes/Side/First Customer.md",
+    "II. The Archive/Extra Material/Meeting Solomon.md",
+    "II. The Archive/Extra Material/The Storm.md",
+    "I. Rewrite/2. Writing/Story & Gameplay.md",
+    "I. Rewrite/3. Sound/Sound.md",
+    "3. Sound/By Zone/2. Flesh Pits.md",
+    "3. Sound/Music.md",
+    "2. Writing/0. Narrative Overview.md",
+    "2. Writing/Scenes/Meeting Geildukhuk.md",
+    "2. Writing/Scenes/Death & Rebirth.md",
+    "II. The Archive/Extra Material/Storyboard.canvas",
+    "II. The Archive/Extra Material/~Foes.md",
+    "1. Design/Foes & Obstacles/~Stats.md",
+    "9. Tools/0. Zone Template.md",
+    "9. Tools",
     "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
-    "1. Design/2. Stage Design/Zones/1. Desert.md",
-    "1. Design/2. Stage Design/Zones/0. Zone Template.md",
-    "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
-    "1. Design/1. Global Mechanics/Fast Travel.md",
-    "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
-    "I. Rewrite/2. Writing/NPCs.md",
-    "1. Design/0. Design Notes/0. Design.md"
+    "1. Design/2. Stage Design/Zones/Flesh Pits Flowchart.canvas",
+    "II. The Archive/Extra Material/3. Deluge.md",
+    "II. The Archive/Extra Material/1. Desert.md",
+    "II. The Archive/Extra Material"
   ]
 }
