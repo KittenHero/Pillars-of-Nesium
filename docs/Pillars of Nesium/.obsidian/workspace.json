@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Sound/Sound.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "mode": "source",
                 "source": false
               }
@@ -172,7 +172,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3. Sound/Sound.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +189,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3. Sound/Sound.md",
+                "file": "1. Design/2. The Nomad/1. Abilities.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -212,7 +212,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Sound/Sound.md"
+                "file": "1. Design/2. The Nomad/1. Abilities.md"
               }
             }
           }
@@ -236,8 +236,8 @@
   },
   "active": "6c229897e300ae46",
   "lastOpenFiles": [
-    "1. Design/2. The Nomad/0. The Nomad.md",
     "3. Sound/Sound.md",
+    "1. Design/2. The Nomad/0. The Nomad.md",
     "II. The Archive/Extra Material/3. Magic.md",
     "II. The Archive/Extra Material/4. Unlockables.md",
     "2. Writing/Lore.md",
