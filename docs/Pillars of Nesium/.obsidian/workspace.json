@@ -81,24 +81,6 @@
           }
         ],
         "currentTab": 5
-      },
-      {
-        "id": "b3ed4bed1624b0a5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "68b9842a1b66ccc3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Design/2. The Nomad/0. The Nomad.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -236,8 +218,13 @@
   },
   "active": "6c229897e300ae46",
   "lastOpenFiles": [
-    "3. Sound/Sound.md",
+    "1. Design/2. The Nomad/2. Life & Death.md",
+    "1. Design/Foes & Obstacles/~Stats.md",
+    "1. Design/2. The Nomad/1. Abilities.md",
+    "II. The Archive/Extra Material/~Foes.md",
+    "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
     "1. Design/2. The Nomad/0. The Nomad.md",
+    "3. Sound/Sound.md",
     "II. The Archive/Extra Material/3. Magic.md",
     "II. The Archive/Extra Material/4. Unlockables.md",
     "2. Writing/Lore.md",
@@ -257,14 +244,9 @@
     "2. Writing/Scenes/Meeting Geildukhuk.md",
     "2. Writing/Scenes/Death & Rebirth.md",
     "II. The Archive/Extra Material/Storyboard.canvas",
-    "II. The Archive/Extra Material/~Foes.md",
-    "1. Design/Foes & Obstacles/~Stats.md",
     "9. Tools/0. Zone Template.md",
     "9. Tools",
-    "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
     "1. Design/2. Stage Design/Zones/Flesh Pits Flowchart.canvas",
-    "II. The Archive/Extra Material/3. Deluge.md",
-    "II. The Archive/Extra Material/1. Desert.md",
     "II. The Archive/Extra Material"
   ]
 }
