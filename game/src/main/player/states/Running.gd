@@ -12,7 +12,7 @@ func physics_process(parent: MC, delta: float):
 	)
 	
 	if not parent.is_on_floor() or (
-		parent.velocity.length_squared() < parent.acc_per_frame and not is_movement_input):
+		parent.velocity.length_squared() < parent.acc_per_frame() and not is_movement_input):
 		parent.pop_state()
 	elif Input.is_action_just_pressed("jump"):
 		parent.push_state(parent.STATES.AIRBORNE, {"jump": true})

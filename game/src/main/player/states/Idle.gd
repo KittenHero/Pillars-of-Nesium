@@ -25,7 +25,7 @@ func physics_process(parent: MC, delta: float):
 	elif Input.is_action_just_pressed("move_down"):
 		parent.push_state(parent.STATES.CROUCHING)
 
-	if parent.velocity.length_squared() < parent.acc_per_frame * parent.acc_per_frame * 2:
+	if parent.velocity.length_squared() < parent.acc_per_frame() * parent.acc_per_frame() * 2:
 		parent.velocity = Vector2.ZERO
 	anim_process(parent, delta)
 	

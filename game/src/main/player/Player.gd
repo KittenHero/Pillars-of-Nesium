@@ -9,6 +9,7 @@ export var time_to_max_air_speed := 20
 export var jump_height := 150
 export var min_jump_height := 10
 export var gravity := 2500
+export var floatyness := 1.5
 export var slide_speed_multiplier := 2
 export var slide_gravity_multiplier := 0.9
 export var slide_jump_height := 100
@@ -53,21 +54,29 @@ onready var anim_direction = Vector2.RIGHT
 onready var climb_tiles = 0
 onready var stand_left = $stand_1
 onready var stand_right = $stand_2
-
-onready var acc_per_frame = max_speed/time_to_max_speed
-onready var air_acc_per_frame = max_air_speed/time_to_max_air_speed
-
-# Variable high jump physics
-onready var init_jump_velocity = - sqrt(2*gravity*jump_height)
-onready var terminal_velocity = - sqrt(
-	pow(init_jump_velocity, 2) - 
-	(2*gravity*(jump_height - min_jump_height))
-)
-onready var slide_jump_velocity = - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
 onready var ground_offset = Vector2(
 	0,
 	$CollisionShape2D.position.y + $CollisionShape2D.shape.height/2
 )
+
+func acc_per_frame():
+	return max_speed/time_to_max_speed
+
+func air_acc_per_frame():
+	return max_air_speed/time_to_max_air_speed
+
+# Variable high jump physics
+func init_jump_velocity():
+	return -sqrt(2*gravity*jump_height)
+
+func terminal_velocity():
+	return  - sqrt(
+		pow(init_jump_velocity(), 2) - 
+		(2*gravity*(jump_height - min_jump_height))
+	)
+
+func slide_jump_velocity():
+	return - sqrt(2*gravity*slide_gravity_multiplier*slide_jump_height)
 
 func _ready():
 	current_state = state_dict[entry_state]
@@ -79,10 +88,10 @@ func _physics_process(delta) -> void:
 func move_horizontal(_delta: float) -> Vector2:
 	if Input.is_action_pressed("move_left"):
 		anim_direction = Vector2.LEFT
-		velocity.x -= acc_per_frame;
+		velocity.x -= acc_per_frame();
 	elif Input.is_action_pressed("move_right"):
 		anim_direction = Vector2.RIGHT
-		velocity.x += acc_per_frame;
+		velocity.x += acc_per_frame();
 	if velocity.x > max_speed:
 		velocity.x = max_speed
 	elif velocity.x < - max_speed:
@@ -92,10 +101,10 @@ func move_horizontal(_delta: float) -> Vector2:
 func move_air_horizontal(_delta: float, speed = max_air_speed) -> Vector2:
 	if Input.is_action_pressed("move_left"):
 		anim_direction = Vector2.LEFT
-		velocity.x -= air_acc_per_frame;
+		velocity.x -= air_acc_per_frame();
 	elif Input.is_action_pressed("move_right"):
 		anim_direction = Vector2.RIGHT
-		velocity.x += air_acc_per_frame;
+		velocity.x += air_acc_per_frame();
 	if velocity.x > speed:
 		velocity.x = speed
 	elif velocity.x < - speed:
@@ -133,6 +142,8 @@ func apply_stopping_friction(_delta: float) -> Vector2:
 	return velocity
 
 func apply_gravity(delta: float, gravity_scale = 1) -> Vector2:
+	if velocity.y > 0 and floatyness != 0:
+		gravity_scale /= floatyness
 	velocity.y += gravity * gravity_scale * delta
 	return velocity
 
@@ -140,7 +151,8 @@ func modulate_sprite(color: Color) -> void:
 	$Sprite.modulate = color
 
 func can_climb() -> bool:
-	return climb_tiles > 0
+	#return climb_tiles > 0
+	return false
 
 func can_stand() -> bool:
 	return not stand_left.is_colliding() && not stand_right.is_colliding()

@@ -7,8 +7,8 @@ func handle_normal(parent: MC, delta: float) -> Vector2:
 #	elif parent.is_on_floor():
 #		parent.pop_state()
 	if Input.is_action_just_released("jump"):
-		if parent.velocity.y < parent.terminal_velocity:
-			parent.velocity.y = parent.terminal_velocity
+		if parent.velocity.y < parent.terminal_velocity():
+			parent.velocity.y = parent.terminal_velocity()
 	var velocity = parent.move_air_horizontal(delta)
 	velocity = parent.apply_gravity(delta)
 	return velocity
@@ -49,11 +49,11 @@ func enter(parent: MC):
 	if "jump" in self._args and self._args["jump"]:
 		# Instant release
 		if not Input.is_action_pressed("jump"):
-			parent.velocity.y = parent.terminal_velocity
+			parent.velocity.y = parent.terminal_velocity()
 		else:
-			parent.velocity.y = parent.init_jump_velocity
+			parent.velocity.y = parent.init_jump_velocity()
 	elif "slide_jump" in self._args and self._args["slide_jump"]:
-		parent.velocity.y = parent.slide_jump_velocity
+		parent.velocity.y = parent.slide_jump_velocity()
 	
 func exit(parent: MC):
 	.exit(parent) 
