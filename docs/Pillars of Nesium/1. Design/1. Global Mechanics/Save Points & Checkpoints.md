@@ -1,4 +1,4 @@
-## Checkpoints
+## Save Points & Checkpoints
 ### Primary Checkpoint / "Save Point"
 **Appearance**: Fountain
 - [ ] The Nomad respawns at the most recently used checkpoint on Death
