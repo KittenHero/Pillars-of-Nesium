@@ -4,83 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "a490dfdeebf61ff1",
+        "id": "fbbe89c712168e06",
         "type": "tabs",
         "children": [
           {
-            "id": "9ca22f9ec1ec7bb5",
+            "id": "a667fbab35f12359",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "f5954df6c0707548",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Sound/Music.md",
+                "file": "Untitled.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1792bc94ebd55904",
+            "id": "d26163f21a597759",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "1. Design/2. Stage Design/Zones & Stages.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dc3a1981a3a2fc9d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5a9305487b08b46f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c5cb95fb043a2dea",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "II. The Archive/Extra Material/1. Desert.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6c229897e300ae46",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
-                "mode": "source",
-                "source": false
+                "file": "1. Design/2. The Nomad/Character Move Reference.md"
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -154,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "1. Design/2. The Nomad/Character Move Reference.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md",
+                "file": "1. Design/2. The Nomad/Character Move Reference.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -194,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. The Nomad/1. Abilities.md"
+                "file": "1. Design/2. The Nomad/Character Move Reference.md"
               }
             }
           },
@@ -215,29 +173,36 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:New Excalidraw drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6c229897e300ae46",
+  "active": "d26163f21a597759",
   "lastOpenFiles": [
-    "1. Design/2. Stage Design/Zones/2. Flesh Pits.md",
+    "1. Design/2. The Nomad/2. Life & Death.md",
+    "1. Design/2. The Nomad/1. Abilities.md",
+    "1. Design/2. The Nomad/Character Move Reference.md",
+    "1. Design/2. Level Design/1. Flesh Pits Zone.md",
+    "3. Sound/Music.md",
+    "1. Design/2. Level Design/0. Zones & Stages.md",
+    "II. The Archive/Extra Material/1. Desert.md",
+    "Untitled.md",
     "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
     "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
-    "1. Design/0. Design Notes/2. The Demo.md",
-    "1. Design/0. Design Notes/1. Terminology.md",
     "1. Design/0. Design Notes/0. Design.md",
-    "1. Design/2. The Nomad/1. Abilities.md",
-    "1. Design/2. The Nomad/2. Life & Death.md",
+    "1. Design/0. Design Notes/1. Terminology.md",
+    "1. Design/2. The Nomad/0. The Nomad.md",
+    "1. Design/2. Level Design/2. Flesh Pits Flowchart.canvas",
+    "II. The Archive/Zones & Stages (old).md",
+    "1. Design/0. Design Notes/2. The Demo.md",
     "1. Design/Foes & Obstacles/~Stats.md",
     "II. The Archive/Extra Material/~Foes.md",
-    "1. Design/2. The Nomad/0. The Nomad.md",
     "3. Sound/Sound.md",
     "II. The Archive/Extra Material/3. Magic.md",
     "II. The Archive/Extra Material/4. Unlockables.md",
@@ -247,15 +212,8 @@
     "II. The Archive/Extra Material/2. Writing/Traveler's Journals.md",
     "2. Writing/NPCs.md",
     "2. Writing/Scenes/Scenes.md",
-    "2. Writing/Scenes/Side/First Customer.md",
-    "II. The Archive/Extra Material/Meeting Solomon.md",
-    "II. The Archive/Extra Material/The Storm.md",
-    "I. Rewrite/2. Writing/Story & Gameplay.md",
-    "I. Rewrite/3. Sound/Sound.md",
-    "3. Sound/By Zone/2. Flesh Pits.md",
     "II. The Archive/Extra Material/Storyboard.canvas",
     "9. Tools",
-    "1. Design/2. Stage Design/Zones/Flesh Pits Flowchart.canvas",
     "II. The Archive/Extra Material"
   ]
 }

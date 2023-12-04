@@ -656,11 +656,13 @@ tracks/0/keys = {
 [node name="MC" type="KinematicBody2D"]
 collision_layer = 64
 script = ExtResource( 26 )
+max_speed = 500
 time_to_max_speed = 5
+max_air_speed = 500
 time_to_max_air_speed = 7
 min_jump_height = 20
-gravity = 4000
-floatyness = 5.0
+gravity = 3000
+floatyness = 3.0
 slide_gravity_multiplier = 0.75
 slide_jump_height = 76
 max_health = 15
@@ -762,7 +764,7 @@ script = ExtResource( 18 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 0.8, 0.8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 50 )

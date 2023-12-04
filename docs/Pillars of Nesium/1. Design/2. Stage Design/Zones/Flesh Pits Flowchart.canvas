@@ -1,7 +1,0 @@
-{
-	"nodes":[
-		{"id":"e0f6dd63ce7da481","x":-180,"y":-880,"width":200,"height":60,"type":"text","text":"## The Mound"},
-		{"id":"3cf6adc84f696fa5","x":-600,"y":-800,"width":170,"height":60,"type":"text","text":"## The Pit"}
-	],
-	"edges":[]
-}
