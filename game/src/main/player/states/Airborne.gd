@@ -56,5 +56,7 @@ func enter(parent: MC):
 		parent.velocity.y = parent.slide_jump_velocity()
 	
 func exit(parent: MC):
-	.exit(parent) 
+	parent.dustL.emitting = true
+	parent.dustR.emitting = true
+	.exit(parent)
 	handle_anim_finished(parent)

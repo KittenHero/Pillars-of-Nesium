@@ -23,6 +23,7 @@ func handle_anim_finished(parent: MC):
 func enter(parent: MC):
 	parent.velocity = Vector2.ZERO
 	
+	
 func exit(parent: MC):
 	.exit(parent)
 	handle_anim_finished(parent)

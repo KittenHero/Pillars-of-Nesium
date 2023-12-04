@@ -47,6 +47,8 @@ onready var state_dict = {
 	STATES.CLIMBING: $States/Climbing,
 	STATES.CROUCHING: $States/Crouching
 }
+onready var dustL = $dustL
+onready var dustR = $dustR
 onready var anim_sprite = $Sprite
 onready var anim_player = $AnimationPlayer
 onready var entry_state = STATES.IDLE
