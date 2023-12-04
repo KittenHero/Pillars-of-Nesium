@@ -4,41 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "fbbe89c712168e06",
+        "id": "e5efaaff35d4d030",
         "type": "tabs",
         "children": [
           {
-            "id": "a667fbab35f12359",
+            "id": "512a0aa50451bf59",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "canvas",
+              "state": {
+                "file": "2. Design/2. The Nomad/Move Map.canvas",
+                "viewState": {
+                  "x": 1565.4902090232204,
+                  "y": -2105.887397853753,
+                  "zoom": -1.333333333333333
+                }
+              }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "dd90bed7304bfef3",
+        "type": "tabs",
+        "children": [
           {
-            "id": "f5954df6c0707548",
+            "id": "e640d725c3714898",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "2. Design/2. The Nomad/1. Abilities.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "d26163f21a597759",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "1. Design/2. The Nomad/Character Move Reference.md"
-              }
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1. Design/2. The Nomad/Character Move Reference.md",
+                "file": "2. Design/2. The Nomad/Move Map.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1. Design/2. The Nomad/Character Move Reference.md",
+                "file": "2. Design/2. The Nomad/Move Map.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1. Design/2. The Nomad/Character Move Reference.md"
+                "file": "2. Design/2. The Nomad/Move Map.canvas"
               }
             }
           },
@@ -169,7 +171,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,35 +186,36 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d26163f21a597759",
+  "active": "512a0aa50451bf59",
   "lastOpenFiles": [
-    "1. Design/2. The Nomad/2. Life & Death.md",
-    "1. Design/2. The Nomad/1. Abilities.md",
-    "1. Design/2. The Nomad/Character Move Reference.md",
-    "1. Design/2. Level Design/1. Flesh Pits Zone.md",
-    "3. Sound/Music.md",
-    "1. Design/2. Level Design/0. Zones & Stages.md",
-    "II. The Archive/Extra Material/1. Desert.md",
+    "2. Design/2. The Nomad/1. Abilities.md",
+    "2. Design/2. The Nomad/Move Map.canvas",
+    "2. Design/2. The Nomad/2. Life & Death.md",
     "Untitled.md",
-    "1. Design/1. Global Mechanics/Collectibles & Currencies.md",
-    "1. Design/1. Global Mechanics/Save Points & Checkpoints.md",
-    "1. Design/0. Design Notes/0. Design.md",
-    "1. Design/0. Design Notes/1. Terminology.md",
-    "1. Design/2. The Nomad/0. The Nomad.md",
-    "1. Design/2. Level Design/2. Flesh Pits Flowchart.canvas",
+    "2. Design/2. The Nomad/Character Move Reference.md",
+    "2. Design/2. Level Design/2. Flesh Pits Flowchart.canvas",
+    "1. Interface/Controls.md",
+    "1. Interface/UI.md",
+    "4. Sound/Sound Tasklist.md",
+    "4. Sound/Sound.md",
+    "II. The Archive/Art.md",
+    "0. Admin/Important Links.md",
+    "1. Interface",
+    "2. Design/2. Level Design/1. Flesh Pits Zone.md",
+    "4. Sound/Music.md",
+    "2. Design/2. Level Design/0. Zones & Stages.md",
+    "II. The Archive/Extra Material/1. Desert.md",
+    "2. Design/1. Global Mechanics/Collectibles & Currencies.md",
+    "2. Design/1. Global Mechanics/Save Points & Checkpoints.md",
+    "2. Design/0. Design Notes/0. Design.md",
+    "2. Design/0. Design Notes/1. Terminology.md",
+    "2. Design/2. The Nomad/0. The Nomad.md",
     "II. The Archive/Zones & Stages (old).md",
-    "1. Design/0. Design Notes/2. The Demo.md",
-    "1. Design/Foes & Obstacles/~Stats.md",
+    "2. Design/0. Design Notes/2. The Demo.md",
+    "2. Design/Foes & Obstacles/~Stats.md",
     "II. The Archive/Extra Material/~Foes.md",
-    "3. Sound/Sound.md",
     "II. The Archive/Extra Material/3. Magic.md",
     "II. The Archive/Extra Material/4. Unlockables.md",
-    "2. Writing/Lore.md",
-    "II. The Archive/Extra Material/2. Writing/Scenes/The Graveyard.md",
-    "II. The Archive/Extra Material/2. Writing/Scenes/New Fishing Spot.md",
-    "II. The Archive/Extra Material/2. Writing/Traveler's Journals.md",
-    "2. Writing/NPCs.md",
-    "2. Writing/Scenes/Scenes.md",
     "II. The Archive/Extra Material/Storyboard.canvas",
     "9. Tools",
     "II. The Archive/Extra Material"
