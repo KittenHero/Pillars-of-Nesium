@@ -15,28 +15,10 @@
               "state": {
                 "file": "2. Design/2. The Nomad/Move Map.canvas",
                 "viewState": {
-                  "x": 1565.4902090232204,
-                  "y": -2105.887397853753,
-                  "zoom": -1.333333333333333
+                  "x": 2216.0612698519753,
+                  "y": -2126.1001756977385,
+                  "zoom": -0.9999999999999998
                 }
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "dd90bed7304bfef3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "e640d725c3714898",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2. Design/2. The Nomad/1. Abilities.md",
-                "mode": "source",
-                "source": false
               }
             }
           }
