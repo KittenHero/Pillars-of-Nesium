@@ -15,9 +15,9 @@
               "state": {
                 "file": "2. Design/2. The Nomad/Move Map.canvas",
                 "viewState": {
-                  "x": 2216.0612698519753,
-                  "y": -2126.1001756977385,
-                  "zoom": -0.9999999999999998
+                  "x": 3038.622897109223,
+                  "y": -1667.605308849,
+                  "zoom": -1.3333333333333333
                 }
               }
             }
@@ -170,13 +170,13 @@
   },
   "active": "512a0aa50451bf59",
   "lastOpenFiles": [
-    "2. Design/2. The Nomad/1. Abilities.md",
+    "2. Design/2. The Nomad/Character Move Reference.md",
+    "1. Interface/Controls.md",
     "2. Design/2. The Nomad/Move Map.canvas",
+    "2. Design/2. The Nomad/1. Abilities.md",
     "2. Design/2. The Nomad/2. Life & Death.md",
     "Untitled.md",
-    "2. Design/2. The Nomad/Character Move Reference.md",
     "2. Design/2. Level Design/2. Flesh Pits Flowchart.canvas",
-    "1. Interface/Controls.md",
     "1. Interface/UI.md",
     "4. Sound/Sound Tasklist.md",
     "4. Sound/Sound.md",

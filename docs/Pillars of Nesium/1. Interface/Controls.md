@@ -21,3 +21,4 @@
 - Wind Move: Shift
 - Melee: J
 - Wind Melee: K
+- Parry: L
